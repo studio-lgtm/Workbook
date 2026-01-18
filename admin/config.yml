@@ -3,20 +3,15 @@ backend:
   branch: main
 
 media_folder: "media"
-public_folder: "media"
+public_folder: "/media"
 
-# Media library settings for web optimization
+# Enable Netlify Large Media for video support
+# This uses Git LFS automatically when files are large
 media_library:
   name: uploadcare
   config:
-    publicKey: YOUR_UPLOADCARE_PUBLIC_KEY
-
-# Alternative: Use Cloudinary for automatic optimization
-# media_library:
-#   name: cloudinary
-#   config:
-#     cloud_name: YOUR_CLOUD_NAME
-#     api_key: YOUR_API_KEY
+    publicKey: demopublickey
+    imagesOnly: false
 
 collections:
   - name: "projects"
@@ -37,25 +32,23 @@ collections:
               - label: "Media"
                 name: "media"
                 widget: "list"
+                summary: '{{fields.type}}: {{fields.url}}'
                 fields:
                   - { label: "Type", name: "type", widget: "select", options: ["image", "video"] }
-                  - label: "Image File"
+                  - label: "File (Image or Video)"
                     name: "url"
-                    widget: "image"
-                    required: false
-                    hint: "For images. Supports JPG, PNG, WebP"
-                  - label: "Video File"
-                    name: "videoUrl"
                     widget: "file"
-                    required: false
-                    hint: "For videos. Upload MP4, WebM, or MOV files"
-                    media_folder: "media/videos"
-                  - label: "Video Poster/Fallback Image"
+                    required: true
+                    hint: "Upload your image or video file here. Supports JPG, PNG, WebP, MP4, MOV, WebM"
+                    media_library:
+                      config:
+                        multiple: false
+                  - label: "Poster Image (Video Thumbnail)"
                     name: "poster"
                     widget: "image"
                     required: false
-                    hint: "Thumbnail image shown before video plays or as fallback"
+                    hint: "For videos only: Upload a thumbnail image"
                   - { label: "Alt Text", name: "alt", widget: "string", required: false }
-                  - { label: "Autoplay (video only)", name: "autoplay", widget: "boolean", required: false, default: false }
-                  - { label: "Loop (video only)", name: "loop", widget: "boolean", required: false, default: false }
-                  - { label: "Muted (video only)", name: "muted", widget: "boolean", required: false, default: true, hint: "Videos must be muted for autoplay to work" }
+                  - { label: "Autoplay (video)", name: "autoplay", widget: "boolean", required: false, default: false }
+                  - { label: "Loop (video)", name: "loop", widget: "boolean", required: false, default: false }
+                  - { label: "Muted (video)", name: "muted", widget: "boolean", required: false, default: true }

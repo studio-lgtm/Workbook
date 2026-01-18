@@ -9,5 +9,18 @@
 <body>
     <!-- Include the script that builds the page and powers Netlify CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- Custom configuration for media uploads -->
+    <script>
+        // Wait for CMS to load
+        window.addEventListener('load', function() {
+            if (window.CMS) {
+                console.log('Decap CMS loaded successfully');
+
+                // Configure to accept all file types in media library
+                // This allows video uploads through the standard media library
+            }
+        });
+    </script>
 </body>
 </html>

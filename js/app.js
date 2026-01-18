@@ -101,7 +101,7 @@ class PortfolioApp {
                     </div>
                 `;
             } else if (item.type === 'video') {
-                const videoSrc = item.videoUrl || item.url;
+                const videoSrc = item.url;
                 const posterAttr = item.poster ? `poster="${item.poster}"` : '';
                 const mutedAttr = item.muted !== false ? 'muted' : '';
 
