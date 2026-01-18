@@ -11,22 +11,22 @@
     <!-- Fixed Header Navigation -->
     <header class="header">
         <div class="header-content">
-            <a href="/" class="logo">Nate J Minnick</a>
             <nav class="nav">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link" id="projectsToggle">Projects</a>
+                    <div class="dropdown-content" id="projectsDropdown">
+                        <!-- Project links will be dynamically generated -->
+                    </div>
+                </div>
                 <a href="about.html" class="nav-link">Information</a>
                 <a href="mailto:studio@natejminnick.com" class="nav-link">Contact</a>
             </nav>
+            <a href="/" class="logo">Nate J Minnick</a>
         </div>
     </header>
 
     <!-- Main Content Container -->
     <main class="main-container">
-        <!-- Sticky Sidebar Navigation -->
-        <aside class="sidebar" id="sidebar">
-            <nav class="sidebar-nav" id="sidebarNav">
-                <!-- Project links will be dynamically generated -->
-            </nav>
-        </aside>
 
         <!-- Projects Container -->
         <div class="projects-container" id="projectsContainer">

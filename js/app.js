@@ -8,8 +8,9 @@ class PortfolioApp {
 
     async init() {
         await this.loadProjects();
-        this.renderSidebar();
+        this.renderProjectsDropdown();
         this.renderProjects();
+        this.setupDropdownToggle();
         this.setupScrollSpy();
     }
 
@@ -24,15 +25,41 @@ class PortfolioApp {
         }
     }
 
-    renderSidebar() {
-        const sidebarNav = document.getElementById('sidebarNav');
-        if (!sidebarNav) return;
+    renderProjectsDropdown() {
+        const dropdown = document.getElementById('projectsDropdown');
+        if (!dropdown) return;
 
-        sidebarNav.innerHTML = this.projects.map(project => `
-            <a href="#${this.createSlug(project.title)}" class="sidebar-link" data-project="${this.createSlug(project.title)}">
+        dropdown.innerHTML = this.projects.map(project => `
+            <a href="#${this.createSlug(project.title)}" class="dropdown-link" data-project="${this.createSlug(project.title)}">
                 ${project.title}
             </a>
         `).join('');
+    }
+
+    setupDropdownToggle() {
+        const toggle = document.getElementById('projectsToggle');
+        const dropdown = document.getElementById('projectsDropdown');
+
+        if (!toggle || !dropdown) return;
+
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            dropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-dropdown')) {
+                dropdown.classList.remove('show');
+            }
+        });
+
+        // Close dropdown when clicking a project link
+        dropdown.addEventListener('click', (e) => {
+            if (e.target.classList.contains('dropdown-link')) {
+                dropdown.classList.remove('show');
+            }
+        });
     }
 
     renderProjects() {
@@ -50,11 +77,15 @@ class PortfolioApp {
 
         return `
             <section class="project-section" id="${slug}">
-                <h2 class="project-title">${project.title}</h2>
-                <div class="project-description">${project.description}</div>
-                ${creditsHTML}
-                ${linkHTML}
-                ${mediaHTML}
+                <div class="project-info">
+                    <h2 class="project-title">${project.title}</h2>
+                    <div class="project-description">${project.description}</div>
+                    ${creditsHTML}
+                    ${linkHTML}
+                </div>
+                <div class="project-media-container">
+                    ${mediaHTML}
+                </div>
             </section>
         `;
     }
@@ -62,10 +93,7 @@ class PortfolioApp {
     createMediaHTML(media) {
         if (!media || media.length === 0) return '';
 
-        // Determine grid layout based on media count
-        const gridClass = media.length === 1 ? 'grid-1' : 'grid-2';
-
-        const mediaItems = media.map(item => {
+        return media.map(item => {
             if (item.type === 'image') {
                 return `
                     <div class="media-item">
@@ -73,10 +101,22 @@ class PortfolioApp {
                     </div>
                 `;
             } else if (item.type === 'video') {
+                const videoSrc = item.videoUrl || item.url;
+                const posterAttr = item.poster ? `poster="${item.poster}"` : '';
+                const mutedAttr = item.muted !== false ? 'muted' : '';
+
                 return `
                     <div class="media-item">
-                        <video controls ${item.autoplay ? 'autoplay' : ''} ${item.loop ? 'loop' : ''} muted playsinline>
-                            <source src="${item.url}" type="video/mp4">
+                        <video
+                            controls
+                            ${item.autoplay ? 'autoplay' : ''}
+                            ${item.loop ? 'loop' : ''}
+                            ${mutedAttr}
+                            ${posterAttr}
+                            playsinline
+                            preload="metadata">
+                            <source src="${videoSrc}" type="video/mp4">
+                            ${item.poster ? `<img src="${item.poster}" alt="${item.alt || 'Video thumbnail'}">` : ''}
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -84,8 +124,6 @@ class PortfolioApp {
             }
             return '';
         }).join('');
-
-        return `<div class="project-media ${gridClass}">${mediaItems}</div>`;
     }
 
     createSlug(text) {
@@ -98,10 +136,10 @@ class PortfolioApp {
     }
 
     setupScrollSpy() {
-        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const dropdownLinks = document.querySelectorAll('.dropdown-link');
         const sections = document.querySelectorAll('.project-section');
 
-        if (sidebarLinks.length === 0 || sections.length === 0) return;
+        if (dropdownLinks.length === 0 || sections.length === 0) return;
 
         const observerOptions = {
             root: null,
@@ -113,7 +151,7 @@ class PortfolioApp {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
-                    sidebarLinks.forEach(link => {
+                    dropdownLinks.forEach(link => {
                         link.classList.remove('active');
                         if (link.getAttribute('data-project') === id) {
                             link.classList.add('active');

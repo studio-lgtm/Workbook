@@ -1,0 +1,18 @@
+{
+  "name": "nate-j-minnick-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Nate J Minnick",
+  "scripts": {
+    "optimize": "node scripts/optimize-media.js",
+    "build": "npm run optimize"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.0"
+  },
+  "keywords": [
+    "portfolio",
+    "design"
+  ],
+  "author": "Nate J Minnick",
+  "license": "MIT"
+}
