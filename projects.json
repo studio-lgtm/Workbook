@@ -1,0 +1,53 @@
+{
+  "projects": [
+    {
+      "title": "Vazquez + Partners",
+      "description": "Brand identity and visual system for a luxury fashion consultancy. The project included logo design, typography, color palette, and brand guidelines to establish a sophisticated market presence.",
+      "credits": "<p><strong>Creative Direction:</strong> Nate J Minnick</p><p><strong>Agency:</strong> Decimal</p><p><strong>Year:</strong> 2024</p>",
+      "link": "",
+      "media": [
+        {
+          "type": "image",
+          "url": "images/vazquez-1.jpg",
+          "alt": "Vazquez + Partners Brand Identity"
+        },
+        {
+          "type": "image",
+          "url": "images/vazquez-2.jpg",
+          "alt": "Vazquez + Partners Collateral"
+        }
+      ]
+    },
+    {
+      "title": "WØRKS",
+      "description": "Comprehensive branding for a New York-based creative studio focused on cultural advancement. The identity system reflects the studio's commitment to innovative design and strategic thinking.",
+      "credits": "<p><strong>Creative Direction:</strong> Nate J Minnick</p><p><strong>Year:</strong> 2024</p>",
+      "link": "",
+      "media": [
+        {
+          "type": "image",
+          "url": "images/works-1.jpg",
+          "alt": "WØRKS Studio Identity"
+        }
+      ]
+    },
+    {
+      "title": "DoingWell",
+      "description": "Visual identity and digital presence for a health coaching practice. The project encompassed brand strategy, logo design, website design, and marketing materials to communicate wellness and personal transformation.",
+      "credits": "<p><strong>Design:</strong> Nate J Minnick</p><p><strong>Year:</strong> 2023</p>",
+      "link": "",
+      "media": [
+        {
+          "type": "image",
+          "url": "images/doingwell-1.jpg",
+          "alt": "DoingWell Brand Identity"
+        },
+        {
+          "type": "image",
+          "url": "images/doingwell-2.jpg",
+          "alt": "DoingWell Website Design"
+        }
+      ]
+    }
+  ]
+}

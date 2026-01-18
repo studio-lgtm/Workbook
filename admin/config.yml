@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    files:
+      - label: "All Projects"
+        name: "projects"
+        file: "projects.json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Credits (HTML)", name: "credits", widget: "text", required: false, hint: "Use HTML tags like <p> and <strong>" }
+              - { label: "External Link", name: "link", widget: "string", required: false }
+              - label: "Media"
+                name: "media"
+                widget: "list"
+                fields:
+                  - { label: "Type", name: "type", widget: "select", options: ["image", "video"] }
+                  - { label: "File", name: "url", widget: "image" }
+                  - { label: "Alt Text", name: "alt", widget: "string", required: false }
+                  - { label: "Autoplay (video only)", name: "autoplay", widget: "boolean", required: false, default: false }
+                  - { label: "Loop (video only)", name: "loop", widget: "boolean", required: false, default: false }
