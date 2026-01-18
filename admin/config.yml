@@ -5,13 +5,29 @@ backend:
 media_folder: "media"
 public_folder: "/media"
 
-# Enable Netlify Large Media for video support
-# This uses Git LFS automatically when files are large
-media_library:
-  name: uploadcare
-  config:
-    publicKey: demopublickey
-    imagesOnly: false
+# For video uploads without file size limits, you need one of these:
+
+# OPTION 1: Get free Uploadcare account (recommended - easiest setup)
+# Sign up at https://uploadcare.com (free tier: 3GB storage, 3GB CDN traffic/month)
+# Then replace YOUR_PUBLIC_KEY below with your actual key
+# media_library:
+#   name: uploadcare
+#   config:
+#     publicKey: YOUR_PUBLIC_KEY
+#     imagesOnly: false
+
+# OPTION 2: Use Netlify Large Media (if hosting on Netlify)
+# Run these commands in your terminal:
+# netlify plugins:install netlify-lm-plugin
+# netlify lm:install
+# netlify lm:setup
+# Then uncomment this:
+# media_library:
+#   name: netlify-large-media
+
+# OPTION 3: No external service (default Git - has ~10MB limit)
+# Leave media_library commented out (current setup)
+# For larger videos, compress them first or use external hosting
 
 collections:
   - name: "projects"
@@ -40,9 +56,7 @@ collections:
                     widget: "file"
                     required: true
                     hint: "Upload your image or video file here. Supports JPG, PNG, WebP, MP4, MOV, WebM"
-                    media_library:
-                      config:
-                        multiple: false
+                    allow_multiple: false
                   - label: "Poster Image (Video Thumbnail)"
                     name: "poster"
                     widget: "image"
