@@ -7,14 +7,47 @@
       "link": "",
       "media": [
         {
-          "type": "image",
-          "url": "images/vazquez-1.jpg",
-          "alt": "Vazquez + Partners Brand Identity"
+          "autoplay": true,
+          "loop": true,
+          "muted": true,
+          "type": "video",
+          "url": "/media/v-phero.mp4",
+          "poster": "/media/cleanshot-2024-09-14-at-17.43.59-2x.jpg"
         },
         {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
           "type": "image",
-          "url": "images/vazquez-2.jpg",
-          "alt": "Vazquez + Partners Collateral"
+          "url": "/media/phone_white.jpg"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image",
+          "url": "/media/vp_logo.jpg"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image",
+          "url": "/media/.jpg"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "video",
+          "url": "/media/info_color_fix.mp4"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "video",
+          "url": "/media/main-site-scroll.mp4"
         }
       ]
     },
