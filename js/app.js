@@ -108,13 +108,14 @@ class PortfolioApp {
                 return `
                     <div class="media-item">
                         <video
-                            controls
                             ${item.autoplay ? 'autoplay' : ''}
                             ${item.loop ? 'loop' : ''}
                             ${mutedAttr}
                             ${posterAttr}
                             playsinline
-                            preload="metadata">
+                            preload="metadata"
+                            disablePictureInPicture
+                            controlsList="nodownload nofullscreen noremoteplayback">
                             <source src="${videoSrc}" type="video/mp4">
                             ${item.poster ? `<img src="${item.poster}" alt="${item.alt || 'Video thumbnail'}">` : ''}
                             Your browser does not support the video tag.

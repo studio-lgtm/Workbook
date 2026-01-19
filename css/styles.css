@@ -121,7 +121,7 @@ a:hover {
 /* Individual Project Section */
 .project-section {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 20% 80%;
     gap: 15px;
     margin-bottom: 120px;
     scroll-margin-top: calc(var(--header-height) + 15px);
@@ -176,6 +176,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    padding-right: 15px;
 }
 
 /* Project Media */
@@ -197,6 +198,19 @@ a:hover {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* Hide video controls */
+.media-item video::-webkit-media-controls {
+    display: none !important;
+}
+
+.media-item video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+.media-item video::-webkit-media-controls-panel {
+    display: none !important;
 }
 
 /* About Page Styles */
