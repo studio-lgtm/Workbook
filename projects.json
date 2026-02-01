@@ -70,6 +70,27 @@
           "muted": true,
           "type": "image",
           "url": "/media/02.jpg"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "video",
+          "url": "/media/main-case-study-scroll.mp4"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image",
+          "url": "/media/04.jpg"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image",
+          "url": "/media/about-tray.jpg"
         }
       ]
     },
