@@ -58,9 +58,18 @@
       "link": "",
       "media": [
         {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
           "type": "image",
-          "url": "images/works-1.jpg",
-          "alt": "WØRKS Studio Identity"
+          "url": "/media/01.jpg"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image",
+          "url": "/media/02.jpg"
         }
       ]
     },
