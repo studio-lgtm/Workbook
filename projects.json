@@ -150,6 +150,25 @@
           "url": "/media/main2.mp4"
         }
       ]
+    },
+    {
+      "title": "Directors Library",
+      "media": [
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image",
+          "url": "/media/wørks_directorslibrary_digital_design_01.jpg"
+        },
+        {
+          "autoplay": true,
+          "loop": true,
+          "muted": true,
+          "type": "video",
+          "url": "/media/wørks_directorslibrary_digital_design_25.mp4"
+        }
+      ]
     }
   ]
 }
