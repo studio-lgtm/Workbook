@@ -101,14 +101,11 @@
       "link": "",
       "media": [
         {
-          "type": "image",
-          "url": "images/doingwell-1.jpg",
-          "alt": "DoingWell Brand Identity"
-        },
-        {
-          "type": "image",
-          "url": "images/doingwell-2.jpg",
-          "alt": "DoingWell Website Design"
+          "autoplay": true,
+          "loop": true,
+          "muted": true,
+          "type": "video",
+          "url": "/media/main3.mp4"
         }
       ]
     }
