@@ -106,6 +106,48 @@
           "muted": true,
           "type": "video",
           "url": "/media/main3.mp4"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image",
+          "url": "/media/doingwell02.jpg"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image",
+          "url": "/media/2.jpg"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image",
+          "url": "/media/3.jpg"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image",
+          "url": "/media/doingwell03.jpg"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image",
+          "url": "/media/doingwell04.jpg"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "video",
+          "url": "/media/main2.mp4"
         }
       ]
     }
