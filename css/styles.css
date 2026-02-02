@@ -1,3 +1,11 @@
+/* Custom Font */
+@font-face {
+    font-family: 'Times New Roman';
+    src: url('../fonts/Times New Roman.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;

@@ -30,6 +30,21 @@ public_folder: "/media"
 # For larger videos, compress them first or use external hosting
 
 collections:
+  - name: "landing"
+    label: "Landing Page"
+    files:
+      - label: "Landing Slideshow"
+        name: "landing"
+        file: "landing.json"
+        fields:
+          - label: "Slideshow Images"
+            name: "images"
+            widget: "list"
+            summary: '{{fields.url}}'
+            fields:
+              - { label: "Image", name: "url", widget: "image", required: true }
+              - { label: "Alt Text", name: "alt", widget: "string", required: false }
+
   - name: "projects"
     label: "Projects"
     files:
