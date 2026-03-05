@@ -100,6 +100,17 @@ class PortfolioApp {
                         <img src="${item.url}" alt="${item.alt || ''}" loading="lazy">
                     </div>
                 `;
+            } else if (item.type === 'image-pair') {
+                return `
+                    <div class="media-item-pair">
+                        <div class="media-item">
+                            <img src="${item.url}" alt="${item.alt || ''}" loading="lazy">
+                        </div>
+                        <div class="media-item">
+                            <img src="${item.url2 || ''}" alt="${item.alt2 || ''}" loading="lazy">
+                        </div>
+                    </div>
+                `;
             } else if (item.type === 'video') {
                 const videoSrc = item.url;
                 const posterAttr = item.poster ? `poster="${item.poster}"` : '';

@@ -65,19 +65,25 @@ collections:
                 widget: "list"
                 summary: '{{fields.type}}: {{fields.url}}'
                 fields:
-                  - { label: "Type", name: "type", widget: "select", options: ["image", "video"] }
+                  - { label: "Type", name: "type", widget: "select", options: ["image", "image-pair", "video"] }
                   - label: "File (Image or Video)"
                     name: "url"
                     widget: "file"
                     required: true
-                    hint: "Upload your image or video file here. Supports JPG, PNG, WebP, MP4, MOV, WebM"
+                    hint: "Upload your image or video file here. For image-pair, this is the LEFT image."
                     allow_multiple: false
+                  - label: "Second Image (image-pair only)"
+                    name: "url2"
+                    widget: "image"
+                    required: false
+                    hint: "For image-pair type only: Upload the RIGHT image."
                   - label: "Poster Image (Video Thumbnail)"
                     name: "poster"
                     widget: "image"
                     required: false
                     hint: "For videos only: Upload a thumbnail image"
                   - { label: "Alt Text", name: "alt", widget: "string", required: false }
+                  - { label: "Alt Text 2 (image-pair only)", name: "alt2", widget: "string", required: false }
                   - { label: "Autoplay (video)", name: "autoplay", widget: "boolean", required: false, default: false }
                   - { label: "Loop (video)", name: "loop", widget: "boolean", required: false, default: false }
                   - { label: "Muted (video)", name: "muted", widget: "boolean", required: false, default: true }
