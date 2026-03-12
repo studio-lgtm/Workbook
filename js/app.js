@@ -138,7 +138,7 @@ class App {
                 ? `<img src="${thumb}" alt="${project.title}">`
                 : '';
             return `
-                <div class="gallery-item" data-index="${i}">
+                <div class="gallery-item" data-index="${i}"${project.locked ? ' data-locked="true"' : ''}>
                     <div class="gallery-img-wrap">${imgHTML}</div>
                     <div class="gallery-item-label">${project.title}</div>
                     ${project.locked ? '<div class="gallery-item-confidential">Confidential</div>' : ''}
@@ -149,7 +149,9 @@ class App {
         grid.addEventListener('click', e => {
             const item = e.target.closest('.gallery-item');
             if (!item) return;
-            this.openProject(parseInt(item.dataset.index));
+            const index = parseInt(item.dataset.index);
+            if (this.projects[index]?.locked) return;
+            this.openProject(index);
         });
     }
 
@@ -170,7 +172,7 @@ class App {
                 <div class="project-section-media">
                     ${this.createMediaHTML(project.media)}
                 </div>
-                ${i < this.projects.length - 1 ? `<div class="project-next"><a class="next-project-link" data-next="${i + 1}">Next Project</a></div>` : ''}
+                <div class="project-next"><a class="next-project-link">Next Project</a></div>
             </section>`
         ).join('');
 
@@ -179,12 +181,21 @@ class App {
         this.setupProgressiveLoad(container);
     }
 
+    getNextProjectIndex(fromIndex) {
+        const total = this.projects.length;
+        for (let i = 1; i <= total; i++) {
+            const idx = (fromIndex + i) % total;
+            if (!this.projects[idx].locked) return idx;
+        }
+        return -1;
+    }
+
     setupNextProjectLinks(container) {
         container.addEventListener('click', e => {
             const link = e.target.closest('.next-project-link');
             if (!link) return;
-            const nextIndex = parseInt(link.dataset.next);
-            this.showSection(container, nextIndex);
+            const nextIndex = this.getNextProjectIndex(this.currentProjectIndex);
+            if (nextIndex >= 0) this.showSection(container, nextIndex);
         });
     }
 
