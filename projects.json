@@ -63,12 +63,12 @@
           "url": "/media/brutus-4.webp"
         },
         {
-          "type": "image",
-          "url": "/media/brutus-5.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/brutus-6.webp"
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/brutus-5.webp",
+          "url2": "/media/brutus-6.webp"
         },
         {
           "type": "image",
