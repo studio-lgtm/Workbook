@@ -2,7 +2,7 @@
   "projects": [
     {
       "title": "AP",
-      "description": "",
+      "description": "A strategy-focused design exploration aimed at integrating artificial intelligence into Audemars Piguet’s digital ecosystem, enhancing customer experience and operational efficiency while preserving the brand’s luxury heritage. Credit - Frederik Delmotte, Decimal.\n\n\n",
       "credits": "",
       "link": "",
       "media": [
@@ -42,7 +42,7 @@
     },
     {
       "title": "Brutus",
-      "description": "",
+      "description": "Brutus is a design agency specializing in graphic design and art direction, collaborating with artists and institutions to craft identities, products, and digital experiences. Credit - Shannon Jager, Frederik Delmotte, Decimal.\n\n\n\n\n\n",
       "credits": "",
       "link": "",
       "media": [
@@ -63,12 +63,12 @@
           "url": "/media/brutus-4.webp"
         },
         {
-          "type": "image",
-          "url": "/media/brutus-5.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/brutus-6.webp"
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/brutus-5.webp",
+          "url2": "/media/brutus-6.webp"
         },
         {
           "type": "image",
@@ -78,7 +78,7 @@
     },
     {
       "title": "Converse Closet",
-      "description": "",
+      "description": "A celebration of Shai’s penchant for vintage, guests were invited to ​“shop” a curated store full of archival Converse items from decades past. Credit - WØRKS, Baggy.\n\n",
       "credits": "",
       "link": "",
       "media": [
@@ -138,7 +138,7 @@
     },
     {
       "title": "Directors Library",
-      "description": "",
+      "description": "Independent platform and resource for the film, video, and creative industries. Above-the-line shorts, music videos, campaigns, and motion pictures. With - WØRKS",
       "credits": "",
       "link": "",
       "media": [
@@ -234,7 +234,7 @@
     },
     {
       "title": "DoingWell",
-      "description": "",
+      "description": "The private practice of Daphne Javitch. As a health coach she is guiding individuals and groups to grow in their careers, wellness, and overall lives through the baseline of foundational health practices. With - Frederik Delmotte, Decimal.",
       "credits": "",
       "link": "",
       "media": [
@@ -250,12 +250,12 @@
           "url": "/media/doingwell-2.webp"
         },
         {
-          "type": "image",
-          "url": "/media/doingwell-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/doingwell-4.webp"
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/doingwell-3.webp",
+          "url2": "/media/doingwell-4.webp"
         },
         {
           "type": "image",
@@ -276,7 +276,7 @@
     },
     {
       "title": "Long Covid",
-      "description": "",
+      "description": "A data storytelling experience for The New York Times about a life-altering disease. With - Pentagram, Decimal.\nPress - Awwwards, D&AD",
       "credits": "",
       "link": "",
       "media": [
@@ -314,7 +314,7 @@
     },
     {
       "title": "Ophelia",
-      "description": "",
+      "description": "Ophelia is a New York-based jewelry brand founded by Sydney Serena, focused on offering elegant, high-quality pieces at accessible prices. The brand combines refined craftsmanship with a commitment to affordability, making luxury within reach for a broader audience. ",
       "credits": "",
       "link": "",
       "media": [
@@ -354,7 +354,7 @@
     },
     {
       "title": "Vazquez + Partners",
-      "description": "",
+      "description": "A fashion consultancy that specializes in strategic brand development, product design, and client-centric practices in the fashion, luxury, and lifestyle spaces. With - Guillermo Brotons, Decimal.\nPress - The Brand Identity",
       "credits": "",
       "link": "",
       "media": [
@@ -395,7 +395,7 @@
     },
     {
       "title": "WØRKS",
-      "description": "",
+      "description": "WØRKS is a NYC city based New York City based creative studio dedicated to cultural advancement through strategy and interdisciplinary design. With - WØRKS\nPress - Typewolf Site of the Day \n\n",
       "credits": "",
       "link": "",
       "media": [
