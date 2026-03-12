@@ -20,7 +20,7 @@ body {
     background: #fff;
     color: #000;
     font-size: 12px;
-    line-height: 1.4;
+    line-height: 1.2;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -70,7 +70,7 @@ a:hover {
     font-size: 12px;
     font-weight: 400;
     text-transform: uppercase;
-    line-height: 1.4;
+    line-height: 1.2;
     pointer-events: none;
     white-space: nowrap;
 }
@@ -84,20 +84,19 @@ a:hover {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0;
-    line-height: 1.4;
+    line-height: 1.2;
 }
 
 .nav {
     display: flex;
     flex-direction: column;
-    line-height: 1.4;
+    line-height: 1.2;
 }
 
 .nav-link {
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.4;
-    margin-bottom: -2px;
+    line-height: 1.2;
 }
 
 
@@ -187,10 +186,23 @@ a:hover {
     font-weight: 400;
     opacity: 0;
     transition: opacity 0.15s ease;
+    text-transform: uppercase;
+}
+
+.gallery-item-confidential {
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    line-height: 1.2;
 }
 
 .gallery-item:hover .gallery-item-label {
     opacity: 1;
+}
+
+.gallery-item:hover .gallery-item-confidential {
+    opacity: 0.5;
 }
 
 
@@ -203,8 +215,12 @@ a:hover {
 }
 
 .project-section {
-    min-height: 100vh;
+    display: none;
+}
+
+.project-section.active {
     display: grid;
+    min-height: 100%;
     grid-template-columns: repeat(24, 1fr);
     column-gap: 12px;
     padding: 40px 12px 15vh;
@@ -221,13 +237,13 @@ a:hover {
 .project-section-description {
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.2;
 }
 
 .project-section-credits {
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.2;
     margin-top: 8px;
 }
 
@@ -254,6 +270,7 @@ a:hover {
 /* === MEDIA ITEMS === */
 
 .media-item {
+    position: relative;
     width: 100%;
     overflow: hidden;
     background: #f5f5f5;
@@ -290,32 +307,14 @@ a:hover {
     display: block;
 }
 
-/* Progressive pixelation load */
-.media-item-canvas-wrap {
-    position: relative;
-    width: 100%;
-    line-height: 0;
-}
-
-.media-item-canvas-wrap canvas {
+/* Progressive pixelation canvas overlay */
+.media-pixelate {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     image-rendering: pixelated;
     pointer-events: none;
-    transition: opacity 0.15s ease;
-}
-
-.media-item-canvas-wrap canvas.fade-out {
-    opacity: 0;
-}
-
-.media-item-canvas-wrap img,
-.media-item-canvas-wrap video {
-    width: 100%;
-    height: auto;
-    display: block;
 }
 
 
@@ -359,23 +358,21 @@ a:hover {
 }
 
 .about-main {
-    padding: calc(var(--header-height) + 25vh) var(--margin) var(--margin);
-    max-width: 520px;
-}
-
-.about-title {
-    font-size: 12px;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0;
-    line-height: 1.4;
-    margin-bottom: 24px;
+    min-height: calc(100vh - var(--header-height));
+    margin-top: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--margin);
 }
 
 .about-text {
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.2;
+    max-width: 380px;
 }
 
 .about-text p {
@@ -425,9 +422,5 @@ a:hover {
 
     .media-item-pair {
         flex-direction: column;
-    }
-
-    .media-item-pair .media-item {
-        aspect-ratio: 4 / 5;
     }
 }

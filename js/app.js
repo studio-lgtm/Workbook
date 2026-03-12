@@ -77,6 +77,7 @@ class App {
         const run = () => {
             const cw = img.offsetWidth || canvas.parentElement.offsetWidth;
             const ch = img.offsetHeight || canvas.parentElement.offsetHeight;
+            if (!cw || !ch) return;
             canvas.width = cw;
             canvas.height = ch;
             ctx.imageSmoothingEnabled = false;
@@ -130,6 +131,7 @@ class App {
                 <div class="gallery-item" data-index="${i}">
                     <div class="gallery-img-wrap">${imgHTML}</div>
                     <div class="gallery-item-label">${project.title}</div>
+                    ${project.locked ? '<div class="gallery-item-confidential">Confidential</div>' : ''}
                 </div>
             `;
         }).join('');
@@ -168,28 +170,26 @@ class App {
     }
 
     setupNextProjectLinks(container) {
-        // Clamp scroll so user can't drift past the current project's bottom
-        let clamping = false;
-        container.addEventListener('scroll', () => {
-            if (clamping) return;
-            const section = container.querySelector(`.project-section[data-index="${this.currentProjectIndex}"]`);
-            if (!section) return;
-            const maxScroll = section.offsetTop + section.offsetHeight - container.clientHeight;
-            if (container.scrollTop > maxScroll + 2) {
-                clamping = true;
-                container.scrollTop = Math.max(section.offsetTop, maxScroll);
-                setTimeout(() => { clamping = false; }, 100);
-            }
-        });
-
         container.addEventListener('click', e => {
             const link = e.target.closest('.next-project-link');
             if (!link) return;
             const nextIndex = parseInt(link.dataset.next);
-            this.currentProjectIndex = nextIndex;
-            const nextSection = container.querySelector(`.project-section[data-index="${nextIndex}"]`);
-            if (nextSection) container.scrollTo({ top: nextSection.offsetTop, behavior: 'smooth' });
+            this.showSection(container, nextIndex);
         });
+    }
+
+    showSection(container, index) {
+        this.currentProjectIndex = index;
+
+        container.querySelectorAll('.project-section').forEach(s => s.classList.remove('active'));
+        const section = container.querySelector(`.project-section[data-index="${index}"]`);
+        if (section) {
+            section.classList.add('active');
+            container.scrollTop = 0;
+        }
+
+        const titleEl = document.getElementById('projectNavTitle');
+        if (titleEl && this.projects[index]) titleEl.textContent = this.projects[index].title;
     }
 
     setupProgressiveLoad(container) {
@@ -199,35 +199,40 @@ class App {
             if (img.dataset.revealed) return;
             img.dataset.revealed = '1';
 
-            const wrap = document.createElement('div');
-            wrap.className = 'media-item-canvas-wrap';
-            img.parentNode.insertBefore(wrap, img);
-            wrap.appendChild(img);
+            const parent = img.closest('.media-item');
+            if (!parent) return;
+
+            img.style.opacity = '0';
 
             const canvas = document.createElement('canvas');
-            wrap.appendChild(canvas);
+            canvas.className = 'media-pixelate';
+            parent.appendChild(canvas);
             const ctx = canvas.getContext('2d');
 
             const draw = () => {
-                const w = img.naturalWidth || img.offsetWidth;
-                const h = img.naturalHeight || img.offsetHeight;
-                canvas.width = img.offsetWidth;
-                canvas.height = img.offsetHeight;
+                const cw = img.offsetWidth;
+                const ch = img.offsetHeight;
+                if (!cw || !ch) return;
+                canvas.width = cw;
+                canvas.height = ch;
                 ctx.imageSmoothingEnabled = false;
 
                 let step = 0;
                 const next = () => {
                     if (step >= steps.length) {
-                        canvas.classList.add('fade-out');
+                        img.style.transition = 'opacity 0.15s ease';
+                        img.style.opacity = '1';
+                        canvas.style.transition = 'opacity 0.15s ease';
+                        canvas.style.opacity = '0';
                         canvas.addEventListener('transitionend', () => canvas.remove(), { once: true });
                         return;
                     }
                     const px = steps[step++];
-                    const sw = Math.max(1, Math.round(w / px));
-                    const sh = Math.max(1, Math.round(h / px));
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    const sw = Math.max(1, Math.round(cw / px));
+                    const sh = Math.max(1, Math.round(ch / px));
+                    ctx.clearRect(0, 0, cw, ch);
                     ctx.drawImage(img, 0, 0, sw, sh);
-                    ctx.drawImage(canvas, 0, 0, sw, sh, 0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(canvas, 0, 0, sw, sh, 0, 0, cw, ch);
                     setTimeout(next, 40);
                 };
                 next();
@@ -243,11 +248,10 @@ class App {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
-                const el = entry.target;
-                if (el.tagName === 'IMG') revealImage(el);
-                observer.unobserve(el);
+                revealImage(entry.target);
+                observer.unobserve(entry.target);
             });
-        }, { rootMargin: '0px 0px 100px 0px' });
+        }, { root: container, rootMargin: '0px 0px 200px 0px' });
 
         container.querySelectorAll('.media-item img').forEach(img => observer.observe(img));
     }
@@ -275,26 +279,31 @@ class App {
     createMediaHTML(media) {
         if (!media || media.length === 0) return '';
 
+        const isImageUrl = url => /\.(webp|jpg|jpeg|png|gif|avif)$/i.test(url || '');
+
         return media.map(item => {
             if (item.type === 'image') {
                 return `
                     <div class="media-item">
-                        <img src="${item.url}" alt="${item.alt || ''}" loading="lazy">
+                        <img src="${item.url}" alt="${item.alt || ''}">
                     </div>`;
             }
             if (item.type === 'image-pair') {
                 return `
                     <div class="media-item-pair">
                         <div class="media-item">
-                            <img src="${item.url}" alt="${item.alt || ''}" loading="lazy">
+                            <img src="${item.url}" alt="${item.alt || ''}">
                         </div>
                         <div class="media-item">
-                            <img src="${item.url2 || ''}" alt="${item.alt2 || ''}" loading="lazy">
+                            <img src="${item.url2 || ''}" alt="${item.alt2 || ''}">
                         </div>
                     </div>`;
             }
             if (item.type === 'video-pair') {
-                const makeVideo = (url, poster) => {
+                const makeMediaEl = (url, poster) => {
+                    if (isImageUrl(url)) {
+                        return `<div class="media-item"><img src="${url}"></div>`;
+                    }
                     const p = poster ? `poster="${poster}"` : '';
                     return `<div class="media-item">
                         <video autoplay loop muted playsinline preload="metadata" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" ${p}>
@@ -302,7 +311,7 @@ class App {
                         </video>
                     </div>`;
                 };
-                return `<div class="media-item-pair">${makeVideo(item.url, item.poster)}${makeVideo(item.url2 || '', item.poster2 || '')}</div>`;
+                return `<div class="media-item-pair">${makeMediaEl(item.url, item.poster)}${makeMediaEl(item.url2 || '', item.poster2 || '')}</div>`;
             }
             if (item.type === 'video') {
                 const poster = item.poster ? `poster="${item.poster}"` : '';
@@ -336,15 +345,9 @@ class App {
     }
 
     openProject(index) {
-        this.currentProjectIndex = index;
-        const titleEl = document.getElementById('projectNavTitle');
-        if (titleEl && this.projects[index]) titleEl.textContent = this.projects[index].title;
         this.showView('view-project');
-        requestAnimationFrame(() => {
-            const container = document.getElementById('projectScroll');
-            const section = container.querySelector(`.project-section[data-index="${index}"]`);
-            if (section) container.scrollTop = section.offsetTop;
-        });
+        const container = document.getElementById('projectScroll');
+        this.showSection(container, index);
     }
 
     setupNavigation() {
