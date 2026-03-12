@@ -39,7 +39,8 @@
           "loop": true,
           "muted": true
         }
-      ]
+      ],
+      "thumbnail": "/media/natejminnickap-thumbnail.jpg"
     },
     {
       "title": "Brutus",
@@ -75,7 +76,8 @@
           "type": "image",
           "url": "/media/brutus-7.webp"
         }
-      ]
+      ],
+      "thumbnail": "/media/brutus-2.webp"
     },
     {
       "title": "Converse Closet",
@@ -135,7 +137,8 @@
           "type": "image",
           "url": "/media/converse-closet-10.webp"
         }
-      ]
+      ],
+      "thumbnail": "/media/converse-closet-5.webp"
     },
     {
       "title": "Directors Library",
@@ -166,18 +169,12 @@
           "muted": true
         },
         {
-          "type": "video",
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "video-pair",
           "url": "/media/directors-library-5.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "video",
-          "url": "/media/directors-library-6.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
+          "url2": "/media/directors-library-6.mp4"
         },
         {
           "type": "image",
@@ -188,15 +185,12 @@
           "url": "/media/directors-library-8.webp"
         },
         {
-          "type": "image",
-          "url": "/media/directors-library-9.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/directors-library-10.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "video-pair",
+          "url": "/media/directors-library-9.webp",
+          "url2": "/media/directors-library-10.mp4"
         },
         {
           "type": "video",
@@ -210,12 +204,12 @@
           "url": "/media/directors-library-12.webp"
         },
         {
-          "type": "image",
-          "url": "/media/directors-library-13.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/directors-library-14.webp"
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/directors-library-13.webp",
+          "url2": "/media/directors-library-14.webp"
         },
         {
           "type": "video",
@@ -231,7 +225,8 @@
           "loop": true,
           "muted": true
         }
-      ]
+      ],
+      "thumbnail": "/media/001.jpg"
     },
     {
       "title": "DoingWell",
@@ -273,7 +268,8 @@
           "type": "image",
           "url": "/media/doingwell-7.webp"
         }
-      ]
+      ],
+      "thumbnail": "/media/doingwell.jpg"
     },
     {
       "title": "Long Covid",
@@ -351,7 +347,8 @@
           "type": "image",
           "url": "/media/ophelia-8.webp"
         }
-      ]
+      ],
+      "thumbnail": "/media/natejminnick-ophelia-thumbnail.jpg"
     },
     {
       "title": "Vazquez + Partners",
@@ -392,7 +389,8 @@
           "loop": true,
           "muted": true
         }
-      ]
+      ],
+      "thumbnail": "/media/vp-3.webp"
     },
     {
       "title": "WØRKS",
