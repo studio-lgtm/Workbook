@@ -3,36 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nate J Minnick - Design Portfolio</title>
-    <meta name="description" content="Portfolio of Nate J Minnick - Designer and Creative Director">
+    <title>Nate J Minnick</title>
+    <meta name="description" content="Portfolio of Nate J Minnick — Designer and Creative Director">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Fixed Header Navigation -->
-    <header class="header">
-        <div class="header-content">
+
+    <!-- Home View -->
+    <div class="view" id="view-home">
+        <header class="header">
             <nav class="nav">
-                <div class="nav-dropdown">
-                    <a href="#" class="nav-link" id="projectsToggle">Projects</a>
-                    <div class="dropdown-content" id="projectsDropdown">
-                        <!-- Project links will be dynamically generated -->
-                    </div>
-                </div>
+                <a href="#" class="nav-link" id="openProjects">Projects</a>
                 <a href="about.html" class="nav-link">Information</a>
                 <a href="mailto:studio@natejminnick.com" class="nav-link">Contact</a>
             </nav>
-            <a href="/" class="logo">Nate J Minnick</a>
-        </div>
-    </header>
+            <span class="logo">Nate J Minnick</span>
+        </header>
+        <main class="home-main">
+            <div class="home-slideshow" id="homeSlideshow"></div>
+        </main>
+    </div>
 
-    <!-- Main Content Container -->
-    <main class="main-container">
+    <!-- Projects Gallery View -->
+    <div class="view view--hidden" id="view-projects">
+        <header class="header">
+            <a href="#" class="nav-link" id="closeProjects">Close</a>
+        </header>
+        <main class="gallery-main">
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </main>
+    </div>
 
-        <!-- Projects Container -->
-        <div class="projects-container" id="projectsContainer">
-            <!-- Projects will be dynamically loaded here -->
-        </div>
-    </main>
+    <!-- Project Detail View -->
+    <div class="view view--hidden" id="view-project">
+        <header class="header">
+            <a href="#" class="nav-link" id="closeProject">Close</a>
+        </header>
+        <div class="project-scroll" id="projectScroll"></div>
+    </div>
 
     <script src="js/app.js"></script>
 </body>

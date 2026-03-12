@@ -30,19 +30,20 @@ public_folder: "/media"
 # For larger videos, compress them first or use external hosting
 
 collections:
-  - name: "landing"
-    label: "Landing Page"
+  - name: "homepage"
+    label: "Homepage"
     files:
-      - label: "Landing Slideshow"
-        name: "landing"
+      - label: "Homepage Assets"
+        name: "homepage"
         file: "landing.json"
         fields:
-          - label: "Slideshow Images"
+          - label: "Assets (click through on homepage)"
             name: "images"
             widget: "list"
             summary: '{{fields.url}}'
             fields:
-              - { label: "Image", name: "url", widget: "image", required: true }
+              - { label: "Type", name: "type", widget: "select", options: ["image", "video"], default: "image" }
+              - { label: "File", name: "url", widget: "file", required: true, hint: "Upload image or video" }
               - { label: "Alt Text", name: "alt", widget: "string", required: false }
 
   - name: "projects"
@@ -57,6 +58,11 @@ collections:
             widget: "list"
             fields:
               - { label: "Title", name: "title", widget: "string" }
+              - label: "Thumbnail (projects grid)"
+                name: "thumbnail"
+                widget: "image"
+                required: false
+                hint: "Image shown in the projects grid. If empty, first image from media is used."
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Credits (HTML)", name: "credits", widget: "text", required: false, hint: "Use HTML tags like <p> and <strong>" }
               - { label: "External Link", name: "link", widget: "string", required: false }

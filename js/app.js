@@ -1,93 +1,144 @@
-// Portfolio App - Main JavaScript
-
-class PortfolioApp {
+class App {
     constructor() {
         this.projects = [];
+        this.homepageAssets = [];
+        this.slideshowIndex = 0;
         this.init();
     }
 
     async init() {
-        await this.loadProjects();
-        this.renderProjectsDropdown();
-        this.renderProjects();
-        this.setupDropdownToggle();
-        this.setupScrollSpy();
+        await this.loadData();
+        this.renderHomeSlideshow();
+        this.renderGallery();
+        this.renderProjectScroll();
+        this.setupNavigation();
     }
 
-    async loadProjects() {
-        try {
-            const response = await fetch('projects.json');
-            const data = await response.json();
-            this.projects = data.projects || [];
-        } catch (error) {
-            console.error('Error loading projects:', error);
-            this.projects = [];
-        }
+    async loadData() {
+        const [projectsData, landingData] = await Promise.all([
+            fetch('projects.json').then(r => r.json()).catch(() => ({ projects: [] })),
+            fetch('landing.json').then(r => r.json()).catch(() => ({ images: [] }))
+        ]);
+        this.projects = projectsData.projects || [];
+        this.homepageAssets = landingData.images || [];
     }
 
-    renderProjectsDropdown() {
-        const dropdown = document.getElementById('projectsDropdown');
-        if (!dropdown) return;
 
-        dropdown.innerHTML = this.projects.map(project => `
-            <a href="#${this.createSlug(project.title)}" class="dropdown-link" data-project="${this.createSlug(project.title)}">
-                ${project.title}
-            </a>
-        `).join('');
-    }
+    // ── HOME SLIDESHOW ──────────────────────────────────────────────
 
-    setupDropdownToggle() {
-        const toggle = document.getElementById('projectsToggle');
-        const dropdown = document.getElementById('projectsDropdown');
+    renderHomeSlideshow() {
+        const container = document.getElementById('homeSlideshow');
+        if (!container || this.homepageAssets.length === 0) return;
 
-        if (!toggle || !dropdown) return;
-
-        toggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            dropdown.classList.toggle('show');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-dropdown')) {
-                dropdown.classList.remove('show');
+        this.homepageAssets.forEach((asset, i) => {
+            let el;
+            if (asset.type === 'video') {
+                el = document.createElement('video');
+                el.autoplay = true;
+                el.loop = true;
+                el.muted = true;
+                el.playsInline = true;
+            } else {
+                el = document.createElement('img');
+                el.alt = asset.alt || '';
             }
+            el.src = asset.url;
+            if (i === 0) el.classList.add('active');
+            container.appendChild(el);
         });
 
-        // Close dropdown when clicking a project link
-        dropdown.addEventListener('click', (e) => {
-            if (e.target.classList.contains('dropdown-link')) {
-                dropdown.classList.remove('show');
-            }
+        container.addEventListener('click', () => this.advanceSlideshow());
+    }
+
+    advanceSlideshow() {
+        const container = document.getElementById('homeSlideshow');
+        const items = container.querySelectorAll('img, video');
+        if (items.length === 0) return;
+        items[this.slideshowIndex].classList.remove('active');
+        this.slideshowIndex = (this.slideshowIndex + 1) % items.length;
+        items[this.slideshowIndex].classList.add('active');
+    }
+
+
+    // ── PROJECTS GALLERY ────────────────────────────────────────────
+
+    renderGallery() {
+        const grid = document.getElementById('galleryGrid');
+        if (!grid) return;
+
+        grid.innerHTML = this.projects.map((project, i) => {
+            const thumb = project.thumbnail
+                || (project.media && project.media.find(m => m.type === 'image')?.url)
+                || (project.media && project.media[0]?.url)
+                || '';
+            const isVideo = thumb && !project.thumbnail && project.media && project.media[0]?.type === 'video';
+            const imgHTML = thumb && !isVideo
+                ? `<img src="${thumb}" alt="${project.title}">`
+                : '';
+            return `
+                <div class="gallery-item" data-index="${i}">
+                    ${imgHTML}
+                    <div class="gallery-item-label">${project.title}</div>
+                </div>
+            `;
+        }).join('');
+
+        grid.addEventListener('click', e => {
+            const item = e.target.closest('.gallery-item');
+            if (!item) return;
+            this.openProject(parseInt(item.dataset.index));
         });
     }
 
-    renderProjects() {
-        const container = document.getElementById('projectsContainer');
+
+    // ── PROJECT DETAIL ──────────────────────────────────────────────
+
+    renderProjectScroll() {
+        const container = document.getElementById('projectScroll');
         if (!container) return;
 
-        container.innerHTML = this.projects.map(project => this.createProjectHTML(project)).join('');
+        container.innerHTML = this.projects.map((project, i) =>
+            `<section class="project-section" data-index="${i}">
+                <div class="project-section-header">
+                    <h2 class="project-section-title">${project.title}</h2>
+                    ${project.description ? `<p class="project-section-description">${project.description}</p>` : ''}
+                    ${project.credits ? `<div class="project-section-credits">${project.credits}</div>` : ''}
+                    ${project.link ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-section-link">View Project →</a>` : ''}
+                </div>
+                <div class="project-section-media">
+                    ${this.createMediaHTML(project.media)}
+                </div>
+            </section>`
+        ).join('');
+
+        this.setupProjectSnap(container);
     }
 
-    createProjectHTML(project) {
-        const slug = this.createSlug(project.title);
-        const mediaHTML = this.createMediaHTML(project.media);
-        const creditsHTML = project.credits ? `<div class="project-credits">${project.credits}</div>` : '';
-        const linkHTML = project.link ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">View Project →</a>` : '';
+    setupProjectSnap(container) {
+        const sections = () => container.querySelectorAll('.project-section');
+        let isSnapping = false;
 
-        return `
-            <section class="project-section" id="${slug}">
-                <div class="project-info">
-                    <h2 class="project-title">${project.title}</h2>
-                    <div class="project-description">${project.description}</div>
-                    ${creditsHTML}
-                    ${linkHTML}
-                </div>
-                <div class="project-media-container">
-                    ${mediaHTML}
-                </div>
-            </section>
-        `;
+        container.addEventListener('scroll', () => {
+            if (isSnapping) return;
+
+            const allSections = sections();
+            const scrollBottom = container.scrollTop + container.clientHeight;
+
+            for (let i = 0; i < allSections.length - 1; i++) {
+                const section = allSections[i];
+                const sectionBottom = section.offsetTop + section.offsetHeight;
+
+                if (scrollBottom >= sectionBottom - 2) {
+                    const nextTop = allSections[i + 1].offsetTop;
+                    if (container.scrollTop < nextTop - 10) {
+                        isSnapping = true;
+                        container.scrollTo({ top: nextTop, behavior: 'smooth' });
+                        setTimeout(() => { isSnapping = false; }, 900);
+                    }
+                    break;
+                }
+            }
+        });
     }
 
     createMediaHTML(media) {
@@ -98,9 +149,9 @@ class PortfolioApp {
                 return `
                     <div class="media-item">
                         <img src="${item.url}" alt="${item.alt || ''}" loading="lazy">
-                    </div>
-                `;
-            } else if (item.type === 'image-pair') {
+                    </div>`;
+            }
+            if (item.type === 'image-pair') {
                 return `
                     <div class="media-item-pair">
                         <div class="media-item">
@@ -109,77 +160,64 @@ class PortfolioApp {
                         <div class="media-item">
                             <img src="${item.url2 || ''}" alt="${item.alt2 || ''}" loading="lazy">
                         </div>
-                    </div>
-                `;
-            } else if (item.type === 'video') {
-                const videoSrc = item.url;
-                const posterAttr = item.poster ? `poster="${item.poster}"` : '';
-                const mutedAttr = item.muted !== false ? 'muted' : '';
-
+                    </div>`;
+            }
+            if (item.type === 'video') {
+                const poster = item.poster ? `poster="${item.poster}"` : '';
+                const muted = item.muted !== false ? 'muted' : '';
                 return `
                     <div class="media-item">
                         <video
                             ${item.autoplay ? 'autoplay' : ''}
                             ${item.loop ? 'loop' : ''}
-                            ${mutedAttr}
-                            ${posterAttr}
+                            ${muted}
+                            ${poster}
                             playsinline
                             preload="metadata"
                             disablePictureInPicture
                             controlsList="nodownload nofullscreen noremoteplayback">
-                            <source src="${videoSrc}" type="video/mp4">
-                            ${item.poster ? `<img src="${item.poster}" alt="${item.alt || 'Video thumbnail'}">` : ''}
-                            Your browser does not support the video tag.
+                            <source src="${item.url}" type="video/mp4">
                         </video>
-                    </div>
-                `;
+                    </div>`;
             }
             return '';
         }).join('');
     }
 
-    createSlug(text) {
-        return text
-            .toLowerCase()
-            .replace(/[^\w\s-]/g, '')
-            .replace(/\s+/g, '-')
-            .replace(/-+/g, '-')
-            .trim();
+
+    // ── NAVIGATION ──────────────────────────────────────────────────
+
+    showView(id) {
+        document.querySelectorAll('.view').forEach(v => {
+            v.classList.toggle('view--hidden', v.id !== id);
+        });
     }
 
-    setupScrollSpy() {
-        const dropdownLinks = document.querySelectorAll('.dropdown-link');
-        const sections = document.querySelectorAll('.project-section');
+    openProject(index) {
+        this.showView('view-project');
+        requestAnimationFrame(() => {
+            const container = document.getElementById('projectScroll');
+            const section = container.querySelector(`.project-section[data-index="${index}"]`);
+            if (section) container.scrollTop = section.offsetTop;
+        });
+    }
 
-        if (dropdownLinks.length === 0 || sections.length === 0) return;
+    setupNavigation() {
+        document.getElementById('openProjects').addEventListener('click', e => {
+            e.preventDefault();
+            this.showView('view-projects');
+        });
 
-        const observerOptions = {
-            root: null,
-            rootMargin: '-100px 0px -66% 0px',
-            threshold: 0
-        };
+        document.getElementById('closeProjects').addEventListener('click', e => {
+            e.preventDefault();
+            this.showView('view-home');
+        });
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    dropdownLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('data-project') === id) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(section => observer.observe(section));
+        document.getElementById('closeProject').addEventListener('click', e => {
+            e.preventDefault();
+            this.showView('view-home');
+        });
     }
 }
 
-// Initialize app when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => new PortfolioApp());
-} else {
-    new PortfolioApp();
-}
+new App();
