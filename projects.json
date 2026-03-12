@@ -1,7 +1,7 @@
 {
   "projects": [
     {
-      "title": "AP",
+      "title": "Audemars Piguet",
       "locked": true,
       "description": "A strategy-focused design exploration aimed at integrating artificial intelligence into Audemars Piguet’s digital ecosystem, enhancing customer experience and operational efficiency while preserving the brand’s luxury heritage. Credit - Frederik Delmotte, Decimal.\n\n\n",
       "credits": "",
@@ -272,7 +272,7 @@
       "thumbnail": "/media/doingwell.jpg"
     },
     {
-      "title": "Long Covid",
+      "title": "The New York Times",
       "description": "A data storytelling experience for The New York Times about a life-altering disease. With - Pentagram, Decimal.\nPress - Awwwards, D&AD",
       "credits": "",
       "link": "",
