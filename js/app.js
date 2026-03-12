@@ -3,6 +3,7 @@ class App {
         this.projects = [];
         this.homepageAssets = [];
         this.slideshowIndex = 0;
+        this.currentProjectIndex = 0;
         this.init();
     }
 
@@ -30,6 +31,11 @@ class App {
         const container = document.getElementById('homeSlideshow');
         if (!container || this.homepageAssets.length === 0) return;
 
+        const canvas = document.createElement('canvas');
+        canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;pointer-events:none;z-index:1;opacity:0;';
+        container.appendChild(canvas);
+        this.slideshowCanvas = canvas;
+
         this.homepageAssets.forEach((asset, i) => {
             let el;
             if (asset.type === 'video') {
@@ -56,7 +62,52 @@ class App {
         if (items.length === 0) return;
         items[this.slideshowIndex].classList.remove('active');
         this.slideshowIndex = (this.slideshowIndex + 1) % items.length;
-        items[this.slideshowIndex].classList.add('active');
+        const next = items[this.slideshowIndex];
+        next.classList.add('active');
+        if (next.tagName === 'IMG' && this.slideshowCanvas) {
+            this.runSlideshowPixelation(next);
+        }
+    }
+
+    runSlideshowPixelation(img) {
+        const canvas = this.slideshowCanvas;
+        const ctx = canvas.getContext('2d');
+        const steps = [6, 12, 24, 48, 96];
+
+        const run = () => {
+            const cw = img.offsetWidth || canvas.parentElement.offsetWidth;
+            const ch = img.offsetHeight || canvas.parentElement.offsetHeight;
+            canvas.width = cw;
+            canvas.height = ch;
+            ctx.imageSmoothingEnabled = false;
+            canvas.style.transition = 'none';
+            canvas.style.opacity = '1';
+
+            let step = 0;
+            const next = () => {
+                if (step >= steps.length) {
+                    canvas.style.transition = 'opacity 0.15s ease';
+                    canvas.style.opacity = '0';
+                    return;
+                }
+                const px = steps[step++];
+                const w = img.naturalWidth || cw;
+                const h = img.naturalHeight || ch;
+                const sw = Math.max(1, Math.round(w / px));
+                const sh = Math.max(1, Math.round(h / px));
+                ctx.clearRect(0, 0, cw, ch);
+                ctx.drawImage(img, 0, 0, sw, sh);
+                ctx.drawImage(canvas, 0, 0, sw, sh, 0, 0, cw, ch);
+                setTimeout(next, 40);
+            };
+            next();
+        };
+
+        if (img.complete && img.naturalWidth) {
+            run();
+        } else {
+            img.addEventListener('load', run, { once: true });
+        }
     }
 
 
@@ -117,10 +168,25 @@ class App {
     }
 
     setupNextProjectLinks(container) {
+        // Clamp scroll so user can't drift past the current project's bottom
+        let clamping = false;
+        container.addEventListener('scroll', () => {
+            if (clamping) return;
+            const section = container.querySelector(`.project-section[data-index="${this.currentProjectIndex}"]`);
+            if (!section) return;
+            const maxScroll = section.offsetTop + section.offsetHeight - container.clientHeight;
+            if (container.scrollTop > maxScroll + 2) {
+                clamping = true;
+                container.scrollTop = Math.max(section.offsetTop, maxScroll);
+                setTimeout(() => { clamping = false; }, 100);
+            }
+        });
+
         container.addEventListener('click', e => {
             const link = e.target.closest('.next-project-link');
             if (!link) return;
             const nextIndex = parseInt(link.dataset.next);
+            this.currentProjectIndex = nextIndex;
             const nextSection = container.querySelector(`.project-section[data-index="${nextIndex}"]`);
             if (nextSection) container.scrollTo({ top: nextSection.offsetTop, behavior: 'smooth' });
         });
@@ -162,7 +228,7 @@ class App {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     ctx.drawImage(img, 0, 0, sw, sh);
                     ctx.drawImage(canvas, 0, 0, sw, sh, 0, 0, canvas.width, canvas.height);
-                    setTimeout(next, 60);
+                    setTimeout(next, 40);
                 };
                 next();
             };
@@ -270,6 +336,7 @@ class App {
     }
 
     openProject(index) {
+        this.currentProjectIndex = index;
         const titleEl = document.getElementById('projectNavTitle');
         if (titleEl && this.projects[index]) titleEl.textContent = this.projects[index].title;
         this.showView('view-project');

@@ -78,26 +78,21 @@ collections:
                     required: true
                     hint: "Upload your image or video file here. For image-pair, this is the LEFT image."
                     allow_multiple: false
-                  - label: "Second Image (image-pair only)"
-                    name: "url2"
-                    widget: "image"
-                    required: false
-                    hint: "For image-pair type only: Upload the RIGHT image."
-                  - label: "Poster Image (Video Thumbnail)"
-                    name: "poster"
-                    widget: "image"
-                    required: false
-                    hint: "For videos only: Upload a thumbnail image"
-                  - label: "Second Video (video-pair only)"
+                  - label: "Second File (image-pair: right image / video-pair: right video)"
                     name: "url2"
                     widget: "file"
                     required: false
-                    hint: "For video-pair type only: Upload the RIGHT video."
-                  - label: "Poster Image 2 (video-pair only)"
+                    hint: "For image-pair or video-pair: Upload the RIGHT image or video."
+                  - label: "Poster Image (video thumbnail — left)"
+                    name: "poster"
+                    widget: "image"
+                    required: false
+                    hint: "For video or video-pair: thumbnail for the left/only video."
+                  - label: "Poster Image 2 (video-pair right thumbnail)"
                     name: "poster2"
                     widget: "image"
                     required: false
-                    hint: "For video-pair type only: Thumbnail for the right video."
+                    hint: "For video-pair only: thumbnail for the right video."
                   - { label: "Alt Text", name: "alt", widget: "string", required: false }
                   - { label: "Alt Text 2 (image-pair only)", name: "alt2", widget: "string", required: false }
                   - { label: "Autoplay (video)", name: "autoplay", widget: "boolean", required: false, default: false }
