@@ -100,6 +100,15 @@ a:hover {
 }
 
 
+/* === HOME LOGO CENTER === */
+
+#view-home .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 /* === HOME VIEW === */
 
 .home-main {
@@ -260,23 +269,73 @@ a:hover {
     display: block;
 }
 
-/* Image Pair */
+/* Image / Video Pair */
 .media-item-pair {
     display: flex;
     gap: 15px;
     width: 100%;
+    align-items: flex-start;
 }
 
 .media-item-pair .media-item {
     flex: 1;
-    aspect-ratio: 4 / 5;
 }
 
-.media-item-pair .media-item img {
+.media-item-pair .media-item img,
+.media-item-pair .media-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Progressive pixelation load */
+.media-item-canvas-wrap {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+}
+
+.media-item-canvas-wrap canvas {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    image-rendering: pixelated;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
 }
+
+.media-item-canvas-wrap canvas.fade-out {
+    opacity: 0;
+}
+
+.media-item-canvas-wrap img,
+.media-item-canvas-wrap video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Next Project */
+.project-next {
+    grid-column: 7 / 19;
+    grid-row: 3;
+    text-align: center;
+    padding: 60px 0 80px;
+}
+
+.next-project-link {
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.next-project-link:hover {
+    opacity: 0.5;
+}
+
 
 /* Hide video controls */
 .media-item video::-webkit-media-controls,

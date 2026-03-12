@@ -107,11 +107,83 @@ class App {
                 <div class="project-section-media">
                     ${this.createMediaHTML(project.media)}
                 </div>
+                ${i < this.projects.length - 1 ? `<div class="project-next"><a class="next-project-link" data-next="${i + 1}">Next Project</a></div>` : ''}
             </section>`
         ).join('');
 
-        this.setupProjectSnap(container);
+        this.setupNextProjectLinks(container);
         this.setupTitleObserver(container);
+        this.setupProgressiveLoad(container);
+    }
+
+    setupNextProjectLinks(container) {
+        container.addEventListener('click', e => {
+            const link = e.target.closest('.next-project-link');
+            if (!link) return;
+            const nextIndex = parseInt(link.dataset.next);
+            const nextSection = container.querySelector(`.project-section[data-index="${nextIndex}"]`);
+            if (nextSection) container.scrollTo({ top: nextSection.offsetTop, behavior: 'smooth' });
+        });
+    }
+
+    setupProgressiveLoad(container) {
+        const steps = [6, 12, 24, 48, 96];
+
+        const revealImage = (img) => {
+            if (img.dataset.revealed) return;
+            img.dataset.revealed = '1';
+
+            const wrap = document.createElement('div');
+            wrap.className = 'media-item-canvas-wrap';
+            img.parentNode.insertBefore(wrap, img);
+            wrap.appendChild(img);
+
+            const canvas = document.createElement('canvas');
+            wrap.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+
+            const draw = () => {
+                const w = img.naturalWidth || img.offsetWidth;
+                const h = img.naturalHeight || img.offsetHeight;
+                canvas.width = img.offsetWidth;
+                canvas.height = img.offsetHeight;
+                ctx.imageSmoothingEnabled = false;
+
+                let step = 0;
+                const next = () => {
+                    if (step >= steps.length) {
+                        canvas.classList.add('fade-out');
+                        canvas.addEventListener('transitionend', () => canvas.remove(), { once: true });
+                        return;
+                    }
+                    const px = steps[step++];
+                    const sw = Math.max(1, Math.round(w / px));
+                    const sh = Math.max(1, Math.round(h / px));
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0, sw, sh);
+                    ctx.drawImage(canvas, 0, 0, sw, sh, 0, 0, canvas.width, canvas.height);
+                    setTimeout(next, 60);
+                };
+                next();
+            };
+
+            if (img.complete && img.naturalWidth) {
+                draw();
+            } else {
+                img.addEventListener('load', draw, { once: true });
+            }
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                if (el.tagName === 'IMG') revealImage(el);
+                observer.unobserve(el);
+            });
+        }, { rootMargin: '0px 0px 100px 0px' });
+
+        container.querySelectorAll('.media-item img').forEach(img => observer.observe(img));
     }
 
     setupTitleObserver(container) {
@@ -134,33 +206,6 @@ class App {
         container.querySelectorAll('.project-section').forEach(s => observer.observe(s));
     }
 
-    setupProjectSnap(container) {
-        const sections = () => container.querySelectorAll('.project-section');
-        let isSnapping = false;
-
-        container.addEventListener('scroll', () => {
-            if (isSnapping) return;
-
-            const allSections = sections();
-            const scrollBottom = container.scrollTop + container.clientHeight;
-
-            for (let i = 0; i < allSections.length - 1; i++) {
-                const section = allSections[i];
-                const sectionBottom = section.offsetTop + section.offsetHeight;
-
-                if (scrollBottom >= sectionBottom - 2) {
-                    const nextTop = allSections[i + 1].offsetTop;
-                    if (container.scrollTop < nextTop - 10) {
-                        isSnapping = true;
-                        container.scrollTo({ top: nextTop, behavior: 'smooth' });
-                        setTimeout(() => { isSnapping = false; }, 900);
-                    }
-                    break;
-                }
-            }
-        });
-    }
-
     createMediaHTML(media) {
         if (!media || media.length === 0) return '';
 
@@ -181,6 +226,17 @@ class App {
                             <img src="${item.url2 || ''}" alt="${item.alt2 || ''}" loading="lazy">
                         </div>
                     </div>`;
+            }
+            if (item.type === 'video-pair') {
+                const makeVideo = (url, poster) => {
+                    const p = poster ? `poster="${poster}"` : '';
+                    return `<div class="media-item">
+                        <video autoplay loop muted playsinline preload="metadata" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback" ${p}>
+                            <source src="${url}" type="video/mp4">
+                        </video>
+                    </div>`;
+                };
+                return `<div class="media-item-pair">${makeVideo(item.url, item.poster)}${makeVideo(item.url2 || '', item.poster2 || '')}</div>`;
             }
             if (item.type === 'video') {
                 const poster = item.poster ? `poster="${item.poster}"` : '';

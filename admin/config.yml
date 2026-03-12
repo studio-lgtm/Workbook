@@ -71,7 +71,7 @@ collections:
                 widget: "list"
                 summary: '{{fields.type}}: {{fields.url}}'
                 fields:
-                  - { label: "Type", name: "type", widget: "select", options: ["image", "image-pair", "video"] }
+                  - { label: "Type", name: "type", widget: "select", options: ["image", "image-pair", "video", "video-pair"] }
                   - label: "File (Image or Video)"
                     name: "url"
                     widget: "file"
@@ -88,6 +88,16 @@ collections:
                     widget: "image"
                     required: false
                     hint: "For videos only: Upload a thumbnail image"
+                  - label: "Second Video (video-pair only)"
+                    name: "url2"
+                    widget: "file"
+                    required: false
+                    hint: "For video-pair type only: Upload the RIGHT video."
+                  - label: "Poster Image 2 (video-pair only)"
+                    name: "poster2"
+                    widget: "image"
+                    required: false
+                    hint: "For video-pair type only: Thumbnail for the right video."
                   - { label: "Alt Text", name: "alt", widget: "string", required: false }
                   - { label: "Alt Text 2 (image-pair only)", name: "alt2", widget: "string", required: false }
                   - { label: "Autoplay (video)", name: "autoplay", widget: "boolean", required: false, default: false }
