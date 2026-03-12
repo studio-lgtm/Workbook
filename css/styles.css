@@ -55,11 +55,28 @@ a:hover {
 /* === HEADER (shared) === */
 
 .header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     padding: var(--margin);
     flex-shrink: 0;
+}
+
+.project-nav-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.4;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.header-spacer {
+    min-width: 30px;
 }
 
 .logo {
@@ -135,34 +152,30 @@ a:hover {
 }
 
 .gallery-item {
-    position: relative;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-img-wrap {
     aspect-ratio: 3 / 2;
     overflow: hidden;
     background: #f0f0f0;
 }
 
-.gallery-item img {
+.gallery-img-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: opacity 0.2s ease;
 }
 
 .gallery-item-label {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-top: 6px;
     font-size: 12px;
     font-weight: 400;
     opacity: 0;
-    transition: opacity 0.2s ease;
-    background: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: var(--margin);
+    transition: opacity 0.15s ease;
 }
 
 .gallery-item:hover .gallery-item-label {
@@ -180,26 +193,18 @@ a:hover {
 
 .project-section {
     min-height: 100vh;
-    padding: 40px var(--margin) 15vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    column-gap: 12px;
+    padding: 40px 12px 15vh;
+    align-content: start;
 }
 
 .project-section-header {
+    grid-column: 7 / 19;
+    grid-row: 1;
     text-align: center;
-    max-width: 560px;
-    width: 100%;
     margin-bottom: 40px;
-}
-
-.project-section-title {
-    font-size: 12px;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0;
-    line-height: 1.4;
-    margin-bottom: 12px;
 }
 
 .project-section-description {
@@ -227,7 +232,8 @@ a:hover {
 }
 
 .project-section-media {
-    width: 100%;
+    grid-column: 5 / 21;
+    grid-row: 2;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -330,12 +336,25 @@ a:hover {
     .gallery-grid {
         grid-template-columns: repeat(4, 1fr);
     }
+
+    .project-section-header {
+        grid-column: 5 / 21;
+    }
+
+    .project-section-media {
+        grid-column: 3 / 23;
+    }
 }
 
 @media screen and (max-width: 768px) {
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
+    }
+
+    .project-section-header,
+    .project-section-media {
+        grid-column: 1 / -1;
     }
 
     .media-item-pair {

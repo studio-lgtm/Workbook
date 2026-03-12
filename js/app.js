@@ -77,7 +77,7 @@ class App {
                 : '';
             return `
                 <div class="gallery-item" data-index="${i}">
-                    ${imgHTML}
+                    <div class="gallery-img-wrap">${imgHTML}</div>
                     <div class="gallery-item-label">${project.title}</div>
                 </div>
             `;
@@ -100,7 +100,6 @@ class App {
         container.innerHTML = this.projects.map((project, i) =>
             `<section class="project-section" data-index="${i}">
                 <div class="project-section-header">
-                    <h2 class="project-section-title">${project.title}</h2>
                     ${project.description ? `<p class="project-section-description">${project.description}</p>` : ''}
                     ${project.credits ? `<div class="project-section-credits">${project.credits}</div>` : ''}
                     ${project.link ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-section-link">View Project →</a>` : ''}
@@ -112,6 +111,27 @@ class App {
         ).join('');
 
         this.setupProjectSnap(container);
+        this.setupTitleObserver(container);
+    }
+
+    setupTitleObserver(container) {
+        const titleEl = document.getElementById('projectNavTitle');
+        if (!titleEl) return;
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const project = this.projects[parseInt(entry.target.dataset.index)];
+                    if (project) titleEl.textContent = project.title;
+                }
+            });
+        }, {
+            root: container,
+            threshold: 0,
+            rootMargin: '0px 0px -80% 0px'
+        });
+
+        container.querySelectorAll('.project-section').forEach(s => observer.observe(s));
     }
 
     setupProjectSnap(container) {
@@ -194,6 +214,8 @@ class App {
     }
 
     openProject(index) {
+        const titleEl = document.getElementById('projectNavTitle');
+        if (titleEl && this.projects[index]) titleEl.textContent = this.projects[index].title;
         this.showView('view-project');
         requestAnimationFrame(() => {
             const container = document.getElementById('projectScroll');
