@@ -165,18 +165,12 @@
           "muted": true
         },
         {
-          "type": "video",
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "video-pair",
           "url": "/media/directors-library-5.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "video",
-          "url": "/media/directors-library-6.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
+          "url2": "/media/directors-library-6.mp4"
         },
         {
           "type": "image",
@@ -187,15 +181,12 @@
           "url": "/media/directors-library-8.webp"
         },
         {
-          "type": "image",
-          "url": "/media/directors-library-9.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/directors-library-10.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "video-pair",
+          "url": "/media/directors-library-9.webp",
+          "url2": "/media/directors-library-10.mp4"
         },
         {
           "type": "video",
@@ -209,12 +200,12 @@
           "url": "/media/directors-library-12.webp"
         },
         {
-          "type": "image",
-          "url": "/media/directors-library-13.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/directors-library-14.webp"
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/directors-library-13.webp",
+          "url2": "/media/directors-library-14.webp"
         },
         {
           "type": "video",
