@@ -77,7 +77,7 @@
           "url": "/media/brutus-7.webp"
         }
       ],
-      "thumbnail": "/media/brutus-2.webp"
+      "thumbnail": "/media/natejminnickbrutus-thumbnail.jpg"
     },
     {
       "title": "Converse Closet",
@@ -269,7 +269,7 @@
           "url": "/media/doingwell-7.webp"
         }
       ],
-      "thumbnail": "/media/doingwell.jpg"
+      "thumbnail": "/media/natejminnickdoingwell-thumbnail.jpg"
     },
     {
       "title": "The New York Times",
@@ -390,7 +390,7 @@
           "muted": true
         }
       ],
-      "thumbnail": "/media/vp-3.webp"
+      "thumbnail": "/media/natejminnickvazquez-partners-thumbnail.jpg"
     },
     {
       "title": "WØRKS",
@@ -422,6 +422,12 @@
           "url": "/media/works-5.webp"
         }
       ]
+    },
+    {
+      "locked": true,
+      "title": "Google Workspace",
+      "thumbnail": "/media/natejminnickgoogleworkspace-thumbnail.jpg",
+      "description": "NA"
     }
   ]
 }
