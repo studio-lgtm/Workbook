@@ -32,7 +32,7 @@ class App {
         if (!container || this.homepageAssets.length === 0) return;
 
         const canvas = document.createElement('canvas');
-        canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;pointer-events:none;z-index:1;opacity:0;';
+        canvas.style.cssText = 'position:absolute;image-rendering:pixelated;pointer-events:none;z-index:1;opacity:0;';
         container.appendChild(canvas);
         this.slideshowCanvas = canvas;
 
@@ -75,14 +75,24 @@ class App {
         const steps = [6, 12, 24, 48, 96];
 
         const run = () => {
-            const cw = img.offsetWidth || canvas.parentElement.offsetWidth;
-            const ch = img.offsetHeight || canvas.parentElement.offsetHeight;
-            if (!cw || !ch) return;
-            canvas.width = cw;
-            canvas.height = ch;
+            const containerRect = canvas.parentElement.getBoundingClientRect();
+            const imgRect = img.getBoundingClientRect();
+            if (!imgRect.width || !imgRect.height) return;
+
+            // Size and position canvas to exactly match the image, not the full container
+            const left = imgRect.left - containerRect.left;
+            const top = imgRect.top - containerRect.top;
+            Object.assign(canvas.style, {
+                left: left + 'px',
+                top: top + 'px',
+                width: imgRect.width + 'px',
+                height: imgRect.height + 'px',
+                transition: 'none',
+                opacity: '1',
+            });
+            canvas.width = Math.round(imgRect.width);
+            canvas.height = Math.round(imgRect.height);
             ctx.imageSmoothingEnabled = false;
-            canvas.style.transition = 'none';
-            canvas.style.opacity = '1';
 
             let step = 0;
             const next = () => {
@@ -92,10 +102,10 @@ class App {
                     return;
                 }
                 const px = steps[step++];
-                const w = img.naturalWidth || cw;
-                const h = img.naturalHeight || ch;
-                const sw = Math.max(1, Math.round(w / px));
-                const sh = Math.max(1, Math.round(h / px));
+                const cw = canvas.width;
+                const ch = canvas.height;
+                const sw = Math.max(1, Math.round(cw / px));
+                const sh = Math.max(1, Math.round(ch / px));
                 ctx.clearRect(0, 0, cw, ch);
                 ctx.drawImage(img, 0, 0, sw, sh);
                 ctx.drawImage(canvas, 0, 0, sw, sh, 0, 0, cw, ch);
