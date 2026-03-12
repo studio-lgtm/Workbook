@@ -250,12 +250,12 @@
           "url": "/media/doingwell-2.webp"
         },
         {
-          "type": "image",
-          "url": "/media/doingwell-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/doingwell-4.webp"
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/doingwell-3.webp",
+          "url2": "/media/doingwell-4.webp"
         },
         {
           "type": "image",
