@@ -1,214 +1,426 @@
 {
   "projects": [
     {
-      "title": "Vazquez + Partners",
-      "description": "Brand identity and visual system for a luxury fashion consultancy. The project included logo design, typography, color palette, and brand guidelines to establish a sophisticated market presence.",
-      "credits": "<p>Credit: Decimal</p><p>vazquezandpartners.com</p>",
+      "title": "AP",
+      "description": "",
+      "credits": "",
       "link": "",
       "media": [
         {
+          "type": "video",
+          "url": "/media/ap-1.mp4",
           "autoplay": true,
           "loop": true,
-          "muted": true,
+          "muted": true
+        },
+        {
           "type": "video",
-          "url": "/media/v-phero.mp4",
-          "poster": "/media/cleanshot-2024-09-14-at-17.43.59-2x.jpg"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image",
-          "url": "/media/phone_white.jpg"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image",
-          "url": "/media/vp_logo.jpg"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image",
-          "url": "/media/.jpg"
-        },
-        {
+          "url": "/media/ap-2.mp4",
           "autoplay": true,
           "loop": true,
-          "muted": true,
-          "type": "video",
-          "url": "/media/info_color_fix.mp4"
+          "muted": true
         },
         {
+          "type": "image",
+          "url": "/media/ap-3.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/ap-4.mp4",
           "autoplay": true,
           "loop": true,
-          "muted": true,
+          "muted": true
+        },
+        {
           "type": "video",
-          "url": "/media/main-site-scroll.mp4"
+          "url": "/media/ap-5.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
         }
       ]
     },
     {
-      "title": "WØRKS",
-      "description": "Comprehensive branding for a New York-based creative studio focused on cultural advancement. The identity system reflects the studio's commitment to innovative design and strategic thinking.",
-      "credits": "<p><strong>Creative Direction:</strong> Nate J Minnick</p><p><strong>Year:</strong> 2024</p>",
+      "title": "Brutus",
+      "description": "",
+      "credits": "",
       "link": "",
       "media": [
         {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
           "type": "image",
-          "url": "/media/01.jpg"
+          "url": "/media/brutus-1.webp"
         },
         {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
           "type": "image",
-          "url": "/media/02.jpg"
+          "url": "/media/brutus-2.webp"
         },
         {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "video",
-          "url": "/media/main-case-study-scroll.mp4"
+          "type": "image",
+          "url": "/media/brutus-3.webp"
         },
         {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
           "type": "image",
-          "url": "/media/04.jpg"
+          "url": "/media/brutus-4.webp"
         },
         {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
           "type": "image",
-          "url": "/media/about-tray.jpg"
+          "url": "/media/brutus-5.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/brutus-6.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/brutus-7.webp"
         }
       ]
     },
     {
-      "title": "DoingWell",
-      "description": "Visual identity and digital presence for a health coaching practice. The project encompassed brand strategy, logo design, website design, and marketing materials to communicate wellness and personal transformation.",
-      "credits": "<p><strong>Design:</strong> Nate J Minnick</p><p><strong>Year:</strong> 2023</p>",
+      "title": "Converse Closet",
+      "description": "",
+      "credits": "",
       "link": "",
       "media": [
         {
+          "type": "video",
+          "url": "/media/converse-closet-1.mp4",
           "autoplay": true,
           "loop": true,
-          "muted": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-2.webp"
+        },
+        {
           "type": "video",
-          "url": "/media/main3.mp4"
+          "url": "/media/converse-closet-3.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
         },
         {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image",
-          "url": "/media/doingwell02.jpg"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image",
-          "url": "/media/2.jpg"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image",
-          "url": "/media/3.jpg"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image",
-          "url": "/media/doingwell03.jpg"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image",
-          "url": "/media/doingwell04.jpg"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
           "type": "video",
-          "url": "/media/main2.mp4"
+          "url": "/media/converse-closet-4.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-5.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/converse-closet-6.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-7.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-8.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-9.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-10.webp"
         }
       ]
     },
     {
       "title": "Directors Library",
+      "description": "",
+      "credits": "",
+      "link": "",
       "media": [
         {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
           "type": "image",
-          "url": "/media/wørks_directorslibrary_digital_design_01.jpg"
+          "url": "/media/directors-library-1.webp"
         },
         {
-          "autoplay": true,
-          "loop": true,
-          "muted": true,
           "type": "video",
-          "url": "/media/wørks_directorslibrary_digital_design_25.mp4"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image",
-          "url": "/media/wørks_directorslibrary_digital_design_03.jpg"
-        },
-        {
+          "url": "/media/directors-library-2.mp4",
           "autoplay": true,
           "loop": true,
-          "muted": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-3.webp"
+        },
+        {
           "type": "video",
-          "url": "/media/wørks_directorslibrary_digital_design_24.mp4"
-        },
-        {
+          "url": "/media/directors-library-4.mp4",
           "autoplay": true,
           "loop": true,
-          "muted": true,
-          "type": "image",
-          "url": "/media/wørks_directorslibrary_digital_design_22.mp4"
+          "muted": true
         },
         {
+          "type": "video",
+          "url": "/media/directors-library-5.mp4",
           "autoplay": true,
           "loop": true,
-          "muted": true,
-          "type": "image",
-          "url": "/media/wørks_directorslibrary_digital_design_27.mp4"
+          "muted": true
         },
         {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image",
-          "url": "/media/wørks_directorslibrary_digital_design_08.jpg"
+          "type": "video",
+          "url": "/media/directors-library-6.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
         },
         {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
           "type": "image",
-          "url": "/media/directors-library.jpg"
+          "url": "/media/directors-library-7.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-8.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-9.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-10.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-11.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-12.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-13.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-14.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-15.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-16.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        }
+      ]
+    },
+    {
+      "title": "DoingWell",
+      "description": "",
+      "credits": "",
+      "link": "",
+      "media": [
+        {
+          "type": "video",
+          "url": "/media/doingwell-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-5.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/doingwell-6.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-7.webp"
+        }
+      ]
+    },
+    {
+      "title": "Long Covid",
+      "description": "",
+      "credits": "",
+      "link": "",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/long-covid-1.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/long-covid-2.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/long-covid-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/long-covid-4.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/long-covid-5.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/long-covid-6.webp"
+        }
+      ]
+    },
+    {
+      "title": "Ophelia",
+      "description": "",
+      "credits": "",
+      "link": "",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/ophelia-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-5.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-6.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-7.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-8.webp"
+        }
+      ]
+    },
+    {
+      "title": "Vazquez + Partners",
+      "description": "",
+      "credits": "",
+      "link": "",
+      "media": [
+        {
+          "type": "video",
+          "url": "/media/vp-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-4.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/vp-5.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/vp-6.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        }
+      ]
+    },
+    {
+      "title": "WØRKS",
+      "description": "",
+      "credits": "",
+      "link": "",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/works-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/works-2.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/works-3.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/works-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/works-5.webp"
         }
       ]
     }
