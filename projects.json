@@ -75,7 +75,8 @@
           "type": "image",
           "url": "/media/brutus-7.webp"
         }
-      ]
+      ],
+      "thumbnail": "/media/brutus-2.webp"
     },
     {
       "title": "Converse Closet",
@@ -223,7 +224,8 @@
           "loop": true,
           "muted": true
         }
-      ]
+      ],
+      "thumbnail": "/media/001.jpg"
     },
     {
       "title": "DoingWell",
@@ -265,7 +267,8 @@
           "type": "image",
           "url": "/media/doingwell-7.webp"
         }
-      ]
+      ],
+      "thumbnail": "/media/doingwell.jpg"
     },
     {
       "title": "Long Covid",
@@ -343,7 +346,8 @@
           "type": "image",
           "url": "/media/ophelia-8.webp"
         }
-      ]
+      ],
+      "thumbnail": "/media/natejminnick-ophelia-thumbnail.jpg"
     },
     {
       "title": "Vazquez + Partners",
@@ -384,7 +388,8 @@
           "loop": true,
           "muted": true
         }
-      ]
+      ],
+      "thumbnail": "/media/vp-3.webp"
     },
     {
       "title": "WØRKS",
