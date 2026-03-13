@@ -1,41 +1,106 @@
 {
   "projects": [
     {
-      "title": "Audemars Piguet",
-      "locked": true,
-      "description": "A strategy-focused design exploration aimed at integrating artificial intelligence into Audemars Piguet's digital ecosystem, enhancing customer experience and operational efficiency while preserving the brand's luxury heritage. Credit - Frederik Delmotte, Decimal.",
+      "title": "Aly Kula",
+      "description": "Aly Kula is an editorial and commercial photographer based in NYC. Her new digital experience is designed to move viewers through the work via continuous scroll, creating a gallery-first flow that emphasizes the work.",
       "credits": "",
       "link": "",
-      "thumbnail": "/media/ap-thumbnail.webp",
+      "thumbnail": "/media/aly-kula-thumbnail.webp",
       "media": [
         {
-          "type": "video",
-          "url": "/media/ap-1.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
+          "type": "image",
+          "url": "/media/aly-kula-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-2.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/aly-kula-3.webp",
+          "url2": "/media/aly-kula-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-5.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-6.webp"
+        }
+      ]
+    },
+    {
+      "title": "WØRKS",
+      "description": "WØRKS is a New York City based creative studio dedicated to cultural advancement through strategy and interdisciplinary design. With - WØRKS\nPress - Typewolf Site of the Day",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/works-thumbnail.webp",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/works-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/works-2.webp"
         },
         {
           "type": "video",
-          "url": "/media/ap-2.mp4",
+          "url": "/media/works-3.mp4",
           "autoplay": true,
           "loop": true,
           "muted": true
         },
         {
           "type": "image",
-          "url": "/media/ap-3.webp"
+          "url": "/media/works-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/works-5.webp"
+        }
+      ]
+    },
+    {
+      "title": "Vazquez + Partners",
+      "description": "A fashion consultancy that specializes in strategic brand development, product design, and client-centric practices in the fashion, luxury, and lifestyle spaces. With - Guillermo Brotons, Decimal.\nPress - The Brand Identity",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/vp-thumbnail.webp",
+      "media": [
+        {
+          "type": "video",
+          "url": "/media/vp-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-4.webp"
         },
         {
           "type": "video",
-          "url": "/media/ap-4.mp4",
+          "url": "/media/vp-5.mp4",
           "autoplay": true,
           "loop": true,
           "muted": true
         },
         {
           "type": "video",
-          "url": "/media/ap-5.mp4",
+          "url": "/media/vp-6.mp4",
           "autoplay": true,
           "loop": true,
           "muted": true
@@ -43,99 +108,42 @@
       ]
     },
     {
-      "title": "Brutus",
-      "description": "Brutus is a design agency specializing in graphic design and art direction, collaborating with artists and institutions to craft identities, products, and digital experiences. Credit - Shannon Jager, Frederik Delmotte, Decimal.",
+      "title": "DoingWell",
+      "description": "The private practice of Daphne Javitch. As a health coach she is guiding individuals and groups to grow in their careers, wellness, and overall lives through the baseline of foundational health practices. With - Frederik Delmotte, Decimal.",
       "credits": "",
       "link": "",
-      "thumbnail": "/media/brutus-thumbnail.webp",
-      "media": [
-        {
-          "type": "image",
-          "url": "/media/brutus-1.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/brutus-2.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/brutus-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/brutus-4.webp"
-        },
-        {
-          "type": "image-pair",
-          "url": "/media/brutus-5.webp",
-          "url2": "/media/brutus-6.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/brutus-7.webp"
-        }
-      ]
-    },
-    {
-      "title": "Converse Closet",
-      "description": "A celebration of Shai's penchant for vintage, guests were invited to “shop” a curated store full of archival Converse items from decades past. Credit - WØRKS, Baggy.",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/converse-closet-5.webp",
+      "thumbnail": "/media/doingwell-thumbnail.webp",
       "media": [
         {
           "type": "video",
-          "url": "/media/converse-closet-1.mp4",
+          "url": "/media/doingwell-1.mp4",
           "autoplay": true,
           "loop": true,
           "muted": true
         },
         {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
+          "type": "image",
+          "url": "/media/doingwell-2.webp"
+        },
+        {
           "type": "image-pair",
-          "url": "/media/converse-closet-2.webp",
-          "url2": "/media/converse-closet-3.mp4"
+          "url": "/media/doingwell-3.webp",
+          "url2": "/media/doingwell-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-5.webp"
         },
         {
           "type": "video",
-          "url": "/media/converse-closet-4.mp4",
+          "url": "/media/doingwell-6.mp4",
           "autoplay": true,
           "loop": true,
           "muted": true
         },
         {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/converse-closet-5.webp",
-          "url2": "/media/converse-closet-6.mp4"
-        },
-        {
           "type": "image",
-          "url": "/media/converse-closet-7.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/converse-closet-8.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/converse-closet-9.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/converse-closet-10.webp"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/converse-closet-8.webp",
-          "url2": "/media/converse-closet-9.webp"
+          "url": "/media/doingwell-7.webp"
         }
       ]
     },
@@ -219,42 +227,141 @@
       ]
     },
     {
-      "title": "DoingWell",
-      "description": "The private practice of Daphne Javitch. As a health coach she is guiding individuals and groups to grow in their careers, wellness, and overall lives through the baseline of foundational health practices. With - Frederik Delmotte, Decimal.",
+      "title": "Brutus",
+      "description": "Brutus is a design agency specializing in graphic design and art direction, collaborating with artists and institutions to craft identities, products, and digital experiences. Credit - Shannon Jager, Frederik Delmotte, Decimal.",
       "credits": "",
       "link": "",
-      "thumbnail": "/media/doingwell-thumbnail.webp",
+      "thumbnail": "/media/brutus-thumbnail.webp",
       "media": [
         {
-          "type": "video",
-          "url": "/media/doingwell-1.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
+          "type": "image",
+          "url": "/media/brutus-1.webp"
         },
         {
           "type": "image",
-          "url": "/media/doingwell-2.webp"
+          "url": "/media/brutus-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/brutus-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/brutus-4.webp"
         },
         {
           "type": "image-pair",
-          "url": "/media/doingwell-3.webp",
-          "url2": "/media/doingwell-4.webp"
+          "url": "/media/brutus-5.webp",
+          "url2": "/media/brutus-6.webp"
         },
         {
           "type": "image",
-          "url": "/media/doingwell-5.webp"
+          "url": "/media/brutus-7.webp"
+        }
+      ]
+    },
+    {
+      "title": "Audemars Piguet",
+      "locked": true,
+      "description": "A strategy-focused design exploration aimed at integrating artificial intelligence into Audemars Piguet's digital ecosystem, enhancing customer experience and operational efficiency while preserving the brand's luxury heritage. Credit - Frederik Delmotte, Decimal.",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/ap-thumbnail.webp",
+      "media": [
+        {
+          "type": "video",
+          "url": "/media/ap-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
         },
         {
           "type": "video",
-          "url": "/media/doingwell-6.mp4",
+          "url": "/media/ap-2.mp4",
           "autoplay": true,
           "loop": true,
           "muted": true
         },
         {
           "type": "image",
-          "url": "/media/doingwell-7.webp"
+          "url": "/media/ap-3.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/ap-4.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/ap-5.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        }
+      ]
+    },
+    {
+      "title": "Converse Closet",
+      "description": "A celebration of Shai's penchant for vintage, guests were invited to “shop” a curated store full of archival Converse items from decades past. Credit - WØRKS, Baggy.",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/converse-closet-5.webp",
+      "media": [
+        {
+          "type": "video",
+          "url": "/media/converse-closet-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/converse-closet-2.webp",
+          "url2": "/media/converse-closet-3.mp4"
+        },
+        {
+          "type": "video",
+          "url": "/media/converse-closet-4.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/converse-closet-5.webp",
+          "url2": "/media/converse-closet-6.mp4"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-7.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-8.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-9.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-10.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/converse-closet-8.webp",
+          "url2": "/media/converse-closet-9.webp"
         }
       ]
     },
@@ -298,6 +405,43 @@
       "hidden": true
     },
     {
+      "title": "Valerie Stepanova",
+      "description": "Valerie Stepanova is a writer and editor based in NYC. \nHer new site is text-only, no images, no portfolio theater, just typography and links to published work.",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/valerie-thumbnail.webp",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/valerie-1.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/valerie-3.webp",
+          "url2": "/media/valerie-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/valerie-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/valerie-7.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/valerie-5.webp",
+          "url2": "/media/valerie-6.webp"
+        }
+      ]
+    },
+    {
       "title": "Ophelia",
       "description": "Ophelia is a New York-based jewelry brand founded by Sydney Serena, focused on offering elegant, high-quality pieces at accessible prices. The brand combines refined craftsmanship with a commitment to affordability, making luxury within reach for a broader audience.",
       "credits": "",
@@ -336,157 +480,13 @@
       ]
     },
     {
-      "title": "Vazquez + Partners",
-      "description": "A fashion consultancy that specializes in strategic brand development, product design, and client-centric practices in the fashion, luxury, and lifestyle spaces. With - Guillermo Brotons, Decimal.\nPress - The Brand Identity",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/vp-thumbnail.webp",
-      "media": [
-        {
-          "type": "video",
-          "url": "/media/vp-1.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/vp-2.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/vp-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/vp-4.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/vp-5.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "video",
-          "url": "/media/vp-6.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        }
-      ]
-    },
-    {
-      "title": "WØRKS",
-      "description": "WØRKS is a New York City based creative studio dedicated to cultural advancement through strategy and interdisciplinary design. With - WØRKS\nPress - Typewolf Site of the Day",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/works-thumbnail.webp",
-      "media": [
-        {
-          "type": "image",
-          "url": "/media/works-1.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/works-2.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/works-3.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/works-4.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/works-5.webp"
-        }
-      ]
-    },
-    {
       "title": "Google Workspace",
       "locked": true,
-      "description": "",
+      "description": "na",
       "credits": "",
       "link": "",
       "thumbnail": "/media/google-workspace-thumbnail.webp",
       "media": []
-    },
-    {
-      "title": "Aly Kula",
-      "description": "Aly Kula is an editorial and commercial photographer based in NYC. Her new digital experience is designed to move viewers through the work via continuous scroll, creating a gallery-first flow that emphasizes the work.",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/aly-kula-thumbnail.webp",
-      "media": [
-        {
-          "type": "image",
-          "url": "/media/aly-kula-1.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/aly-kula-2.webp"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/aly-kula-3.webp",
-          "url2": "/media/aly-kula-4.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/aly-kula-5.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/aly-kula-6.webp"
-        }
-      ]
-    },
-    {
-      "title": "Valerie Stepanova",
-      "description": "Valerie Stepanova is a writer and editor based in NYC. \nHer new site is text-only, no images, no portfolio theater, just typography and links to published work.",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/valerie-thumbnail.webp",
-      "media": [
-        {
-          "type": "image",
-          "url": "/media/valerie-1.webp"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/valerie-3.webp",
-          "url2": "/media/valerie-4.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/valerie-4.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/valerie-7.webp"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/valerie-5.webp",
-          "url2": "/media/valerie-6.webp"
-        }
-      ]
     }
   ]
 }
