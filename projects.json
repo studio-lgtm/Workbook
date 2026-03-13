@@ -8,11 +8,38 @@
       "link": "",
       "thumbnail": "/media/ap-thumbnail.webp",
       "media": [
-        { "type": "video", "url": "/media/ap-1.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/ap-2.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/ap-3.webp" },
-        { "type": "video", "url": "/media/ap-4.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/ap-5.mp4", "autoplay": true, "loop": true, "muted": true }
+        {
+          "type": "video",
+          "url": "/media/ap-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/ap-2.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/ap-3.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/ap-4.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/ap-5.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        }
       ]
     },
     {
@@ -22,31 +49,94 @@
       "link": "",
       "thumbnail": "/media/brutus-thumbnail.webp",
       "media": [
-        { "type": "image", "url": "/media/brutus-1.webp" },
-        { "type": "image", "url": "/media/brutus-2.webp" },
-        { "type": "image", "url": "/media/brutus-3.webp" },
-        { "type": "image", "url": "/media/brutus-4.webp" },
-        { "type": "image-pair", "url": "/media/brutus-5.webp", "url2": "/media/brutus-6.webp" },
-        { "type": "image", "url": "/media/brutus-7.webp" }
+        {
+          "type": "image",
+          "url": "/media/brutus-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/brutus-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/brutus-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/brutus-4.webp"
+        },
+        {
+          "type": "image-pair",
+          "url": "/media/brutus-5.webp",
+          "url2": "/media/brutus-6.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/brutus-7.webp"
+        }
       ]
     },
     {
       "title": "Converse Closet",
-      "description": "A celebration of Shai's penchant for vintage, guests were invited to \u201cshop\u201d a curated store full of archival Converse items from decades past. Credit - WØRKS, Baggy.",
+      "description": "A celebration of Shai's penchant for vintage, guests were invited to “shop” a curated store full of archival Converse items from decades past. Credit - WØRKS, Baggy.",
       "credits": "",
       "link": "",
       "thumbnail": "/media/converse-closet-5.webp",
       "media": [
-        { "type": "video", "url": "/media/converse-closet-1.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/converse-closet-2.webp" },
-        { "type": "video", "url": "/media/converse-closet-3.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/converse-closet-4.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/converse-closet-5.webp" },
-        { "type": "video", "url": "/media/converse-closet-6.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/converse-closet-7.webp" },
-        { "type": "image", "url": "/media/converse-closet-8.webp" },
-        { "type": "image", "url": "/media/converse-closet-9.webp" },
-        { "type": "image", "url": "/media/converse-closet-10.webp" }
+        {
+          "type": "video",
+          "url": "/media/converse-closet-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/converse-closet-2.webp",
+          "url2": "/media/converse-closet-3.mp4"
+        },
+        {
+          "type": "video",
+          "url": "/media/converse-closet-4.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/converse-closet-5.webp",
+          "url2": "/media/converse-closet-6.mp4"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-7.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-8.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-9.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-10.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/converse-closet-8.webp",
+          "url2": "/media/converse-closet-9.webp"
+        }
       ]
     },
     {
@@ -56,19 +146,76 @@
       "link": "",
       "thumbnail": "/media/directors-library-thumbnail.webp",
       "media": [
-        { "type": "image", "url": "/media/directors-library-1.webp" },
-        { "type": "video", "url": "/media/directors-library-2.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/directors-library-3.webp" },
-        { "type": "video", "url": "/media/directors-library-4.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video-pair", "url": "/media/directors-library-5.mp4", "url2": "/media/directors-library-6.mp4" },
-        { "type": "image", "url": "/media/directors-library-7.webp" },
-        { "type": "image", "url": "/media/directors-library-8.webp" },
-        { "type": "video-pair", "url": "/media/directors-library-9.webp", "url2": "/media/directors-library-10.mp4" },
-        { "type": "video", "url": "/media/directors-library-11.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/directors-library-12.webp" },
-        { "type": "image-pair", "url": "/media/directors-library-13.webp", "url2": "/media/directors-library-14.webp" },
-        { "type": "video", "url": "/media/directors-library-15.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/directors-library-16.mp4", "autoplay": true, "loop": true, "muted": true }
+        {
+          "type": "image",
+          "url": "/media/directors-library-1.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-2.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-3.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-4.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video-pair",
+          "url": "/media/directors-library-5.mp4",
+          "url2": "/media/directors-library-6.mp4"
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-7.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-8.webp"
+        },
+        {
+          "type": "video-pair",
+          "url": "/media/directors-library-9.webp",
+          "url2": "/media/directors-library-10.mp4"
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-11.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-12.webp"
+        },
+        {
+          "type": "image-pair",
+          "url": "/media/directors-library-13.webp",
+          "url2": "/media/directors-library-14.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-15.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-16.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        }
       ]
     },
     {
@@ -78,12 +225,37 @@
       "link": "",
       "thumbnail": "/media/doingwell-thumbnail.webp",
       "media": [
-        { "type": "video", "url": "/media/doingwell-1.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/doingwell-2.webp" },
-        { "type": "image-pair", "url": "/media/doingwell-3.webp", "url2": "/media/doingwell-4.webp" },
-        { "type": "image", "url": "/media/doingwell-5.webp" },
-        { "type": "video", "url": "/media/doingwell-6.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/doingwell-7.webp" }
+        {
+          "type": "video",
+          "url": "/media/doingwell-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-2.webp"
+        },
+        {
+          "type": "image-pair",
+          "url": "/media/doingwell-3.webp",
+          "url2": "/media/doingwell-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-5.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/doingwell-6.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-7.webp"
+        }
       ]
     },
     {
@@ -92,12 +264,36 @@
       "credits": "",
       "link": "",
       "media": [
-        { "type": "image", "url": "/media/long-covid-1.webp" },
-        { "type": "video", "url": "/media/long-covid-2.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/long-covid-3.webp" },
-        { "type": "image", "url": "/media/long-covid-4.webp" },
-        { "type": "video", "url": "/media/long-covid-5.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/long-covid-6.webp" }
+        {
+          "type": "image",
+          "url": "/media/long-covid-1.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/long-covid-2.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/long-covid-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/long-covid-4.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/long-covid-5.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/long-covid-6.webp"
+        }
       ]
     },
     {
@@ -107,13 +303,35 @@
       "link": "",
       "thumbnail": "/media/ophelia-thumbnail.webp",
       "media": [
-        { "type": "image", "url": "/media/ophelia-1.webp" },
-        { "type": "image", "url": "/media/ophelia-2.webp" },
-        { "type": "image-pair", "url": "/media/ophelia-4.webp", "url2": "/media/ophelia-3.webp" },
-        { "type": "image", "url": "/media/ophelia-5.webp" },
-        { "type": "image", "url": "/media/ophelia-6.webp" },
-        { "type": "image", "url": "/media/ophelia-7.webp" },
-        { "type": "image", "url": "/media/ophelia-8.webp" }
+        {
+          "type": "image",
+          "url": "/media/ophelia-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-2.webp"
+        },
+        {
+          "type": "image-pair",
+          "url": "/media/ophelia-4.webp",
+          "url2": "/media/ophelia-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-5.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-6.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-7.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-8.webp"
+        }
       ]
     },
     {
@@ -123,12 +341,39 @@
       "link": "",
       "thumbnail": "/media/vp-thumbnail.webp",
       "media": [
-        { "type": "video", "url": "/media/vp-1.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/vp-2.webp" },
-        { "type": "image", "url": "/media/vp-3.webp" },
-        { "type": "image", "url": "/media/vp-4.webp" },
-        { "type": "video", "url": "/media/vp-5.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/vp-6.mp4", "autoplay": true, "loop": true, "muted": true }
+        {
+          "type": "video",
+          "url": "/media/vp-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-4.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/vp-5.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/vp-6.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        }
       ]
     },
     {
@@ -138,11 +383,29 @@
       "link": "",
       "thumbnail": "/media/works-thumbnail.webp",
       "media": [
-        { "type": "image", "url": "/media/works-1.webp" },
-        { "type": "image", "url": "/media/works-2.webp" },
-        { "type": "video", "url": "/media/works-3.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/works-4.webp" },
-        { "type": "image", "url": "/media/works-5.webp" }
+        {
+          "type": "image",
+          "url": "/media/works-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/works-2.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/works-3.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/works-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/works-5.webp"
+        }
       ]
     },
     {
@@ -161,12 +424,30 @@
       "link": "",
       "thumbnail": "/media/aly-kula-thumbnail.webp",
       "media": [
-        { "type": "image", "url": "/media/aly-kula-1.webp" },
-        { "type": "image", "url": "/media/aly-kula-2.webp" },
-        { "type": "image", "url": "/media/aly-kula-3.webp" },
-        { "type": "image", "url": "/media/aly-kula-4.webp" },
-        { "type": "image", "url": "/media/aly-kula-5.webp" },
-        { "type": "image", "url": "/media/aly-kula-6.webp" }
+        {
+          "type": "image",
+          "url": "/media/aly-kula-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-5.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-6.webp"
+        }
       ]
     },
     {
@@ -176,13 +457,34 @@
       "link": "",
       "thumbnail": "/media/valerie-thumbnail.webp",
       "media": [
-        { "type": "image", "url": "/media/valerie-1.webp" },
-        { "type": "image", "url": "/media/valerie-2.webp" },
-        { "type": "image", "url": "/media/valerie-3.webp" },
-        { "type": "image", "url": "/media/valerie-4.webp" },
-        { "type": "image", "url": "/media/valerie-5.webp" },
-        { "type": "image", "url": "/media/valerie-6.webp" },
-        { "type": "image", "url": "/media/valerie-7.webp" }
+        {
+          "type": "image",
+          "url": "/media/valerie-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/valerie-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/valerie-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/valerie-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/valerie-5.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/valerie-6.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/valerie-7.webp"
+        }
       ]
     }
   ]
