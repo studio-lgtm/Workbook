@@ -320,7 +320,7 @@
           "autoplay": false,
           "loop": false,
           "muted": true,
-          "type": "image-pair",
+          "type": "video-pair",
           "url": "/media/converse-closet-2.webp",
           "url2": "/media/converse-closet-3.mp4"
         },
@@ -335,7 +335,7 @@
           "autoplay": false,
           "loop": false,
           "muted": true,
-          "type": "image-pair",
+          "type": "video-pair",
           "url": "/media/converse-closet-5.webp",
           "url2": "/media/converse-closet-6.mp4"
         },
@@ -344,24 +344,16 @@
           "url": "/media/converse-closet-7.webp"
         },
         {
-          "type": "image",
-          "url": "/media/converse-closet-8.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/converse-closet-9.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/converse-closet-10.webp"
-        },
-        {
           "autoplay": false,
           "loop": false,
           "muted": true,
           "type": "image-pair",
           "url": "/media/converse-closet-8.webp",
           "url2": "/media/converse-closet-9.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-10.webp"
         }
       ]
     },
