@@ -53,7 +53,7 @@ class App {
             container.appendChild(el);
         });
 
-        container.addEventListener('click', () => this.advanceSlideshow());
+        container.parentElement.addEventListener('click', () => this.advanceSlideshow());
     }
 
     advanceSlideshow() {
