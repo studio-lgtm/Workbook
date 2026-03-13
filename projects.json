@@ -226,7 +226,7 @@
           "muted": true
         }
       ],
-      "thumbnail": "/media/001.jpg"
+      "thumbnail": "/media/natejminnickdirectorslibrary-thumbnail.jpg"
     },
     {
       "title": "DoingWell",
@@ -421,7 +421,8 @@
           "type": "image",
           "url": "/media/works-5.webp"
         }
-      ]
+      ],
+      "thumbnail": "/media/natejminnickwørks-thumbnail.jpg"
     },
     {
       "locked": true,
