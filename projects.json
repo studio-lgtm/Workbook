@@ -453,7 +453,7 @@
     },
     {
       "title": "Valerie Stepanova",
-      "description": "",
+      "description": "Valerie Stepanova is a writer and editor based in NYC. \nHer new site is text-only, no images, no portfolio theater, just typography and links to published work.",
       "credits": "",
       "link": "",
       "thumbnail": "/media/valerie-thumbnail.webp",
@@ -463,12 +463,12 @@
           "url": "/media/valerie-1.webp"
         },
         {
-          "type": "image",
-          "url": "/media/valerie-2.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/valerie-3.webp"
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/valerie-3.webp",
+          "url2": "/media/valerie-4.webp"
         },
         {
           "type": "image",
@@ -476,15 +476,15 @@
         },
         {
           "type": "image",
-          "url": "/media/valerie-5.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/valerie-6.webp"
-        },
-        {
-          "type": "image",
           "url": "/media/valerie-7.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/valerie-5.webp",
+          "url2": "/media/valerie-6.webp"
         }
       ]
     }
