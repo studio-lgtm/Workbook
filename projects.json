@@ -152,48 +152,6 @@
       ]
     },
     {
-      "title": "Vazquez + Partners",
-      "description": "A fashion consultancy that specializes in strategic brand development, product design, and client-centric practices in the fashion, luxury, and lifestyle spaces. With - Guillermo Brotons, Decimal.\nPress - The Brand Identity",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/vp-thumbnail.webp",
-      "media": [
-        {
-          "type": "video",
-          "url": "/media/vp-1.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/vp-2.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/vp-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/vp-4.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/vp-5.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "video",
-          "url": "/media/vp-6.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        }
-      ]
-    },
-    {
       "title": "Brutus",
       "description": "Brutus is a design agency specializing in graphic design and art direction, collaborating with artists and institutions to craft identities, products, and digital experiences. Credit - Shannon Jager, Frederik Delmotte, Decimal.",
       "credits": "",
@@ -299,6 +257,48 @@
         {
           "type": "image",
           "url": "/media/aly-kula-6.webp"
+        }
+      ]
+    },
+    {
+      "title": "Vazquez + Partners",
+      "description": "A fashion consultancy that specializes in strategic brand development, product design, and client-centric practices in the fashion, luxury, and lifestyle spaces. With - Guillermo Brotons, Decimal.\nPress - The Brand Identity",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/vp-thumbnail.webp",
+      "media": [
+        {
+          "type": "video",
+          "url": "/media/vp-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-4.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/vp-5.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/vp-6.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
         }
       ]
     },
