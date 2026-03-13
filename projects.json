@@ -294,7 +294,8 @@
           "type": "image",
           "url": "/media/long-covid-6.webp"
         }
-      ]
+      ],
+      "hidden": true
     },
     {
       "title": "Ophelia",
@@ -419,7 +420,7 @@
     },
     {
       "title": "Aly Kula",
-      "description": "",
+      "description": "Aly Kula is an editorial and commercial photographer based in NYC. Her new digital experience is designed to move viewers through the work via continuous scroll, creating a gallery-first flow that emphasizes the work.",
       "credits": "",
       "link": "",
       "thumbnail": "/media/aly-kula-thumbnail.webp",
@@ -433,12 +434,12 @@
           "url": "/media/aly-kula-2.webp"
         },
         {
-          "type": "image",
-          "url": "/media/aly-kula-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/aly-kula-4.webp"
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/aly-kula-3.webp",
+          "url2": "/media/aly-kula-4.webp"
         },
         {
           "type": "image",
