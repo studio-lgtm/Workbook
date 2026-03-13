@@ -1,19 +1,13 @@
 {
   "projects": [
     {
-<<<<<<< HEAD
       "title": "Audemars Piguet",
       "locked": true,
-      "description": "A strategy-focused design exploration aimed at integrating artificial intelligence into Audemars Piguet's digital ecosystem, enhancing customer experience and operational efficiency while preserving the brand's luxury heritage. Credit - Frederik Delmotte, Decimal.\n\n\n",
-=======
-      "title": "Vazquez + Partners",
-      "description": "A fashion consultancy that specializes in strategic brand development, product design, and client-centric practices in the fashion, luxury, and lifestyle spaces. With - Guillermo Brotons, Decimal.\nPress - The Brand Identity",
->>>>>>> 9d8833afbc954bb9f72d7e212c7e63e64d07700e
+      "description": "A strategy-focused design exploration aimed at integrating artificial intelligence into Audemars Piguet's digital ecosystem, enhancing customer experience and operational efficiency while preserving the brand's luxury heritage. Credit - Frederik Delmotte, Decimal.",
       "credits": "",
       "link": "",
       "thumbnail": "/media/ap-thumbnail.webp",
       "media": [
-<<<<<<< HEAD
         { "type": "video", "url": "/media/ap-1.mp4", "autoplay": true, "loop": true, "muted": true },
         { "type": "video", "url": "/media/ap-2.mp4", "autoplay": true, "loop": true, "muted": true },
         { "type": "image", "url": "/media/ap-3.webp" },
@@ -24,52 +18,10 @@
     {
       "title": "Brutus",
       "description": "Brutus is a design agency specializing in graphic design and art direction, collaborating with artists and institutions to craft identities, products, and digital experiences. Credit - Shannon Jager, Frederik Delmotte, Decimal.",
-=======
-        {
-          "type": "video",
-          "url": "/media/vp-1.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/vp-2.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/vp-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/vp-4.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/vp-5.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "video",
-          "url": "/media/vp-6.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        }
-      ],
-      "thumbnail": "/media/natejminnickvazquez-partners-thumbnail.jpg"
-    },
-    {
-      "title": "WØRKS",
-      "description": "WØRKS is a NYC city based New York City based creative studio dedicated to cultural advancement through strategy and interdisciplinary design. With - WØRKS\nPress - Typewolf Site of the Day \n\n",
->>>>>>> 9d8833afbc954bb9f72d7e212c7e63e64d07700e
       "credits": "",
       "link": "",
       "thumbnail": "/media/brutus-thumbnail.webp",
       "media": [
-<<<<<<< HEAD
         { "type": "image", "url": "/media/brutus-1.webp" },
         { "type": "image", "url": "/media/brutus-2.webp" },
         { "type": "image", "url": "/media/brutus-3.webp" },
@@ -80,7 +32,7 @@
     },
     {
       "title": "Converse Closet",
-      "description": "A celebration of Shai's penchant for vintage, guests were invited to ​"shop" a curated store full of archival Converse items from decades past. Credit - WØRKS, Baggy.",
+      "description": "A celebration of Shai's penchant for vintage, guests were invited to \u201cshop\u201d a curated store full of archival Converse items from decades past. Credit - WØRKS, Baggy.",
       "credits": "",
       "link": "",
       "thumbnail": "/media/converse-closet-5.webp",
@@ -96,76 +48,6 @@
         { "type": "image", "url": "/media/converse-closet-9.webp" },
         { "type": "image", "url": "/media/converse-closet-10.webp" }
       ]
-=======
-        {
-          "type": "image",
-          "url": "/media/works-1.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/works-2.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/works-3.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/works-4.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/works-5.webp"
-        }
-      ],
-      "thumbnail": "/media/natejminnickwørks-thumbnail.jpg"
-    },
-    {
-      "title": "DoingWell",
-      "description": "The private practice of Daphne Javitch. As a health coach she is guiding individuals and groups to grow in their careers, wellness, and overall lives through the baseline of foundational health practices. With - Frederik Delmotte, Decimal.",
-      "credits": "",
-      "link": "",
-      "media": [
-        {
-          "type": "video",
-          "url": "/media/doingwell-1.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/doingwell-2.webp"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/doingwell-3.webp",
-          "url2": "/media/doingwell-4.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/doingwell-5.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/doingwell-6.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/doingwell-7.webp"
-        }
-      ],
-      "thumbnail": "/media/natejminnickdoingwell-thumbnail.jpg"
->>>>>>> 9d8833afbc954bb9f72d7e212c7e63e64d07700e
     },
     {
       "title": "Directors Library",
@@ -190,13 +72,12 @@
       ]
     },
     {
-      "title": "Brutus",
-      "description": "Brutus is a design agency specializing in graphic design and art direction, collaborating with artists and institutions to craft identities, products, and digital experiences. Credit - Shannon Jager, Frederik Delmotte, Decimal.\n\n\n\n\n\n",
+      "title": "DoingWell",
+      "description": "The private practice of Daphne Javitch. As a health coach she is guiding individuals and groups to grow in their careers, wellness, and overall lives through the baseline of foundational health practices. With - Frederik Delmotte, Decimal.",
       "credits": "",
       "link": "",
       "thumbnail": "/media/doingwell-thumbnail.webp",
       "media": [
-<<<<<<< HEAD
         { "type": "video", "url": "/media/doingwell-1.mp4", "autoplay": true, "loop": true, "muted": true },
         { "type": "image", "url": "/media/doingwell-2.webp" },
         { "type": "image-pair", "url": "/media/doingwell-3.webp", "url2": "/media/doingwell-4.webp" },
@@ -204,135 +85,6 @@
         { "type": "video", "url": "/media/doingwell-6.mp4", "autoplay": true, "loop": true, "muted": true },
         { "type": "image", "url": "/media/doingwell-7.webp" }
       ]
-=======
-        {
-          "type": "image",
-          "url": "/media/brutus-1.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/brutus-2.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/brutus-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/brutus-4.webp"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/brutus-5.webp",
-          "url2": "/media/brutus-6.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/brutus-7.webp"
-        }
-      ],
-      "thumbnail": "/media/natejminnickbrutus-thumbnail.jpg"
-    },
-    {
-      "title": "Audemars Piguet",
-      "locked": true,
-      "description": "A strategy-focused design exploration aimed at integrating artificial intelligence into Audemars Piguet’s digital ecosystem, enhancing customer experience and operational efficiency while preserving the brand’s luxury heritage. Credit - Frederik Delmotte, Decimal.\n\n\n",
-      "credits": "",
-      "link": "",
-      "media": [
-        {
-          "type": "video",
-          "url": "/media/ap-1.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "video",
-          "url": "/media/ap-2.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/ap-3.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/ap-4.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "video",
-          "url": "/media/ap-5.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        }
-      ],
-      "thumbnail": "/media/natejminnickap-thumbnail.jpg"
-    },
-    {
-      "title": "Converse Closet",
-      "description": "A celebration of Shai’s penchant for vintage, guests were invited to ​“shop” a curated store full of archival Converse items from decades past. Credit - WØRKS, Baggy.\n\n",
-      "credits": "",
-      "link": "",
-      "media": [
-        {
-          "type": "video",
-          "url": "/media/converse-closet-1.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "video-pair",
-          "url": "/media/converse-closet-2.webp",
-          "url2": "/media/converse-closet-3.mp4"
-        },
-        {
-          "type": "video",
-          "url": "/media/converse-closet-4.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/converse-closet-5.webp",
-          "url2": "/media/converse-closet-6.mp4"
-        },
-        {
-          "type": "image",
-          "url": "/media/converse-closet-7.webp"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/converse-closet-8.webp",
-          "url2": "/media/converse-closet-9.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/converse-closet-10.webp"
-        }
-      ],
-      "thumbnail": "/media/converse-closet-5.webp"
->>>>>>> 9d8833afbc954bb9f72d7e212c7e63e64d07700e
     },
     {
       "title": "The New York Times",
@@ -340,45 +92,12 @@
       "credits": "",
       "link": "",
       "media": [
-<<<<<<< HEAD
         { "type": "image", "url": "/media/long-covid-1.webp" },
         { "type": "video", "url": "/media/long-covid-2.mp4", "autoplay": true, "loop": true, "muted": true },
         { "type": "image", "url": "/media/long-covid-3.webp" },
         { "type": "image", "url": "/media/long-covid-4.webp" },
         { "type": "video", "url": "/media/long-covid-5.mp4", "autoplay": true, "loop": true, "muted": true },
         { "type": "image", "url": "/media/long-covid-6.webp" }
-=======
-        {
-          "type": "image",
-          "url": "/media/long-covid-1.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/long-covid-2.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/long-covid-3.webp",
-          "url2": "/media/long-covid-4.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/long-covid-5.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/long-covid-6.webp"
-        }
->>>>>>> 9d8833afbc954bb9f72d7e212c7e63e64d07700e
       ]
     },
     {
@@ -398,7 +117,6 @@
       ]
     },
     {
-<<<<<<< HEAD
       "title": "Vazquez + Partners",
       "description": "A fashion consultancy that specializes in strategic brand development, product design, and client-centric practices in the fashion, luxury, and lifestyle spaces. With - Guillermo Brotons, Decimal.\nPress - The Brand Identity",
       "credits": "",
@@ -415,7 +133,7 @@
     },
     {
       "title": "WØRKS",
-      "description": "WØRKS is a NYC city based New York City based creative studio dedicated to cultural advancement through strategy and interdisciplinary design. With - WØRKS\nPress - Typewolf Site of the Day",
+      "description": "WØRKS is a New York City based creative studio dedicated to cultural advancement through strategy and interdisciplinary design. With - WØRKS\nPress - Typewolf Site of the Day",
       "credits": "",
       "link": "",
       "thumbnail": "/media/works-thumbnail.webp",
@@ -428,9 +146,6 @@
       ]
     },
     {
-=======
-      "locked": true,
->>>>>>> 9d8833afbc954bb9f72d7e212c7e63e64d07700e
       "title": "Google Workspace",
       "locked": true,
       "description": "",
