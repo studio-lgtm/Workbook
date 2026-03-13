@@ -324,12 +324,12 @@
           "url": "/media/ophelia-2.webp"
         },
         {
-          "type": "image",
-          "url": "/media/ophelia-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/ophelia-4.webp"
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/ophelia-4.webp",
+          "url2": "/media/ophelia-3.webp"
         },
         {
           "type": "image",
