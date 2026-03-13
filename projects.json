@@ -228,35 +228,39 @@
       ]
     },
     {
-      "title": "Aly Kula",
-      "description": "Aly Kula is an editorial and commercial photographer based in NYC. Her new digital experience is designed to move viewers through the work via continuous scroll, creating a gallery-first flow that emphasizes the work.",
+      "title": "Valerie Stepanova",
+      "description": "Valerie Stepanova is a writer and editor based in NYC. \nHer new site is text-only, no images, no portfolio theater, just typography and links to published work.",
       "credits": "",
       "link": "",
-      "thumbnail": "/media/aly-kula-thumbnail.webp",
+      "thumbnail": "/media/valerie-thumbnail.webp",
       "media": [
         {
           "type": "image",
-          "url": "/media/aly-kula-1.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/aly-kula-2.webp"
+          "url": "/media/valerie-1.webp"
         },
         {
           "autoplay": false,
           "loop": false,
           "muted": true,
           "type": "image-pair",
-          "url": "/media/aly-kula-3.webp",
-          "url2": "/media/aly-kula-4.webp"
+          "url": "/media/valerie-3.webp",
+          "url2": "/media/valerie-4.webp"
         },
         {
           "type": "image",
-          "url": "/media/aly-kula-5.webp"
+          "url": "/media/valerie-4.webp"
         },
         {
           "type": "image",
-          "url": "/media/aly-kula-6.webp"
+          "url": "/media/valerie-7.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/valerie-5.webp",
+          "url2": "/media/valerie-6.webp"
         }
       ]
     },
@@ -397,43 +401,6 @@
       "hidden": true
     },
     {
-      "title": "Valerie Stepanova",
-      "description": "Valerie Stepanova is a writer and editor based in NYC. \nHer new site is text-only, no images, no portfolio theater, just typography and links to published work.",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/valerie-thumbnail.webp",
-      "media": [
-        {
-          "type": "image",
-          "url": "/media/valerie-1.webp"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/valerie-3.webp",
-          "url2": "/media/valerie-4.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/valerie-4.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/valerie-7.webp"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/valerie-5.webp",
-          "url2": "/media/valerie-6.webp"
-        }
-      ]
-    },
-    {
       "title": "Ophelia",
       "description": "Ophelia is a New York-based jewelry brand founded by Sydney Serena, focused on offering elegant, high-quality pieces at accessible prices. The brand combines refined craftsmanship with a commitment to affordability, making luxury within reach for a broader audience.",
       "credits": "",
@@ -468,6 +435,39 @@
         {
           "type": "image",
           "url": "/media/ophelia-8.webp"
+        }
+      ]
+    },
+    {
+      "title": "Aly Kula",
+      "description": "Aly Kula is an editorial and commercial photographer based in NYC. Her new digital experience is designed to move viewers through the work via continuous scroll, creating a gallery-first flow that emphasizes the work.",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/aly-kula-thumbnail.webp",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/aly-kula-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-2.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/aly-kula-3.webp",
+          "url2": "/media/aly-kula-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-5.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-6.webp"
         }
       ]
     },
