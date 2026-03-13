@@ -30,6 +30,18 @@ public_folder: "/media"
 # For larger videos, compress them first or use external hosting
 
 collections:
+  - name: "info"
+    label: "Info"
+    files:
+      - label: "Info Page"
+        name: "info"
+        file: "info.json"
+        fields:
+          - label: "Body"
+            name: "body"
+            widget: "markdown"
+            hint: "The text shown on the Info page. Use the editor to add links, formatting, etc."
+
   - name: "homepage"
     label: "Homepage"
     files:
