@@ -20,7 +20,7 @@ class App {
             fetch('projects.json').then(r => r.json()).catch(() => ({ projects: [] })),
             fetch('landing.json').then(r => r.json()).catch(() => ({ images: [] }))
         ]);
-        this.projects = projectsData.projects || [];
+        this.projects = (projectsData.projects || []).filter(p => !p.hidden);
         this.homepageAssets = landingData.images || [];
     }
 

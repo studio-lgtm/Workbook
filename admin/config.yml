@@ -58,7 +58,8 @@ collections:
             widget: "list"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Locked (Confidential)", name: "locked", widget: "boolean", required: false, default: false, hint: "If enabled, shows 'Confidential' label in the gallery." }
+              - { label: "Hidden", name: "hidden", widget: "boolean", required: false, default: false, hint: "If enabled, project is completely hidden from the site." }
+              - { label: "Locked (Confidential)", name: "locked", widget: "boolean", required: false, default: false, hint: "If enabled, shows 'Confidential' label in the gallery and blocks access." }
               - label: "Thumbnail (projects grid)"
                 name: "thumbnail"
                 widget: "image"
