@@ -14,11 +14,15 @@
     },
     {
       "type": "image",
-      "url": "/media/iphone-image.jpg"
+      "url": "/media/back-body-part-person-finger-hand-lighting.jpg"
     },
     {
       "url": "/media/1.jpg",
       "type": "image"
+    },
+    {
+      "type": "image",
+      "url": "/media/iphone-image.jpg"
     },
     {
       "type": "image",
