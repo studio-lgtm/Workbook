@@ -1,74 +1,35 @@
 {
   "projects": [
     {
-      "title": "Audemars Piguet",
-      "locked": true,
-      "description": "A strategy-focused design exploration aimed at integrating artificial intelligence into Audemars Piguet's digital ecosystem, enhancing customer experience and operational efficiency while preserving the brand's luxury heritage. Credit - Frederik Delmotte, Decimal.",
+      "title": "WØRKS",
+      "description": "WØRKS is a New York City based creative studio dedicated to cultural advancement through strategy and interdisciplinary design. With - WØRKS\nPress - Typewolf Site of the Day",
       "credits": "",
       "link": "",
-      "thumbnail": "/media/ap-thumbnail.webp",
+      "thumbnail": "/media/works-thumbnail.webp",
       "media": [
-        { "type": "video", "url": "/media/ap-1.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/ap-2.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/ap-3.webp" },
-        { "type": "video", "url": "/media/ap-4.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/ap-5.mp4", "autoplay": true, "loop": true, "muted": true }
-      ]
-    },
-    {
-      "title": "Brutus",
-      "description": "Brutus is a design agency specializing in graphic design and art direction, collaborating with artists and institutions to craft identities, products, and digital experiences. Credit - Shannon Jager, Frederik Delmotte, Decimal.",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/brutus-thumbnail.webp",
-      "media": [
-        { "type": "image", "url": "/media/brutus-1.webp" },
-        { "type": "image", "url": "/media/brutus-2.webp" },
-        { "type": "image", "url": "/media/brutus-3.webp" },
-        { "type": "image", "url": "/media/brutus-4.webp" },
-        { "type": "image-pair", "url": "/media/brutus-5.webp", "url2": "/media/brutus-6.webp" },
-        { "type": "image", "url": "/media/brutus-7.webp" }
-      ]
-    },
-    {
-      "title": "Converse Closet",
-      "description": "A celebration of Shai's penchant for vintage, guests were invited to \u201cshop\u201d a curated store full of archival Converse items from decades past. Credit - WØRKS, Baggy.",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/converse-closet-5.webp",
-      "media": [
-        { "type": "video", "url": "/media/converse-closet-1.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/converse-closet-2.webp" },
-        { "type": "video", "url": "/media/converse-closet-3.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/converse-closet-4.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/converse-closet-5.webp" },
-        { "type": "video", "url": "/media/converse-closet-6.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/converse-closet-7.webp" },
-        { "type": "image", "url": "/media/converse-closet-8.webp" },
-        { "type": "image", "url": "/media/converse-closet-9.webp" },
-        { "type": "image", "url": "/media/converse-closet-10.webp" }
-      ]
-    },
-    {
-      "title": "Directors Library",
-      "description": "Independent platform and resource for the film, video, and creative industries. Above-the-line shorts, music videos, campaigns, and motion pictures. With - WØRKS",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/directors-library-thumbnail.webp",
-      "media": [
-        { "type": "image", "url": "/media/directors-library-1.webp" },
-        { "type": "video", "url": "/media/directors-library-2.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/directors-library-3.webp" },
-        { "type": "video", "url": "/media/directors-library-4.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video-pair", "url": "/media/directors-library-5.mp4", "url2": "/media/directors-library-6.mp4" },
-        { "type": "image", "url": "/media/directors-library-7.webp" },
-        { "type": "image", "url": "/media/directors-library-8.webp" },
-        { "type": "video-pair", "url": "/media/directors-library-9.webp", "url2": "/media/directors-library-10.mp4" },
-        { "type": "video", "url": "/media/directors-library-11.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/directors-library-12.webp" },
-        { "type": "image-pair", "url": "/media/directors-library-13.webp", "url2": "/media/directors-library-14.webp" },
-        { "type": "video", "url": "/media/directors-library-15.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/directors-library-16.mp4", "autoplay": true, "loop": true, "muted": true }
+        {
+          "type": "image",
+          "url": "/media/works-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/works-2.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/works-3.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/works-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/works-5.webp"
+        }
       ]
     },
     {
@@ -78,42 +39,225 @@
       "link": "",
       "thumbnail": "/media/doingwell-thumbnail.webp",
       "media": [
-        { "type": "video", "url": "/media/doingwell-1.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/doingwell-2.webp" },
-        { "type": "image-pair", "url": "/media/doingwell-3.webp", "url2": "/media/doingwell-4.webp" },
-        { "type": "image", "url": "/media/doingwell-5.webp" },
-        { "type": "video", "url": "/media/doingwell-6.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/doingwell-7.webp" }
+        {
+          "type": "video",
+          "url": "/media/doingwell-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-2.webp"
+        },
+        {
+          "type": "image-pair",
+          "url": "/media/doingwell-3.webp",
+          "url2": "/media/doingwell-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-5.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/doingwell-6.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-7.webp"
+        }
       ]
     },
     {
-      "title": "The New York Times",
-      "description": "A data storytelling experience for The New York Times about a life-altering disease. With - Pentagram, Decimal.\nPress - Awwwards, D&AD",
+      "title": "Directors Library",
+      "description": "Independent platform and resource for the film, video, and creative industries. Above-the-line shorts, music videos, campaigns, and motion pictures. With - WØRKS",
       "credits": "",
       "link": "",
+      "thumbnail": "/media/directors-library-thumbnail.webp",
       "media": [
-        { "type": "image", "url": "/media/long-covid-1.webp" },
-        { "type": "video", "url": "/media/long-covid-2.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/long-covid-3.webp" },
-        { "type": "image", "url": "/media/long-covid-4.webp" },
-        { "type": "video", "url": "/media/long-covid-5.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/long-covid-6.webp" }
+        {
+          "type": "image",
+          "url": "/media/directors-library-1.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-2.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-3.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-4.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video-pair",
+          "url": "/media/directors-library-5.mp4",
+          "url2": "/media/directors-library-6.mp4"
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-7.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-8.webp"
+        },
+        {
+          "type": "video-pair",
+          "url": "/media/directors-library-9.webp",
+          "url2": "/media/directors-library-10.mp4"
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-11.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/directors-library-12.webp"
+        },
+        {
+          "type": "image-pair",
+          "url": "/media/directors-library-13.webp",
+          "url2": "/media/directors-library-14.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-15.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/directors-library-16.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        }
       ]
     },
     {
-      "title": "Ophelia",
-      "description": "Ophelia is a New York-based jewelry brand founded by Sydney Serena, focused on offering elegant, high-quality pieces at accessible prices. The brand combines refined craftsmanship with a commitment to affordability, making luxury within reach for a broader audience.",
+      "title": "Brutus",
+      "description": "Brutus is a design agency specializing in graphic design and art direction, collaborating with artists and institutions to craft identities, products, and digital experiences. Credit - Shannon Jager, Frederik Delmotte, Decimal.",
       "credits": "",
       "link": "",
-      "thumbnail": "/media/ophelia-thumbnail.webp",
+      "thumbnail": "/media/brutus-thumbnail.webp",
       "media": [
-        { "type": "image", "url": "/media/ophelia-1.webp" },
-        { "type": "image", "url": "/media/ophelia-2.webp" },
-        { "type": "image-pair", "url": "/media/ophelia-4.webp", "url2": "/media/ophelia-3.webp" },
-        { "type": "image", "url": "/media/ophelia-5.webp" },
-        { "type": "image", "url": "/media/ophelia-6.webp" },
-        { "type": "image", "url": "/media/ophelia-7.webp" },
-        { "type": "image", "url": "/media/ophelia-8.webp" }
+        {
+          "type": "image",
+          "url": "/media/brutus-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/brutus-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/brutus-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/brutus-4.webp"
+        },
+        {
+          "type": "image-pair",
+          "url": "/media/brutus-5.webp",
+          "url2": "/media/brutus-6.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/brutus-7.webp"
+        }
+      ]
+    },
+    {
+      "title": "Audemars Piguet",
+      "locked": true,
+      "description": "A strategy-focused design exploration aimed at integrating artificial intelligence into Audemars Piguet's digital ecosystem, enhancing customer experience and operational efficiency while preserving the brand's luxury heritage. Credit - Frederik Delmotte, Decimal.",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/ap-thumbnail.webp",
+      "media": [
+        {
+          "type": "video",
+          "url": "/media/ap-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/ap-2.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/ap-3.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/ap-4.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/ap-5.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        }
+      ]
+    },
+    {
+      "title": "Valerie Stepanova",
+      "description": "Valerie Stepanova is a writer and editor based in NYC. \nHer new site is text-only, no images, no portfolio theater, just typography and links to published work.",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/valerie-thumbnail.webp",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/valerie-1.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/valerie-3.webp",
+          "url2": "/media/valerie-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/valerie-7.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/valerie-5.webp",
+          "url2": "/media/valerie-6.webp"
+        }
       ]
     },
     {
@@ -123,67 +267,214 @@
       "link": "",
       "thumbnail": "/media/vp-thumbnail.webp",
       "media": [
-        { "type": "video", "url": "/media/vp-1.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/vp-2.webp" },
-        { "type": "image", "url": "/media/vp-3.webp" },
-        { "type": "image", "url": "/media/vp-4.webp" },
-        { "type": "video", "url": "/media/vp-5.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/vp-6.mp4", "autoplay": true, "loop": true, "muted": true }
+        {
+          "type": "video",
+          "url": "/media/vp-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-4.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/vp-5.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/vp-6.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        }
       ]
     },
     {
-      "title": "WØRKS",
-      "description": "WØRKS is a New York City based creative studio dedicated to cultural advancement through strategy and interdisciplinary design. With - WØRKS\nPress - Typewolf Site of the Day",
+      "title": "Converse Closet",
+      "description": "A celebration of Shai's penchant for vintage, guests were invited to “shop” a curated store full of archival Converse items from decades past. Credit - WØRKS, Baggy.",
       "credits": "",
       "link": "",
-      "thumbnail": "/media/works-thumbnail.webp",
+      "thumbnail": "/media/converse-closet-5.webp",
       "media": [
-        { "type": "image", "url": "/media/works-1.webp" },
-        { "type": "image", "url": "/media/works-2.webp" },
-        { "type": "video", "url": "/media/works-3.mp4", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/works-4.webp" },
-        { "type": "image", "url": "/media/works-5.webp" }
+        {
+          "type": "video",
+          "url": "/media/converse-closet-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "video-pair",
+          "url": "/media/converse-closet-2.webp",
+          "url2": "/media/converse-closet-3.mp4"
+        },
+        {
+          "type": "video",
+          "url": "/media/converse-closet-4.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "video-pair",
+          "url": "/media/converse-closet-5.webp",
+          "url2": "/media/converse-closet-6.mp4"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-7.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/converse-closet-8.webp",
+          "url2": "/media/converse-closet-9.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/converse-closet-10.webp"
+        }
+      ]
+    },
+    {
+      "title": "The New York Times",
+      "description": "A data storytelling experience for The New York Times about a life-altering disease. With - Pentagram, Decimal.\nPress - Awwwards, D&AD",
+      "credits": "",
+      "link": "",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/long-covid-1.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/long-covid-2.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/long-covid-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/long-covid-4.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/long-covid-5.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/long-covid-6.webp"
+        }
+      ],
+      "hidden": true
+    },
+    {
+      "title": "Ophelia",
+      "description": "Ophelia is a New York-based jewelry brand founded by Sydney Serena, focused on offering elegant, high-quality pieces at accessible prices. The brand combines refined craftsmanship with a commitment to affordability, making luxury within reach for a broader audience.",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/ophelia-thumbnail.webp",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/ophelia-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-2.webp"
+        },
+        {
+          "type": "image-pair",
+          "url": "/media/ophelia-4.webp",
+          "url2": "/media/ophelia-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-5.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-6.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-7.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/ophelia-8.webp"
+        }
+      ]
+    },
+    {
+      "title": "Aly Kula",
+      "description": "Aly Kula is an editorial and commercial photographer based in NYC. Her new digital experience is designed to move viewers through the work via continuous scroll, creating a gallery-first flow that emphasizes the work.",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/aly-kula-thumbnail.webp",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/aly-kula-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-2.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/aly-kula-3.webp",
+          "url2": "/media/aly-kula-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-5.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-6.webp"
+        }
       ]
     },
     {
       "title": "Google Workspace",
       "locked": true,
-      "description": "",
+      "description": "na",
       "credits": "",
       "link": "",
       "thumbnail": "/media/google-workspace-thumbnail.webp",
       "media": []
-    },
-    {
-      "title": "Aly Kula",
-      "description": "",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/aly-kula-thumbnail.webp",
-      "media": [
-        { "type": "image", "url": "/media/aly-kula-1.webp" },
-        { "type": "image", "url": "/media/aly-kula-2.webp" },
-        { "type": "image", "url": "/media/aly-kula-3.webp" },
-        { "type": "image", "url": "/media/aly-kula-4.webp" },
-        { "type": "image", "url": "/media/aly-kula-5.webp" },
-        { "type": "image", "url": "/media/aly-kula-6.webp" }
-      ]
-    },
-    {
-      "title": "Valerie Stepanova",
-      "description": "",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/valerie-thumbnail.webp",
-      "media": [
-        { "type": "image", "url": "/media/valerie-1.webp" },
-        { "type": "image", "url": "/media/valerie-2.webp" },
-        { "type": "image", "url": "/media/valerie-3.webp" },
-        { "type": "image", "url": "/media/valerie-4.webp" },
-        { "type": "image", "url": "/media/valerie-5.webp" },
-        { "type": "image", "url": "/media/valerie-6.webp" },
-        { "type": "image", "url": "/media/valerie-7.webp" }
-      ]
     }
   ]
 }
