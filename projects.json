@@ -1,39 +1,6 @@
 {
   "projects": [
     {
-      "title": "Aly Kula",
-      "description": "Aly Kula is an editorial and commercial photographer based in NYC. Her new digital experience is designed to move viewers through the work via continuous scroll, creating a gallery-first flow that emphasizes the work.",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/aly-kula-thumbnail.webp",
-      "media": [
-        {
-          "type": "image",
-          "url": "/media/aly-kula-1.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/aly-kula-2.webp"
-        },
-        {
-          "autoplay": false,
-          "loop": false,
-          "muted": true,
-          "type": "image-pair",
-          "url": "/media/aly-kula-3.webp",
-          "url2": "/media/aly-kula-4.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/aly-kula-5.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/aly-kula-6.webp"
-        }
-      ]
-    },
-    {
       "title": "WØRKS",
       "description": "WØRKS is a New York City based creative studio dedicated to cultural advancement through strategy and interdisciplinary design. With - WØRKS\nPress - Typewolf Site of the Day",
       "credits": "",
@@ -62,48 +29,6 @@
         {
           "type": "image",
           "url": "/media/works-5.webp"
-        }
-      ]
-    },
-    {
-      "title": "Vazquez + Partners",
-      "description": "A fashion consultancy that specializes in strategic brand development, product design, and client-centric practices in the fashion, luxury, and lifestyle spaces. With - Guillermo Brotons, Decimal.\nPress - The Brand Identity",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/vp-thumbnail.webp",
-      "media": [
-        {
-          "type": "video",
-          "url": "/media/vp-1.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/vp-2.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/vp-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/vp-4.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/vp-5.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "video",
-          "url": "/media/vp-6.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
         }
       ]
     },
@@ -227,6 +152,48 @@
       ]
     },
     {
+      "title": "Vazquez + Partners",
+      "description": "A fashion consultancy that specializes in strategic brand development, product design, and client-centric practices in the fashion, luxury, and lifestyle spaces. With - Guillermo Brotons, Decimal.\nPress - The Brand Identity",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/vp-thumbnail.webp",
+      "media": [
+        {
+          "type": "video",
+          "url": "/media/vp-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/vp-4.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/vp-5.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/vp-6.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        }
+      ]
+    },
+    {
       "title": "Brutus",
       "description": "Brutus is a design agency specializing in graphic design and art direction, collaborating with artists and institutions to craft identities, products, and digital experiences. Credit - Shannon Jager, Frederik Delmotte, Decimal.",
       "credits": "",
@@ -299,6 +266,39 @@
           "autoplay": true,
           "loop": true,
           "muted": true
+        }
+      ]
+    },
+    {
+      "title": "Aly Kula",
+      "description": "Aly Kula is an editorial and commercial photographer based in NYC. Her new digital experience is designed to move viewers through the work via continuous scroll, creating a gallery-first flow that emphasizes the work.",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/aly-kula-thumbnail.webp",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/aly-kula-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-2.webp"
+        },
+        {
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/aly-kula-3.webp",
+          "url2": "/media/aly-kula-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-5.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/aly-kula-6.webp"
         }
       ]
     },
