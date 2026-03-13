@@ -289,12 +289,12 @@
           "muted": true
         },
         {
-          "type": "image",
-          "url": "/media/long-covid-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/long-covid-4.webp"
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/long-covid-3.webp",
+          "url2": "/media/long-covid-4.webp"
         },
         {
           "type": "video",
