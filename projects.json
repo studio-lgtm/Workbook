@@ -226,7 +226,7 @@
           "muted": true
         }
       ],
-      "thumbnail": "/media/001.jpg"
+      "thumbnail": "/media/natejminnickdirectorslibrary-thumbnail.jpg"
     },
     {
       "title": "DoingWell",
@@ -324,12 +324,12 @@
           "url": "/media/ophelia-2.webp"
         },
         {
-          "type": "image",
-          "url": "/media/ophelia-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/ophelia-4.webp"
+          "autoplay": false,
+          "loop": false,
+          "muted": true,
+          "type": "image-pair",
+          "url": "/media/ophelia-4.webp",
+          "url2": "/media/ophelia-3.webp"
         },
         {
           "type": "image",
@@ -421,7 +421,8 @@
           "type": "image",
           "url": "/media/works-5.webp"
         }
-      ]
+      ],
+      "thumbnail": "/media/natejminnickwørks-thumbnail.jpg"
     },
     {
       "locked": true,
