@@ -1,25 +1,28 @@
 {
   "images": [
     {
-      "url": "/media/wørks_directorslibrary_digital_design_03.jpg"
+      "type": "image",
+      "url": "/media/poster.jpg"
     },
     {
-      "url": "/media/vp_logo.jpg"
+      "url": "/media/vp_logo.jpg",
+      "type": "image"
     },
     {
-      "url": "/media/01.jpg"
+      "url": "/media/01.jpg",
+      "type": "image"
     },
     {
-      "url": "/media/doingwell.jpg"
+      "type": "image",
+      "url": "/media/iphone-image.jpg"
     },
     {
-      "url": "/media/1.jpg"
+      "url": "/media/1.jpg",
+      "type": "image"
     },
     {
-      "url": "/media/1.jpg"
-    },
-    {
-      "url": "/media/alywebsitejpg.jpg"
+      "type": "image",
+      "url": "/media/juice.jpg"
     }
   ]
 }
