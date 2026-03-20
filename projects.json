@@ -30,7 +30,8 @@
           "type": "image",
           "url": "/media/works-5.webp"
         }
-      ]
+      ],
+      "backgroundColor": "#F8F8F8"
     },
     {
       "title": "DoingWell",
