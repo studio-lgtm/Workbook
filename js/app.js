@@ -299,7 +299,7 @@ class App {
                     <div class="gallery-img-wrap">${imgHTML}</div>
                     <div class="gallery-item-label">
                         <span>${project.title}</span>
-                        <span class="gallery-item-count">(${assetCount} assets)</span>
+                        ${!project.locked ? `<span class="gallery-item-count">(${assetCount} assets)</span>` : ''}
                     </div>
                     ${project.locked ? '<div class="gallery-item-confidential">Confidential</div>' : ''}
                 </div>
@@ -534,7 +534,7 @@ class App {
         document.getElementById('closeProject').addEventListener('click', e => {
             e.preventDefault();
             document.querySelectorAll('#projectScroll .project-slide.active video').forEach(v => v.pause());
-            this.showView('view-home');
+            this.showView('view-projects');
         });
     }
 }
