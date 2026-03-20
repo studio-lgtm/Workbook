@@ -11,37 +11,43 @@
 
     <!-- Home View -->
     <div class="view" id="view-home">
-        <header class="header">
-            <nav class="nav">
-                <a href="#" class="nav-link" id="openProjects">Projects</a>
-                <a href="about.html" class="nav-link">Information</a>
-                <a href="mailto:studio@natejminnick.com" class="nav-link">Contact</a>
-            </nav>
-            <span class="logo">Nate J Minnick</span>
-        </header>
         <main class="home-main">
             <div class="home-slideshow" id="homeSlideshow"></div>
         </main>
+        <header class="header">
+            <div class="header-identity">
+                <div class="header-name">Nate J Minnick, Digital, Art Direction</div>
+                <div class="header-nav-links">
+                    <a href="about.html" class="nav-link">Information</a>, <a href="https://www.instagram.com/natejminnick/" class="nav-link" target="_blank" rel="noopener">Instagram</a>, <a href="mailto:studio@natejminnick.com" class="nav-link">E-Mail</a>
+                </div>
+            </div>
+            <a href="#" class="nav-link" id="openProjects">See more</a>
+        </header>
     </div>
 
     <!-- Projects Gallery View -->
     <div class="view view--hidden" id="view-projects">
-        <header class="header">
-            <a href="#" class="nav-link" id="closeProjects">Close</a>
-        </header>
         <main class="gallery-main">
             <div class="gallery-grid" id="galleryGrid"></div>
         </main>
+        <header class="header">
+            <div class="header-identity">
+                <div class="header-name">Nate J Minnick, Digital, Art Direction</div>
+                <div class="header-nav-links">
+                    <a href="about.html" class="nav-link">Information</a>, <a href="https://www.instagram.com/natejminnick/" class="nav-link" target="_blank" rel="noopener">Instagram</a>, <a href="mailto:studio@natejminnick.com" class="nav-link">E-Mail</a>
+                </div>
+            </div>
+            <a href="#" class="nav-link" id="closeProjects">See less</a>
+        </header>
     </div>
 
-    <!-- Project Detail View -->
+    <!-- Project Detail View (Lightbox) -->
     <div class="view view--hidden" id="view-project">
-        <header class="header">
-            <a href="#" class="nav-link" id="closeProject">Close</a>
-            <span class="project-nav-title" id="projectNavTitle"></span>
-            <span class="header-spacer"></span>
-        </header>
         <div class="project-scroll" id="projectScroll"></div>
+        <header class="header">
+            <div class="project-info-header" id="projectNavInfo"></div>
+            <a href="#" class="nav-link" id="closeProject">Close</a>
+        </header>
     </div>
 
     <script src="js/app.js"></script>

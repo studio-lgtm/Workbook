@@ -4,6 +4,7 @@ class App {
         this.homepageAssets = [];
         this.slideshowIndex = 0;
         this.currentProjectIndex = 0;
+        this.currentSlideIndex = 0;
         this.init();
     }
 
@@ -122,13 +123,168 @@ class App {
     }
 
 
+    // ── SHARED UTILITIES ────────────────────────────────────────────
+
+    // Expands image-pair / video-pair into individual items so each counts separately
+    flattenMedia(media) {
+        const isImg = url => /\.(webp|jpg|jpeg|png|gif|avif)$/i.test(url || '');
+        const result = [];
+        for (const item of (media || [])) {
+            if (item.type === 'image-pair') {
+                result.push({ type: 'image', url: item.url, alt: item.alt });
+                result.push({ type: 'image', url: item.url2 || '', alt: item.alt2 });
+            } else if (item.type === 'video-pair') {
+                result.push({ type: isImg(item.url) ? 'image' : 'video', url: item.url, loop: true, muted: true });
+                result.push({ type: isImg(item.url2 || '') ? 'image' : 'video', url: item.url2 || '', loop: true, muted: true });
+            } else {
+                result.push(item);
+            }
+        }
+        return result;
+    }
+
+    runPixelation(img, containerEl) {
+        const steps = [6, 12, 24, 48, 96];
+        const canvas = document.createElement('canvas');
+        canvas.style.cssText = 'position:absolute;image-rendering:pixelated;pointer-events:none;z-index:1;opacity:0;';
+        containerEl.appendChild(canvas);
+        const ctx = canvas.getContext('2d');
+
+        const run = () => {
+            const containerRect = containerEl.getBoundingClientRect();
+            const imgRect = img.getBoundingClientRect();
+            if (!imgRect.width || !imgRect.height) { canvas.remove(); return; }
+
+            const left = imgRect.left - containerRect.left;
+            const top = imgRect.top - containerRect.top;
+            Object.assign(canvas.style, {
+                left: left + 'px',
+                top: top + 'px',
+                width: imgRect.width + 'px',
+                height: imgRect.height + 'px',
+                transition: 'none',
+                opacity: '1',
+            });
+            canvas.width = Math.round(imgRect.width);
+            canvas.height = Math.round(imgRect.height);
+            ctx.imageSmoothingEnabled = false;
+
+            let step = 0;
+            const next = () => {
+                if (step >= steps.length) {
+                    canvas.style.transition = 'opacity 0.15s ease';
+                    canvas.style.opacity = '0';
+                    canvas.addEventListener('transitionend', () => canvas.remove(), { once: true });
+                    return;
+                }
+                const px = steps[step++];
+                const cw = canvas.width, ch = canvas.height;
+                const sw = Math.max(1, Math.round(cw / px));
+                const sh = Math.max(1, Math.round(ch / px));
+                ctx.clearRect(0, 0, cw, ch);
+                ctx.drawImage(img, 0, 0, sw, sh);
+                ctx.drawImage(canvas, 0, 0, sw, sh, 0, 0, cw, ch);
+                setTimeout(next, 40);
+            };
+            next();
+        };
+
+        if (img.complete && img.naturalWidth) run();
+        else img.addEventListener('load', run, { once: true });
+    }
+
+    runVideoPixelation(video, containerEl) {
+        video.pause();
+
+        const doEffect = () => {
+            const steps = [6, 12, 24, 48, 96];
+            const canvas = document.createElement('canvas');
+            canvas.style.cssText = 'position:absolute;image-rendering:pixelated;pointer-events:none;z-index:1;opacity:0;';
+            containerEl.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+
+            const containerRect = containerEl.getBoundingClientRect();
+            const videoRect = video.getBoundingClientRect();
+            if (!videoRect.width || !videoRect.height) { canvas.remove(); video.play(); return; }
+
+            const left = videoRect.left - containerRect.left;
+            const top = videoRect.top - containerRect.top;
+            Object.assign(canvas.style, {
+                left: left + 'px',
+                top: top + 'px',
+                width: videoRect.width + 'px',
+                height: videoRect.height + 'px',
+                transition: 'none',
+                opacity: '1',
+            });
+            canvas.width = Math.round(videoRect.width);
+            canvas.height = Math.round(videoRect.height);
+            ctx.imageSmoothingEnabled = false;
+
+            let step = 0;
+            const cw = canvas.width, ch = canvas.height;
+            const next = () => {
+                if (step >= steps.length) {
+                    canvas.style.transition = 'opacity 0.15s ease';
+                    canvas.style.opacity = '0';
+                    canvas.addEventListener('transitionend', () => {
+                        canvas.remove();
+                        video.play();
+                    }, { once: true });
+                    return;
+                }
+                const px = steps[step++];
+                const sw = Math.max(1, Math.round(cw / px));
+                const sh = Math.max(1, Math.round(ch / px));
+                ctx.clearRect(0, 0, cw, ch);
+                ctx.drawImage(video, 0, 0, sw, sh);
+                ctx.drawImage(canvas, 0, 0, sw, sh, 0, 0, cw, ch);
+                setTimeout(next, 40);
+            };
+            next();
+        };
+
+        const ready = () => {
+            if (video.readyState >= 2) {
+                doEffect();
+            } else {
+                video.addEventListener('loadeddata', doEffect, { once: true });
+            }
+        };
+
+        if (video.currentTime !== 0) {
+            video.currentTime = 0;
+            video.addEventListener('seeked', ready, { once: true });
+        } else {
+            ready();
+        }
+
+        if (video.readyState < 1) video.load();
+    }
+
+
     // ── PROJECTS GALLERY ────────────────────────────────────────────
 
     renderGallery() {
         const grid = document.getElementById('galleryGrid');
         if (!grid) return;
 
-        grid.innerHTML = this.projects.map((project, i) => {
+        // Build slot list: every 3rd slot (s % 3 === 2) is blank
+        const slots = [];
+        let pi = 0, s = 0;
+        while (pi < this.projects.length) {
+            if (s % 3 === 2) {
+                slots.push(null);
+            } else {
+                slots.push(this.projects[pi++]);
+            }
+            s++;
+        }
+
+        grid.innerHTML = slots.map(project => {
+            if (!project) return `<div class="gallery-item-blank"></div>`;
+
+            const i = this.projects.indexOf(project);
             const thumb = project.thumbnail
                 || (project.media && project.media.find(m => m.type === 'image')?.url)
                 || (project.media && project.media[0]?.url)
@@ -137,10 +293,14 @@ class App {
             const imgHTML = thumb && !isVideo
                 ? `<img src="${thumb}" alt="${project.title}">`
                 : '';
+            const assetCount = this.flattenMedia(project.media).length;
             return `
                 <div class="gallery-item" data-index="${i}"${project.locked ? ' data-locked="true"' : ''}>
                     <div class="gallery-img-wrap">${imgHTML}</div>
-                    <div class="gallery-item-label">${project.title}</div>
+                    <div class="gallery-item-label">
+                        <span>${project.title}</span>
+                        <span class="gallery-item-count">(${assetCount} assets)</span>
+                    </div>
                     ${project.locked ? '<div class="gallery-item-confidential">Confidential</div>' : ''}
                 </div>
             `;
@@ -162,23 +322,76 @@ class App {
         const container = document.getElementById('projectScroll');
         if (!container) return;
 
-        container.innerHTML = this.projects.map((project, i) =>
-            `<section class="project-section" data-index="${i}">
-                <div class="project-section-header">
-                    ${project.description ? `<p class="project-section-description">${project.description}</p>` : ''}
-                    ${project.credits ? `<div class="project-section-credits">${project.credits}</div>` : ''}
-                    ${project.link ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-section-link">View Project →</a>` : ''}
+        container.innerHTML = this.projects.map((project, i) => {
+            const flat = this.flattenMedia(project.media);
+            const total = flat.length;
+            const slides = flat.map((item, si) =>
+                `<div class="project-slide${si === 0 ? ' active' : ''}" data-slide="${si}">
+                    ${this.createSlideHTML(item)}
+                </div>`
+            ).join('');
+            return `<section class="project-section" data-index="${i}">
+                <div class="project-slideshow">${slides}</div>
+                <div class="project-asset-counter">
+                    <span class="counter-current">1</span> / ${total}
                 </div>
-                <div class="project-section-media">
-                    ${this.createMediaHTML(project.media)}
-                </div>
-                <div class="project-next"><a class="next-project-link">Next Project</a></div>
-            </section>`
-        ).join('');
+            </section>`;
+        }).join('');
 
-        this.setupNextProjectLinks(container);
-        this.setupTitleObserver(container);
-        this.setupProgressiveLoad(container);
+        container.addEventListener('click', () => this.advanceProjectSlide());
+    }
+
+    createSlideHTML(item) {
+        if (item.type === 'image') {
+            return `<img src="${item.url}" alt="${item.alt || ''}">`;
+        }
+        if (item.type === 'video') {
+            const poster = item.poster ? `poster="${item.poster}"` : '';
+            const muted = item.muted !== false ? 'muted' : '';
+            return `<video ${item.loop ? 'loop' : ''} ${muted} ${poster} playsinline preload="auto" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback">
+                <source src="${item.url}" type="video/mp4">
+            </video>`;
+        }
+        if (item.type === 'image-pair') {
+            return `<div class="project-slide-pair">
+                <img src="${item.url}" alt="${item.alt || ''}">
+                <img src="${item.url2 || ''}" alt="${item.alt2 || ''}">
+            </div>`;
+        }
+        if (item.type === 'video-pair') {
+            const isImg = url => /\.(webp|jpg|jpeg|png|gif|avif)$/i.test(url || '');
+            const makeEl = url => isImg(url)
+                ? `<img src="${url}">`
+                : `<video autoplay loop muted playsinline preload="metadata" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback"><source src="${url}" type="video/mp4"></video>`;
+            return `<div class="project-slide-pair">${makeEl(item.url)}${makeEl(item.url2 || '')}</div>`;
+        }
+        return '';
+    }
+
+    advanceProjectSlide() {
+        const container = document.getElementById('projectScroll');
+        const section = container.querySelector('.project-section.active');
+        if (!section) return;
+
+        const slides = section.querySelectorAll('.project-slide');
+        if (slides.length <= 1) return;
+
+        // Pause any video on the outgoing slide
+        const outgoing = slides[this.currentSlideIndex];
+        outgoing.querySelector('video')?.pause();
+        outgoing.classList.remove('active');
+
+        this.currentSlideIndex = (this.currentSlideIndex + 1) % slides.length;
+        const nextSlide = slides[this.currentSlideIndex];
+        nextSlide.classList.add('active');
+
+        const counter = section.querySelector('.counter-current');
+        if (counter) counter.textContent = this.currentSlideIndex + 1;
+
+        const img = nextSlide.querySelector('img');
+        const video = nextSlide.querySelector('video');
+        if (img) this.runPixelation(img, nextSlide);
+        else if (video) this.runVideoPixelation(video, nextSlide);
     }
 
     getNextProjectIndex(fromIndex) {
@@ -190,111 +403,40 @@ class App {
         return -1;
     }
 
-    setupNextProjectLinks(container) {
-        container.addEventListener('click', e => {
-            const link = e.target.closest('.next-project-link');
-            if (!link) return;
-            const nextIndex = this.getNextProjectIndex(this.currentProjectIndex);
-            if (nextIndex >= 0) this.showSection(container, nextIndex);
-        });
-    }
-
     showSection(container, index) {
         this.currentProjectIndex = index;
+        this.currentSlideIndex = 0;
+
+        // Pause all videos in the currently active section before switching
+        container.querySelectorAll('.project-section.active video').forEach(v => v.pause());
 
         container.querySelectorAll('.project-section').forEach(s => s.classList.remove('active'));
         const section = container.querySelector(`.project-section[data-index="${index}"]`);
         if (section) {
             section.classList.add('active');
-            container.scrollTop = 0;
+            section.querySelectorAll('.project-slide').forEach((s, i) => {
+                s.classList.toggle('active', i === 0);
+            });
+            const counter = section.querySelector('.counter-current');
+            if (counter) counter.textContent = '1';
+
+            const firstSlide = section.querySelector('.project-slide.active');
+            if (firstSlide) {
+                const img = firstSlide.querySelector('img');
+                const video = firstSlide.querySelector('video');
+                if (img) requestAnimationFrame(() => this.runPixelation(img, firstSlide));
+                else if (video) requestAnimationFrame(() => this.runVideoPixelation(video, firstSlide));
+            }
         }
 
-        const titleEl = document.getElementById('projectNavTitle');
-        if (titleEl && this.projects[index]) titleEl.textContent = this.projects[index].title;
-    }
+        const project = this.projects[index];
+        if (!project) return;
 
-    setupProgressiveLoad(container) {
-        const steps = [6, 12, 24, 48, 96];
-
-        const revealImage = (img) => {
-            if (img.dataset.revealed) return;
-            img.dataset.revealed = '1';
-
-            const parent = img.closest('.media-item');
-            if (!parent) return;
-
-            img.style.opacity = '0';
-
-            const canvas = document.createElement('canvas');
-            canvas.className = 'media-pixelate';
-            parent.appendChild(canvas);
-            const ctx = canvas.getContext('2d');
-
-            const draw = () => {
-                const cw = img.offsetWidth;
-                const ch = img.offsetHeight;
-                if (!cw || !ch) return;
-                canvas.width = cw;
-                canvas.height = ch;
-                ctx.imageSmoothingEnabled = false;
-
-                let step = 0;
-                const next = () => {
-                    if (step >= steps.length) {
-                        img.style.transition = 'opacity 0.15s ease';
-                        img.style.opacity = '1';
-                        canvas.style.transition = 'opacity 0.15s ease';
-                        canvas.style.opacity = '0';
-                        canvas.addEventListener('transitionend', () => canvas.remove(), { once: true });
-                        return;
-                    }
-                    const px = steps[step++];
-                    const sw = Math.max(1, Math.round(cw / px));
-                    const sh = Math.max(1, Math.round(ch / px));
-                    ctx.clearRect(0, 0, cw, ch);
-                    ctx.drawImage(img, 0, 0, sw, sh);
-                    ctx.drawImage(canvas, 0, 0, sw, sh, 0, 0, cw, ch);
-                    setTimeout(next, 40);
-                };
-                next();
-            };
-
-            if (img.complete && img.naturalWidth) {
-                draw();
-            } else {
-                img.addEventListener('load', draw, { once: true });
-            }
-        };
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                revealImage(entry.target);
-                observer.unobserve(entry.target);
-            });
-        }, { root: container, rootMargin: '0px 0px 200px 0px' });
-
-        container.querySelectorAll('.media-item img').forEach(img => observer.observe(img));
-    }
-
-    setupTitleObserver(container) {
-        const titleEl = document.getElementById('projectNavTitle');
-        if (!titleEl) return;
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const project = this.projects[parseInt(entry.target.dataset.index)];
-                    if (project) titleEl.textContent = project.title;
-                }
-            });
-        }, {
-            root: container,
-            threshold: 0,
-            rootMargin: '0px 0px -80% 0px'
-        });
-
-        container.querySelectorAll('.project-section').forEach(s => observer.observe(s));
+        const infoEl = document.getElementById('projectNavInfo');
+        if (infoEl) {
+            const parts = [project.title, project.description].filter(Boolean);
+            infoEl.textContent = parts.join(' — ');
+        }
     }
 
     createMediaHTML(media) {
@@ -361,11 +503,18 @@ class App {
 
     showView(id) {
         document.querySelectorAll('.view').forEach(v => {
-            v.classList.toggle('view--hidden', v.id !== id);
+            const isTarget = v.id === id;
+            v.classList.toggle('view--hidden', !isTarget);
+            v.style.zIndex = isTarget ? 2 : 1;
         });
     }
 
     openProject(index) {
+        const project = this.projects[index];
+        const view = document.getElementById('view-project');
+        if (view && project) {
+            view.style.background = project.backgroundColor || '#000';
+        }
         this.showView('view-project');
         const container = document.getElementById('projectScroll');
         this.showSection(container, index);
@@ -384,6 +533,7 @@ class App {
 
         document.getElementById('closeProject').addEventListener('click', e => {
             e.preventDefault();
+            document.querySelectorAll('#projectScroll .project-slide.active video').forEach(v => v.pause());
             this.showView('view-home');
         });
     }
