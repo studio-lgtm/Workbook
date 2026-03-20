@@ -512,8 +512,8 @@ class App {
     openProject(index) {
         const project = this.projects[index];
         const view = document.getElementById('view-project');
-        if (view && project) {
-            view.style.background = project.backgroundColor || '#000';
+        if (view) {
+            view.style.backgroundColor = (project?.backgroundColor) || '';
         }
         this.showView('view-project');
         const container = document.getElementById('projectScroll');

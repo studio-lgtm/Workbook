@@ -237,6 +237,12 @@ a:hover {
 }
 
 
+/* ID selector beats .view { background: #fff } */
+#view-project {
+    background-color: #000;
+}
+
+
 /* === PROJECT DETAIL VIEW (Slideshow) === */
 
 .project-scroll {
