@@ -71,7 +71,8 @@
           "type": "image",
           "url": "/media/doingwell-7.webp"
         }
-      ]
+      ],
+      "backgroundColor": "#F9F8F4"
     },
     {
       "title": "Directors Library",
