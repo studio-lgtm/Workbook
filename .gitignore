@@ -5,6 +5,9 @@
 .DS_Store
 Thumbs.db
 
+# Claude Code
+.claude/
+
 # Editor
 .vscode/
 .idea/
