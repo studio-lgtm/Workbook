@@ -561,12 +561,33 @@ class App {
 
     isLightColor(hex) {
         if (!hex) return false;
-        const h = hex.replace('#', '');
-        if (h.length < 6) return false;
+        let h = hex.replace('#', '');
+        if (h.length === 3) h = h.split('').map(c => c + c).join('');
+        if (h.length !== 6) return false;
         const r = parseInt(h.slice(0, 2), 16);
         const g = parseInt(h.slice(2, 4), 16);
         const b = parseInt(h.slice(4, 6), 16);
         return (0.299 * r + 0.587 * g + 0.114 * b) > 128;
+    }
+
+    setProjectHeaderColor(isLight) {
+        const color = isLight ? '#000' : '';
+        const blend = isLight ? 'normal' : '';
+        const view = document.getElementById('view-project');
+        [
+            view.querySelector('#closeProject'),
+            view.querySelector('.project-info-header'),
+            view.querySelector('#projectNavInfo'),
+            view.querySelector('#projectInfoTitleM'),
+            view.querySelector('.project-mobile-sep'),
+            view.querySelector('#projectInfoToggle'),
+            view.querySelector('#projectInfoClose'),
+            view.querySelector('.project-asset-counter'),
+        ].forEach(el => {
+            if (!el) return;
+            el.style.color = color;
+            el.style.mixBlendMode = blend;
+        });
     }
 
     openProject(index) {
@@ -574,7 +595,7 @@ class App {
         const view = document.getElementById('view-project');
         if (view) {
             view.style.backgroundColor = project?.backgroundColor || '';
-            view.classList.toggle('light-bg', this.isLightColor(project?.backgroundColor));
+            this.setProjectHeaderColor(this.isLightColor(project?.backgroundColor));
         }
 
         // Dim the currently visible source view instead of hiding it instantly

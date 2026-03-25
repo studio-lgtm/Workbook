@@ -237,19 +237,6 @@ a:hover {
 }
 
 
-/* Light background override for project header text */
-#view-project.light-bg .project-info-header,
-#view-project.light-bg .project-asset-counter,
-#view-project.light-bg .project-info-toggle,
-#view-project.light-bg .project-info-close {
-    color: #000;
-    mix-blend-mode: normal;
-}
-
-#view-project.light-bg .nav-link {
-    color: #000;
-    mix-blend-mode: normal;
-}
 
 /* ID selector beats .view { background: #fff } */
 #view-project {
