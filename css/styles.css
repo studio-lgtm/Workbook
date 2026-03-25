@@ -418,6 +418,7 @@ a:hover {
     overflow-y: auto;
     padding: var(--margin) var(--margin) calc(var(--gap) * 3.75);
     pointer-events: none;
+    opacity: 0;
 }
 
 #info-panel-content {

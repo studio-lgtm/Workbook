@@ -647,7 +647,10 @@ class App {
             v.style.pointerEvents = 'none';
         });
 
-        document.getElementById('info-panel').style.pointerEvents = 'auto';
+        const panel = document.getElementById('info-panel');
+        panel.style.transition = 'opacity 0.3s ease';
+        panel.style.opacity = '1';
+        panel.style.pointerEvents = 'auto';
     }
 
     closeInfo() {
@@ -661,7 +664,10 @@ class App {
         });
         this.slidDownViews = [];
 
-        document.getElementById('info-panel').style.pointerEvents = 'none';
+        const panel = document.getElementById('info-panel');
+        panel.style.transition = 'opacity 0.3s ease';
+        panel.style.opacity = '0';
+        panel.style.pointerEvents = 'none';
     }
 }
 
