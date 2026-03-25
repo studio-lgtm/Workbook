@@ -16,7 +16,7 @@ html {
 }
 
 body {
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: #fff;
     color: #000;
     font-size: 12px;
@@ -41,6 +41,7 @@ a:hover {
 .view {
     position: fixed;
     inset: 0;
+    z-index: 1;
     background: #fff;
     overflow: hidden;
 }
@@ -208,8 +209,7 @@ a:hover {
 }
 
 .gallery-item-count {
-    font-style: italic;
-    text-transform: none;
+    font-style: normal;
     font-size: 12px;
 }
 
@@ -240,6 +240,24 @@ a:hover {
 /* ID selector beats .view { background: #fff } */
 #view-project {
     background-color: #000;
+    transform: translateY(100%);
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Slide in when active — override generic view--hidden opacity */
+#view-project.view--hidden {
+    opacity: 1;
+    transform: translateY(100%);
+}
+
+/* Prevent inner content from running its own fade during slide */
+#view-project.view--hidden .project-scroll {
+    opacity: 1;
+    transform: none;
+}
+
+#view-project:not(.view--hidden) {
+    transform: translateY(0);
 }
 
 
@@ -331,6 +349,94 @@ a:hover {
 }
 
 
+/* === PROJECT INFO MOBILE TOGGLE === */
+
+.project-nav-mobile {
+    display: none;
+}
+
+.project-info-toggle,
+.project-info-close {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.2;
+    color: white;
+    mix-blend-mode: difference;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.5;
+}
+
+/* Collapsed state */
+.project-mobile-desc {
+    display: none;
+}
+
+.project-info-close {
+    display: none;
+}
+
+/* Open state — toggled via parent class */
+.project-nav-mobile.open .project-info-toggle {
+    display: none;
+}
+
+.project-nav-mobile.open .project-mobile-desc {
+    display: inline;
+    animation: infoReveal 0.15s ease forwards;
+}
+
+.project-nav-mobile.open .project-info-close {
+    display: block;
+    margin-top: 6px;
+}
+
+@keyframes infoReveal {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* === INFO PANEL (in-page bio reveal) === */
+
+#info-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: var(--margin) var(--margin) calc(var(--gap) * 3.75);
+    pointer-events: none;
+}
+
+#info-panel-content {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.2;
+    max-width: calc(((100vw - 24px) * 7 / 24 + 6 * 12px) * 0.85);
+    text-align: left;
+}
+
+#info-panel-content p {
+    margin-bottom: 20px;
+}
+
+#info-panel-content a {
+    text-decoration: underline;
+}
+
+
 /* === ABOUT PAGE (standalone) === */
 
 .about-body .header {
@@ -368,7 +474,8 @@ a:hover {
     text-decoration: underline;
 }
 
-.nav-link.active {
+.nav-link.active,
+.nav-link--selected {
     text-decoration: underline;
 }
 
@@ -390,8 +497,16 @@ a:hover {
 }
 
 @media screen and (max-width: 768px) {
+    body {
+        font-size: 13px;
+    }
+
+    #info-panel-content {
+        max-width: 85%;
+    }
+
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         column-gap: 12px;
         row-gap: 36px;
     }
@@ -407,5 +522,30 @@ a:hover {
 
     .media-item-pair {
         flex-direction: column;
+    }
+
+    .project-slide img,
+    .project-slide video {
+        max-width: 100%;
+        max-height: 75vh;
+    }
+
+    .gallery-item-label,
+    .gallery-item-confidential {
+        opacity: 1;
+        transform: translateY(0);
+        transition: none;
+    }
+
+    .project-nav-combined {
+        display: none;
+    }
+
+    .project-nav-mobile {
+        display: block;
+    }
+
+    .project-mobile-row {
+        margin-top: 2px;
     }
 }

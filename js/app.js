@@ -5,11 +5,15 @@ class App {
         this.slideshowIndex = 0;
         this.currentProjectIndex = 0;
         this.currentSlideIndex = 0;
+        this.dimmedView = null;
+        this.infoOpen = false;
+        this.slidDownViews = [];
         this.init();
     }
 
     async init() {
         await this.loadData();
+        await this.loadInfo();
         this.renderHomeSlideshow();
         this.renderGallery();
         this.renderProjectScroll();
@@ -23,6 +27,12 @@ class App {
         ]);
         this.projects = (projectsData.projects || []).filter(p => !p.hidden);
         this.homepageAssets = landingData.images || [];
+    }
+
+    async loadInfo() {
+        const data = await fetch('info.json').then(r => r.json()).catch(() => ({}));
+        const el = document.getElementById('info-panel-content');
+        if (el && data.body) el.innerHTML = data.body;
     }
 
 
@@ -291,7 +301,7 @@ class App {
                 || '';
             const isVideo = thumb && !project.thumbnail && project.media && project.media[0]?.type === 'video';
             const imgHTML = thumb && !isVideo
-                ? `<img src="${thumb}" alt="${project.title}">`
+                ? `<img src="${thumb}" alt="${project.title}" loading="lazy">`
                 : '';
             const assetCount = this.flattenMedia(project.media).length;
             return `
@@ -338,7 +348,13 @@ class App {
             </section>`;
         }).join('');
 
-        container.addEventListener('click', () => this.advanceProjectSlide());
+        container.addEventListener('click', e => {
+            if (e.clientX < window.innerWidth / 2) {
+                this.prevProjectSlide();
+            } else {
+                this.advanceProjectSlide();
+            }
+        });
     }
 
     createSlideHTML(item) {
@@ -394,6 +410,31 @@ class App {
         else if (video) this.runVideoPixelation(video, nextSlide);
     }
 
+    prevProjectSlide() {
+        const container = document.getElementById('projectScroll');
+        const section = container.querySelector('.project-section.active');
+        if (!section) return;
+
+        const slides = section.querySelectorAll('.project-slide');
+        if (slides.length <= 1) return;
+
+        const outgoing = slides[this.currentSlideIndex];
+        outgoing.querySelector('video')?.pause();
+        outgoing.classList.remove('active');
+
+        this.currentSlideIndex = (this.currentSlideIndex - 1 + slides.length) % slides.length;
+        const prevSlide = slides[this.currentSlideIndex];
+        prevSlide.classList.add('active');
+
+        const counter = section.querySelector('.counter-current');
+        if (counter) counter.textContent = this.currentSlideIndex + 1;
+
+        const img = prevSlide.querySelector('img');
+        const video = prevSlide.querySelector('video');
+        if (img) this.runPixelation(img, prevSlide);
+        else if (video) this.runVideoPixelation(video, prevSlide);
+    }
+
     getNextProjectIndex(fromIndex) {
         const total = this.projects.length;
         for (let i = 1; i <= total; i++) {
@@ -437,6 +478,15 @@ class App {
             const parts = [project.title, project.description].filter(Boolean);
             infoEl.textContent = parts.join(' — ');
         }
+
+        const titleM = document.getElementById('projectInfoTitleM');
+        if (titleM) titleM.textContent = project.title || '';
+        const descM = document.getElementById('projectInfoDescM');
+        if (descM) descM.textContent = project.description || '';
+
+        // Reset mobile drawer
+        const mobileNav = document.getElementById('projectNavMobile');
+        if (mobileNav) mobileNav.classList.remove('open');
     }
 
     createMediaHTML(media) {
@@ -513,9 +563,22 @@ class App {
         const project = this.projects[index];
         const view = document.getElementById('view-project');
         if (view) {
-            view.style.backgroundColor = (project?.backgroundColor) || '';
+            view.style.backgroundColor = project?.backgroundColor || '';
         }
-        this.showView('view-project');
+
+        // Dim the currently visible source view instead of hiding it instantly
+        const sourceView = document.querySelector('.view:not(.view--hidden):not(#view-project)');
+        if (sourceView) {
+            this.dimmedView = sourceView;
+            sourceView.style.transition = 'opacity 0.5s ease';
+            sourceView.style.opacity = '0.5';
+            sourceView.style.pointerEvents = 'none';
+        }
+
+        // Bring project view on top without hiding source
+        view.style.zIndex = 3;
+        view.classList.remove('view--hidden');
+
         const container = document.getElementById('projectScroll');
         this.showSection(container, index);
     }
@@ -534,8 +597,71 @@ class App {
         document.getElementById('closeProject').addEventListener('click', e => {
             e.preventDefault();
             document.querySelectorAll('#projectScroll .project-slide.active video').forEach(v => v.pause());
-            this.showView('view-projects');
+
+            const projectView = document.getElementById('view-project');
+
+            // Restore dimmed source view
+            if (this.dimmedView) {
+                const src = this.dimmedView;
+                src.style.transition = 'opacity 0.5s ease';
+                src.style.opacity = '1';
+                src.style.pointerEvents = '';
+                this.dimmedView = null;
+            }
+
+            // Slide project view down over the restored source view
+            projectView.style.zIndex = 3;
+            projectView.classList.add('view--hidden');
+
+            setTimeout(() => { projectView.style.zIndex = 1; }, 650);
         });
+
+        document.getElementById('projectInfoToggle').addEventListener('click', () => {
+            document.getElementById('projectNavMobile').classList.add('open');
+        });
+
+        document.getElementById('projectInfoClose').addEventListener('click', () => {
+            document.getElementById('projectNavMobile').classList.remove('open');
+        });
+
+        document.querySelectorAll('.info-link').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                this.openInfo();
+            });
+        });
+
+        const panel = document.getElementById('info-panel');
+        panel.addEventListener('click', () => this.closeInfo());
+        panel.addEventListener('scroll', () => this.closeInfo(), { passive: true });
+    }
+
+    openInfo() {
+        if (this.infoOpen) return;
+        this.infoOpen = true;
+
+        this.slidDownViews = Array.from(document.querySelectorAll('.view:not(.view--hidden)'));
+        this.slidDownViews.forEach(v => {
+            v.style.transition = 'transform 0.6s cubic-bezier(0.65, 0, 0.35, 1)';
+            v.style.transform = 'translateY(20%)';
+            v.style.pointerEvents = 'none';
+        });
+
+        document.getElementById('info-panel').style.pointerEvents = 'auto';
+    }
+
+    closeInfo() {
+        if (!this.infoOpen) return;
+        this.infoOpen = false;
+
+        this.slidDownViews.forEach(v => {
+            v.style.transition = 'transform 0.6s cubic-bezier(0.65, 0, 0.35, 1)';
+            v.style.transform = '';
+            v.style.pointerEvents = '';
+        });
+        this.slidDownViews = [];
+
+        document.getElementById('info-panel').style.pointerEvents = 'none';
     }
 }
 
