@@ -417,7 +417,7 @@ a:hover {
     align-items: flex-start;
     justify-content: flex-start;
     overflow-y: auto;
-    padding: var(--margin) var(--margin) calc(var(--gap) * 3.75);
+    padding: var(--margin) var(--margin) calc(var(--gap) * 0.9375);
     pointer-events: none;
     opacity: 0;
 }
