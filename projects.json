@@ -1,80 +1,6 @@
 {
   "projects": [
     {
-      "title": "WØRKS",
-      "description": "New York City based creative studio dedicated to cultural advancement through strategy and interdisciplinary design. With - WØRKS\nPress - Typewolf Site of the Day",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/works-thumbnail.webp",
-      "media": [
-        {
-          "type": "image",
-          "url": "/media/works-1.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/works-2.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/works-3.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/works-4.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/works-5.webp"
-        }
-      ],
-      "backgroundColor": "#F8F8F8"
-    },
-    {
-      "title": "DoingWell",
-      "description": "The private practice of Daphne Javitch. As a health coach she is guiding individuals and groups to grow in their careers, wellness, and overall lives through the baseline of foundational health practices. With - Frederik Delmotte, Decimal.",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/doingwell-thumbnail.webp",
-      "media": [
-        {
-          "type": "video",
-          "url": "/media/doingwell-1.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/doingwell-2.webp"
-        },
-        {
-          "type": "image-pair",
-          "url": "/media/doingwell-3.webp",
-          "url2": "/media/doingwell-4.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/doingwell-5.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/doingwell-6.mp4",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/doingwell-7.webp"
-        }
-      ],
-      "backgroundColor": "#F9F8F4"
-    },
-    {
       "title": "Directors Library",
       "description": "Independent platform and resource for the film, video, and creative industries. Above-the-line shorts, music videos, campaigns, and motion pictures. With - WØRKS",
       "credits": "",
@@ -152,6 +78,163 @@
           "muted": true
         }
       ]
+    },
+    {
+      "title": "DoingWell",
+      "description": "The private practice of Daphne Javitch. As a health coach she is guiding individuals and groups to grow in their careers, wellness, and overall lives through the baseline of foundational health practices. With - Frederik Delmotte, Decimal.",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/doingwell-thumbnail.webp",
+      "media": [
+        {
+          "type": "video",
+          "url": "/media/doingwell-1.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-2.webp"
+        },
+        {
+          "type": "image-pair",
+          "url": "/media/doingwell-3.webp",
+          "url2": "/media/doingwell-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-5.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/doingwell-6.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/doingwell-7.webp"
+        }
+      ],
+      "backgroundColor": "#F9F8F4"
+    },
+    {
+      "title": "WØRKS",
+      "description": "New York City based creative studio dedicated to cultural advancement through strategy and interdisciplinary design. With - WØRKS\nPress - Typewolf Site of the Day",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/works-thumbnail.webp",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/works-1.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/works-2.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/works-3.mp4",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/works-4.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/works-5.webp"
+        }
+      ],
+      "backgroundColor": "#F8F8F8"
+    },
+    {
+      "title": "Apparatus",
+      "description": "Subjects is a series of films born from the shared experiences of colleagues, friends, and collaborators of APPARATUS, the New York City-based lighting and furniture studio. With WØRKS",
+      "credits": "",
+      "link": "",
+      "thumbnail": "/media/apparatus-13.webp",
+      "media": [
+        {
+          "type": "image",
+          "url": "/media/apparatus-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/apparatus-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/apparatus-4.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-5.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-6.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/apparatus-1.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-7.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-8.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-9.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-10.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/apparatus-11.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-12.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/apparatus-13.webp"
+        }
+      ],
+      "backgroundColor": "#000000"
     },
     {
       "title": "Brutus",
@@ -479,89 +562,6 @@
       "link": "",
       "thumbnail": "/media/google-workspace-thumbnail.webp",
       "media": []
-    },
-    {
-      "title": "Apparatus",
-      "description": "Subjects is a series of films born from the shared experiences of colleagues, friends, and collaborators of APPARATUS, the New York City-based lighting and furniture studio. With WØRKS",
-      "credits": "",
-      "link": "",
-      "thumbnail": "/media/apparatus-13.webp",
-      "media": [
-        {
-          "type": "image",
-          "url": "/media/apparatus-2.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/apparatus-3.webp"
-        },
-        {
-          "type": "image",
-          "url": "/media/apparatus-4.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/apparatus-5.webm",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "video",
-          "url": "/media/apparatus-6.webm",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/apparatus-1.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/apparatus-7.webm",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "video",
-          "url": "/media/apparatus-8.webm",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "video",
-          "url": "/media/apparatus-9.webm",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "video",
-          "url": "/media/apparatus-10.webm",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/apparatus-11.webp"
-        },
-        {
-          "type": "video",
-          "url": "/media/apparatus-12.webm",
-          "autoplay": true,
-          "loop": true,
-          "muted": true
-        },
-        {
-          "type": "image",
-          "url": "/media/apparatus-13.webp"
-        }
-      ],
-      "backgroundColor": "#000000"
     }
   ]
 }
