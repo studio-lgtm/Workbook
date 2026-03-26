@@ -55,12 +55,18 @@ class App {
                 el.loop = true;
                 el.muted = true;
                 el.playsInline = true;
+                el.preload = i === 0 ? 'auto' : 'none';
             } else {
                 el = document.createElement('img');
                 el.alt = asset.alt || '';
             }
-            el.src = asset.url;
-            if (i === 0) el.classList.add('active');
+            // Only set src immediately for the first asset; defer the rest
+            if (i === 0) {
+                el.src = asset.url;
+                el.classList.add('active');
+            } else {
+                el.dataset.src = asset.url;
+            }
             container.appendChild(el);
         });
 
@@ -74,9 +80,26 @@ class App {
         items[this.slideshowIndex].classList.remove('active');
         this.slideshowIndex = (this.slideshowIndex + 1) % items.length;
         const next = items[this.slideshowIndex];
+
+        // Load deferred asset on first access
+        if (next.dataset.src) {
+            next.src = next.dataset.src;
+            delete next.dataset.src;
+            if (next.tagName === 'VIDEO') next.load();
+        }
+
         next.classList.add('active');
         if (next.tagName === 'IMG' && this.slideshowCanvas) {
             this.runSlideshowPixelation(next);
+        }
+
+        // Preload the one after next
+        const preloadIndex = (this.slideshowIndex + 1) % items.length;
+        const preloadEl = items[preloadIndex];
+        if (preloadEl?.dataset.src) {
+            preloadEl.src = preloadEl.dataset.src;
+            delete preloadEl.dataset.src;
+            if (preloadEl.tagName === 'VIDEO') { preloadEl.preload = 'auto'; preloadEl.load(); }
         }
     }
 
@@ -359,26 +382,26 @@ class App {
 
     createSlideHTML(item) {
         if (item.type === 'image') {
-            return `<img src="${item.url}" alt="${item.alt || ''}">`;
+            return `<img src="${item.url}" alt="${item.alt || ''}" loading="lazy">`;
         }
         if (item.type === 'video') {
             const poster = item.poster ? `poster="${item.poster}"` : '';
             const muted = item.muted !== false ? 'muted' : '';
-            return `<video ${item.loop ? 'loop' : ''} ${muted} ${poster} playsinline preload="auto" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback">
+            return `<video ${item.loop ? 'loop' : ''} ${muted} ${poster} playsinline preload="none" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback">
                 <source src="${item.url}" type="video/mp4">
             </video>`;
         }
         if (item.type === 'image-pair') {
             return `<div class="project-slide-pair">
-                <img src="${item.url}" alt="${item.alt || ''}">
-                <img src="${item.url2 || ''}" alt="${item.alt2 || ''}">
+                <img src="${item.url}" alt="${item.alt || ''}" loading="lazy">
+                <img src="${item.url2 || ''}" alt="${item.alt2 || ''}" loading="lazy">
             </div>`;
         }
         if (item.type === 'video-pair') {
             const isImg = url => /\.(webp|jpg|jpeg|png|gif|avif)$/i.test(url || '');
             const makeEl = url => isImg(url)
-                ? `<img src="${url}">`
-                : `<video autoplay loop muted playsinline preload="metadata" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback"><source src="${url}" type="video/mp4"></video>`;
+                ? `<img src="${url}" loading="lazy">`
+                : `<video autoplay loop muted playsinline preload="none" disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback"><source src="${url}" type="video/mp4"></video>`;
             return `<div class="project-slide-pair">${makeEl(item.url)}${makeEl(item.url2 || '')}</div>`;
         }
         return '';
@@ -407,7 +430,10 @@ class App {
         const img = nextSlide.querySelector('img');
         const video = nextSlide.querySelector('video');
         if (img) this.runPixelation(img, nextSlide);
-        else if (video) this.runVideoPixelation(video, nextSlide);
+        else if (video) {
+            if (video.preload === 'none') { video.preload = 'auto'; video.load(); }
+            this.runVideoPixelation(video, nextSlide);
+        }
     }
 
     prevProjectSlide() {
@@ -432,7 +458,10 @@ class App {
         const img = prevSlide.querySelector('img');
         const video = prevSlide.querySelector('video');
         if (img) this.runPixelation(img, prevSlide);
-        else if (video) this.runVideoPixelation(video, prevSlide);
+        else if (video) {
+            if (video.preload === 'none') { video.preload = 'auto'; video.load(); }
+            this.runVideoPixelation(video, prevSlide);
+        }
     }
 
     getNextProjectIndex(fromIndex) {
@@ -466,7 +495,10 @@ class App {
                 const img = firstSlide.querySelector('img');
                 const video = firstSlide.querySelector('video');
                 if (img) requestAnimationFrame(() => this.runPixelation(img, firstSlide));
-                else if (video) requestAnimationFrame(() => this.runVideoPixelation(video, firstSlide));
+                else if (video) {
+                    if (video.preload === 'none') { video.preload = 'auto'; video.load(); }
+                    requestAnimationFrame(() => this.runVideoPixelation(video, firstSlide));
+                }
             }
         }
 
