@@ -7,6 +7,7 @@ class App {
         this.currentSlideIndex = 0;
         this.dimmedView = null;
         this.infoOpen = false;
+        this.infoTransitioning = false;
         this.slidDownViews = [];
         this.init();
     }
@@ -584,10 +585,24 @@ class App {
     // ── NAVIGATION ──────────────────────────────────────────────────
 
     showView(id) {
+        // Force-close info if open so its state doesn't bleed across view switches
+        if (this.infoOpen) {
+            this.infoOpen = false;
+            this.infoTransitioning = false;
+            this.slidDownViews = [];
+            const panel = document.getElementById('info-panel');
+            panel.style.transition = 'none';
+            panel.style.opacity = '0';
+            panel.style.pointerEvents = 'none';
+        }
         document.querySelectorAll('.view').forEach(v => {
             const isTarget = v.id === id;
             v.classList.toggle('view--hidden', !isTarget);
             v.style.zIndex = isTarget ? 2 : 1;
+            // Clear any stuck transform from a previous info reveal
+            v.style.transition = 'none';
+            v.style.transform = '';
+            v.style.pointerEvents = '';
         });
     }
 
@@ -697,14 +712,18 @@ class App {
 
         const panel = document.getElementById('info-panel');
         panel.addEventListener('click', () => this.closeInfo());
-        panel.addEventListener('scroll', () => this.closeInfo(), { passive: true });
     }
 
     openInfo() {
-        if (this.infoOpen) return;
+        if (this.infoOpen || this.infoTransitioning) return;
         this.infoOpen = true;
+        this.infoTransitioning = true;
 
-        this.slidDownViews = Array.from(document.querySelectorAll('.view:not(.view--hidden)'));
+        // Only slide the single primary visible view — exclude project view and any dimmed source
+        this.slidDownViews = Array.from(
+            document.querySelectorAll('.view:not(.view--hidden)')
+        ).filter(v => v.id !== 'view-project' && v !== this.dimmedView);
+
         this.slidDownViews.forEach(v => {
             v.style.transition = 'transform 0.6s cubic-bezier(0.65, 0, 0.35, 1)';
             v.style.transform = 'translateY(20%)';
@@ -715,11 +734,14 @@ class App {
         panel.style.transition = 'opacity 0.3s ease';
         panel.style.opacity = '1';
         panel.style.pointerEvents = 'auto';
+
+        setTimeout(() => { this.infoTransitioning = false; }, 650);
     }
 
     closeInfo() {
-        if (!this.infoOpen) return;
+        if (!this.infoOpen || this.infoTransitioning) return;
         this.infoOpen = false;
+        this.infoTransitioning = true;
 
         this.slidDownViews.forEach(v => {
             v.style.transition = 'transform 0.6s cubic-bezier(0.65, 0, 0.35, 1)';
@@ -732,6 +754,8 @@ class App {
         panel.style.transition = 'opacity 0.3s ease';
         panel.style.opacity = '0';
         panel.style.pointerEvents = 'none';
+
+        setTimeout(() => { this.infoTransitioning = false; }, 650);
     }
 }
 
