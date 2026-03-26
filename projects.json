@@ -482,25 +482,86 @@
     },
     {
       "title": "Apparatus",
-      "description": "",
+      "description": "Subjects is a series of films born from the shared experiences of colleagues, friends, and collaborators of APPARATUS, the New York City-based lighting and furniture studio. With WØRKS",
       "credits": "",
       "link": "",
-      "thumbnail": "/media/apparatus-thumbnail.webp",
+      "thumbnail": "/media/apparatus-13.webp",
       "media": [
-        { "type": "image", "url": "/media/apparatus-1.webp" },
-        { "type": "image", "url": "/media/apparatus-2.webp" },
-        { "type": "image", "url": "/media/apparatus-3.webp" },
-        { "type": "image", "url": "/media/apparatus-4.webp" },
-        { "type": "video", "url": "/media/apparatus-5.webm", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/apparatus-6.webm", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/apparatus-7.webm", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/apparatus-8.webm", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/apparatus-9.webm", "autoplay": true, "loop": true, "muted": true },
-        { "type": "video", "url": "/media/apparatus-10.webm", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/apparatus-11.webp" },
-        { "type": "video", "url": "/media/apparatus-12.webm", "autoplay": true, "loop": true, "muted": true },
-        { "type": "image", "url": "/media/apparatus-13.webp" }
-      ]
+        {
+          "type": "image",
+          "url": "/media/apparatus-2.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/apparatus-3.webp"
+        },
+        {
+          "type": "image",
+          "url": "/media/apparatus-4.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-5.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-6.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/apparatus-1.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-7.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-8.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-9.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-10.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/apparatus-11.webp"
+        },
+        {
+          "type": "video",
+          "url": "/media/apparatus-12.webm",
+          "autoplay": true,
+          "loop": true,
+          "muted": true
+        },
+        {
+          "type": "image",
+          "url": "/media/apparatus-13.webp"
+        }
+      ],
+      "backgroundColor": "#000000"
     }
   ]
 }
