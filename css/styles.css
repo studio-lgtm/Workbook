@@ -88,13 +88,6 @@ a:hover {
     color: white;
 }
 
-.header-nav-links {
-    margin-top: 2px;
-}
-
-.header-nav-links .nav-link {
-    display: inline;
-}
 
 .project-info-header {
     font-size: 12px;
