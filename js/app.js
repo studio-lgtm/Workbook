@@ -604,6 +604,14 @@ class App {
             v.style.transform = '';
             v.style.pointerEvents = '';
         });
+
+        // Underline Index link when on the index view
+        const onIndex = id === 'view-projects';
+        document.querySelectorAll('#openProjects, #closeProjects').forEach(el => {
+            el.classList.toggle('nav-active', onIndex);
+        });
+        // Clear info underline when switching views
+        document.querySelectorAll('.info-link').forEach(el => el.classList.remove('nav-active'));
     }
 
     isLightColor(hex) {
@@ -718,6 +726,7 @@ class App {
         if (this.infoOpen || this.infoTransitioning) return;
         this.infoOpen = true;
         this.infoTransitioning = true;
+        document.querySelectorAll('.info-link').forEach(el => el.classList.add('nav-active'));
 
         // Only slide the single primary visible view — exclude project view and any dimmed source
         this.slidDownViews = Array.from(
@@ -742,6 +751,7 @@ class App {
         if (!this.infoOpen || this.infoTransitioning) return;
         this.infoOpen = false;
         this.infoTransitioning = true;
+        document.querySelectorAll('.info-link').forEach(el => el.classList.remove('nav-active'));
 
         this.slidDownViews.forEach(v => {
             v.style.transition = 'transform 0.6s cubic-bezier(0.65, 0, 0.35, 1)';

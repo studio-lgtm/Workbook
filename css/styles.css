@@ -88,6 +88,14 @@ a:hover {
     color: white;
 }
 
+.nav-sep {
+    padding: 0 0.3em;
+}
+
+.nav-link.nav-active {
+    text-decoration: underline;
+}
+
 
 .project-info-header {
     font-size: 12px;
