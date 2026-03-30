@@ -599,10 +599,13 @@ class App {
             const isTarget = v.id === id;
             v.classList.toggle('view--hidden', !isTarget);
             v.style.zIndex = isTarget ? 2 : 1;
-            // Clear any stuck transform from a previous info reveal
-            v.style.transition = 'none';
-            v.style.transform = '';
-            v.style.pointerEvents = '';
+            // Clear stuck transforms from info reveal — but skip view-project
+            // which manages its own slide animation via CSS transition
+            if (v.id !== 'view-project') {
+                v.style.transition = 'none';
+                v.style.transform = '';
+                v.style.pointerEvents = '';
+            }
         });
 
         // Underline Index link when on the index view
