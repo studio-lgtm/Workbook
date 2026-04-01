@@ -604,6 +604,7 @@ class App {
             if (v.id !== 'view-project') {
                 v.style.transition = 'none';
                 v.style.transform = '';
+                v.style.opacity = '';
                 v.style.pointerEvents = '';
             }
         });
