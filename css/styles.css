@@ -20,7 +20,7 @@ body {
     background: #fff;
     color: #000;
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -79,11 +79,13 @@ a:hover {
     justify-content: space-between;
     align-items: flex-start;
     padding: var(--margin);
+    letter-spacing: 0.3px;
+    line-height: 16px;
 }
 
 .header-identity {
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 16px;
     mix-blend-mode: difference;
     color: white;
 }
@@ -104,7 +106,7 @@ a:hover {
 .project-info-header {
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 16px;
     mix-blend-mode: difference;
     color: white;
     max-width: 37%;
@@ -115,13 +117,13 @@ a:hover {
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0;
-    line-height: 1.2;
+    line-height: 16px;
 }
 
 .nav-link {
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 16px;
     mix-blend-mode: difference;
     color: white;
 }
@@ -225,7 +227,7 @@ a:hover {
     opacity: 0;
     transform: translateY(4px);
     transition: opacity 0.15s ease, transform 0.15s ease;
-    line-height: 1.2;
+    line-height: 16px;
 }
 
 .gallery-item:hover .gallery-item-label {
@@ -342,7 +344,7 @@ a:hover {
     bottom: var(--margin);
     left: var(--margin);
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 16px;
     color: white;
     mix-blend-mode: difference;
 }
@@ -368,7 +370,7 @@ a:hover {
     border: none;
     font-family: inherit;
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 16px;
     color: white;
     mix-blend-mode: difference;
     cursor: pointer;
@@ -431,7 +433,7 @@ a:hover {
 #info-panel-content {
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 16px;
     max-width: calc(((100vw - 24px) * 7 / 24 + 6 * 12px) * 0.85);
     text-align: left;
 }
@@ -470,7 +472,7 @@ a:hover {
 .about-text {
     font-size: 12px;
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 16px;
     max-width: calc((100vw - 24px) * 5 / 24 + 4 * 12px);
 }
 
