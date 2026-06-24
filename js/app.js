@@ -737,13 +737,24 @@ class App {
             document.querySelectorAll('.view:not(.view--hidden)')
         ).filter(v => v.id !== 'view-project' && v !== this.dimmedView);
 
+        const panel = document.getElementById('info-panel');
+
+        // On mobile the fixed 20% reveal can clip longer bio copy. Slide the views
+        // down far enough to expose the full info content plus 60px of breathing room.
+        let revealTransform = 'translateY(20%)';
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            const content = document.getElementById('info-panel-content');
+            const padTop = parseFloat(getComputedStyle(panel).paddingTop) || 0;
+            const needed = padTop + content.offsetHeight + 60;
+            revealTransform = `translateY(${needed}px)`;
+        }
+
         this.slidDownViews.forEach(v => {
             v.style.transition = 'transform 0.6s cubic-bezier(0.65, 0, 0.35, 1)';
-            v.style.transform = 'translateY(20%)';
+            v.style.transform = revealTransform;
             v.style.pointerEvents = 'none';
         });
 
-        const panel = document.getElementById('info-panel');
         panel.style.transition = 'opacity 0.3s ease';
         panel.style.opacity = '1';
         panel.style.pointerEvents = 'auto';
