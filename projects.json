@@ -442,7 +442,8 @@
           "url": "/media/converse-closet-10.webp"
         }
       ],
-      "backgroundColor": "#F1F1F1"
+      "backgroundColor": "#F1F1F1",
+      "locked": true
     },
     {
       "title": "The New York Times",
