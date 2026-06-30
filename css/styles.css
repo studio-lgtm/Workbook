@@ -278,7 +278,7 @@ a:hover {
     gap: 0;
     font-size: 13px;
     line-height: 18px;
-    letter-spacing: 0;
+    letter-spacing: 0.01em;
 }
 
 .list-item {
