@@ -16,6 +16,7 @@ class App {
         await this.loadData();
         await this.loadInfo();
         this.renderHomeSlideshow();
+        this.renderList();
         this.renderGallery();
         this.renderProjectScroll();
         this.setupNavigation();
@@ -297,20 +298,49 @@ class App {
     }
 
 
+    // ── PROJECTS LIST ───────────────────────────────────────────────
+
+    renderList() {
+        const list = document.getElementById('listIndex');
+        if (!list) return;
+
+        // Sort alphabetically by title while keeping each project's original
+        // index (openProject indexes into this.projects)
+        const ordered = this.projects
+            .map((project, i) => ({ project, i }))
+            .sort((a, b) => a.project.title.localeCompare(b.project.title, 'en', { sensitivity: 'base' }));
+
+        list.innerHTML = ordered.map(({ project, i }) => {
+            // Clickable only when the project has its own page (not list-only, not locked)
+            const clickable = !project.listOnly && !project.locked;
+            return `<div class="list-item${clickable ? '' : ' list-item--static'}"${clickable ? ` data-index="${i}"` : ''}>${project.title}</div>`;
+        }).join('');
+
+        list.addEventListener('click', e => {
+            const item = e.target.closest('.list-item[data-index]');
+            if (!item) return;
+            this.openProject(parseInt(item.dataset.index));
+        });
+    }
+
+
     // ── PROJECTS GALLERY ────────────────────────────────────────────
 
     renderGallery() {
         const grid = document.getElementById('galleryGrid');
         if (!grid) return;
 
+        // List-only projects are shown in the list view only — never in the grid
+        const gridProjects = this.projects.filter(p => !p.listOnly);
+
         // Build slot list: every 3rd slot (s % 3 === 2) is blank
         const slots = [];
         let pi = 0, s = 0;
-        while (pi < this.projects.length) {
+        while (pi < gridProjects.length) {
             if (s % 3 === 2) {
                 slots.push(null);
             } else {
-                slots.push(this.projects[pi++]);
+                slots.push(gridProjects[pi++]);
             }
             s++;
         }
@@ -357,6 +387,7 @@ class App {
         if (!container) return;
 
         container.innerHTML = this.projects.map((project, i) => {
+            if (project.listOnly) return '';
             const flat = this.flattenMedia(project.media);
             const total = flat.length;
             const slides = flat.map((item, si) =>
@@ -609,10 +640,17 @@ class App {
             }
         });
 
-        // Underline Index link when on the index view
-        const onIndex = id === 'view-projects';
-        document.querySelectorAll('#openProjects, #closeProjects').forEach(el => {
+        // Underline Index link when on either index view (list or grid)
+        const onIndex = id === 'view-list' || id === 'view-projects';
+        document.querySelectorAll('#openProjects, #closeProjects, #closeList').forEach(el => {
             el.classList.toggle('nav-active', onIndex);
+        });
+        // Reflect the active sub-view in the List / Grid toggle
+        document.querySelectorAll('.toggle-list').forEach(el => {
+            el.classList.toggle('nav-active', id === 'view-list');
+        });
+        document.querySelectorAll('.toggle-grid').forEach(el => {
+            el.classList.toggle('nav-active', id === 'view-projects');
         });
         // Clear info underline when switching views
         document.querySelectorAll('.info-link').forEach(el => el.classList.remove('nav-active'));
@@ -675,14 +713,32 @@ class App {
     }
 
     setupNavigation() {
+        // Index link opens the list view by default
         document.getElementById('openProjects').addEventListener('click', e => {
             e.preventDefault();
-            this.showView('view-projects');
+            this.showView('view-list');
         });
 
-        document.getElementById('closeProjects').addEventListener('click', e => {
-            e.preventDefault();
-            this.showView('view-home');
+        // Index link inside the index views toggles back to home
+        document.querySelectorAll('#closeList, #closeProjects').forEach(el => {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                this.showView('view-home');
+            });
+        });
+
+        // List / Grid sub-view toggle (present in both index views)
+        document.querySelectorAll('.toggle-list').forEach(el => {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                this.showView('view-list');
+            });
+        });
+        document.querySelectorAll('.toggle-grid').forEach(el => {
+            el.addEventListener('click', e => {
+                e.preventDefault();
+                this.showView('view-projects');
+            });
         });
 
         document.getElementById('closeProject').addEventListener('click', e => {

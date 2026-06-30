@@ -54,12 +54,14 @@ a:hover {
 /* Content areas animate independently — nav stays fixed */
 .home-main,
 .gallery-main,
+.list-main,
 .project-scroll {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .view--hidden .home-main,
 .view--hidden .gallery-main,
+.view--hidden .list-main,
 .view--hidden .project-scroll {
     opacity: 0;
     transform: translateY(8px);
@@ -96,6 +98,21 @@ a:hover {
 
 .nav-link.nav-active {
     text-decoration: underline;
+}
+
+/* List / Grid toggle (Index views) */
+.view-toggle {
+    display: flex;
+    gap: 4px;
+    align-items: baseline;
+}
+
+.toggle-sep {
+    opacity: 0.5;
+}
+
+.toggle-sep:hover {
+    opacity: 0.5;
 }
 
 #closeProject {
@@ -241,6 +258,40 @@ a:hover {
 }
 
 .gallery-item[data-locked="true"] {
+    cursor: default;
+}
+
+
+/* === PROJECTS LIST VIEW === */
+
+.list-main {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    padding: 96px var(--margin) var(--margin);
+}
+
+.list-index {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.list-item {
+    color: inherit;
+}
+
+.list-item[data-index] {
+    cursor: pointer;
+}
+
+.list-item[data-index]:hover {
+    opacity: 0.5;
+}
+
+.list-item--static {
     cursor: default;
 }
 
