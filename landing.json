@@ -27,6 +27,10 @@
     {
       "type": "image",
       "url": "/media/juice.jpg"
+    },
+    {
+      "type": "image",
+      "url": "/media/4.jpg"
     }
   ]
 }
