@@ -314,7 +314,7 @@ class App {
             // Clickable only when the project has its own page (not list-only, not locked)
             const clickable = !project.listOnly && !project.locked;
             return `<div class="list-item${clickable ? '' : ' list-item--static'}"${clickable ? ` data-index="${i}"` : ''}>${project.title}</div>`;
-        }).join('');
+        }).join('') + `<p class="list-note">Additional work available upon request</p>`;
 
         list.addEventListener('click', e => {
             const item = e.target.closest('.list-item[data-index]');

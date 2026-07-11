@@ -297,6 +297,10 @@ a:hover {
     cursor: default;
 }
 
+.list-note {
+    margin-top: 77px;
+    color: inherit;
+}
 
 
 /* ID selector beats .view { background: #fff } */
