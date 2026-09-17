@@ -327,6 +327,12 @@ a:hover {
     mix-blend-mode: normal;
 }
 
+/* Details/Hide use opacity 0.5 by default; on white that reads as washed-out */
+#view-project.light-bg .project-info-toggle,
+#view-project.light-bg .project-info-close {
+    opacity: 1;
+}
+
 /* ID selector beats .view { background: #fff } */
 #view-project {
     background-color: #ffffff;
