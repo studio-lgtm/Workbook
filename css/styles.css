@@ -316,6 +316,23 @@ a:hover {
 }
 
 
+/* Light background — force solid black text (no difference blend) */
+#view-project.light-bg .project-info-header,
+#view-project.light-bg .project-info-header *,
+#view-project.light-bg .project-asset-counter,
+#view-project.light-bg .project-info-toggle,
+#view-project.light-bg .project-info-close,
+#view-project.light-bg .nav-link {
+    color: #000;
+    mix-blend-mode: normal;
+}
+
+/* Details/Hide use opacity 0.5 by default; on white that reads as washed-out */
+#view-project.light-bg .project-info-toggle,
+#view-project.light-bg .project-info-close {
+    opacity: 1;
+}
+
 /* ID selector beats .view { background: #fff } */
 #view-project {
     background-color: #ffffff;
