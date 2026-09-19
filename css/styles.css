@@ -624,4 +624,15 @@ a:hover {
     .project-mobile-row {
         margin-top: 2px;
     }
+
+    /* Fix mix-blend-mode fallback on mobile — force black text on light backgrounds */
+    .header-identity,
+    .nav-link,
+    .project-info-header,
+    .project-asset-counter,
+    .project-info-toggle,
+    .project-info-close {
+        mix-blend-mode: normal;
+        color: #000;
+    }
 }
